@@ -2,7 +2,7 @@
     <div class="flex justify-between mx-7">
         <h2 class="text-2xl font-bold">Services</h2>
 
-        <x-button wire:click="confirmServiceAdd"  class="px-5 py-2 text-white bg-pink-500 rounded-md hover:bg--600">
+        <x-button wire:click="confirmServiceAdd"  class="px-5 py-2 text-white bg-blue-500 rounded-md hover:bg--600">
             Create
         </x-button>
     </div>
@@ -25,7 +25,7 @@
                     </svg>
                 </div>
                 <input type="search" wire:model="search" id="default-search" name="search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search Services...">
-                <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:outline-none focus:ring-pink-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+                <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
                 </th>
                 <td class="px-6 py-4  max-w-0">
                     <div class="font-medium text-gray-700">
-                        <img src="{{ asset('storage/' . $service->image) }}" alt="" class="w-20 h-20 object-cover">
+                        <img src="{{ asset('images/' . $service->image) }}" alt="" class="w-20 h-20 object-cover">
                     </div>
                 </td>
 
@@ -98,9 +98,9 @@
                             </x-button>
 
                         </a>
-                        <x-button wire:click="confirmServiceEdit({{ $service->id }})" wire:loading.attr="disabled">
+                        <x-warning-button wire:click="confirmServiceEdit({{ $service->id }})" wire:loading.attr="disabled">
                             {{ __('Edit') }}
-                        </x-button>
+                        </x-warning-button>
                         <x-danger-button wire:click="confirmServiceDeletion({{ $service->id }})" wire:loading.attr="disabled">
                             {{ __('Delete') }}
                         </x-danger-button>

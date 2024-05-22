@@ -3,8 +3,8 @@
 body,
 body *:not(html):not(style):not(br):not(tr):not(code) {
     box-sizing: border-box;
-    font-family: 'K2D', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    /* font-family: 'K2D', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; */
     position: relative;
 }
 
@@ -38,7 +38,7 @@ a img {
 /* Typography */
 
 h1 {
-    color: #de5c9d;
+    color: #5061c4;
     font-size: 18px;
     font-weight: bold;
     margin-top: 0;
@@ -103,7 +103,7 @@ img {
 }
 
 .header a {
-    color: #de5c9d;
+    color: #5061c4;
     font-size: 19px;
     font-weight: bold;
     text-decoration: none;
@@ -124,7 +124,7 @@ img {
     -premailer-cellspacing: 0;
     -premailer-width: 100%;
     background-color: #fafafa;
-    border-bottom: 1px solid #f0cde8;
+    border-bottom: 1px solid #b8c7dc;
     border-top: 1px solid #f0cde8;
     margin: 0;
     padding: 0;
@@ -232,11 +232,11 @@ img {
 
 .button-blue,
 .button-primary {
-    background-color: #de5c9d;
-    border-bottom: 8px solid #de5c9d;
-    border-left: 18px solid #de5c9d;
-    border-right: 18px solid #de5c9d;
-    border-top: 8px solid #de5c9d;
+    background-color: #5061c4;
+    border-bottom: 8px solid #5061c4;
+    border-left: 18px solid #5061c4;
+    border-right: 18px solid #5061c4;
+    border-top: 8px solid #5061c4;
 }
 
 .button-green,

@@ -13,7 +13,7 @@
 
             <div class="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8">
                 <div class="aspect-h-3 aspect-w-2 overflow-hidden rounded-lg bg-gray-100 sm:col-span-4 lg:col-span-5">
-                    <img src="{{ asset('storage/'. $service->image) }}" alt="{{$service->name . ' image'}}"
+                    <img src="{{ asset('images/'. $service->image) }}" alt="{{$service->name . ' image'}}"
                          class="object-cover object-center">
                 </div>
 
@@ -34,14 +34,14 @@
                     <section aria-labelledby="information-heading" class="mt-2">
                         <h3 id="information-heading" class="sr-only">Product information</h3>
 
-                        <p class="text-2xl text-gray-900">LKR {{ number_format($service->price, 2, '.', ',') }}
+                        <p class="text-2xl text-gray-900">฿ {{ number_format($service->price, 2, '.', ',') }}
                         </p>
 
 
                             @if (Auth::user()?->role_id == 1 || Auth::user()?->role_id == 2)
 
                             <a href="{{ route('manageservices') }}?search={{ $service->slug }}">
-                                <x-button class="px-5 py-2 text-white bg-pink-500 rounded-md hover:bg--600">
+                                <x-button class="px-5 py-2 text-white bg-blue-500 rounded-md hover:bg--600">
                                     Manage
                                 </x-button>
                             </a>
@@ -124,7 +124,7 @@
                                         </tr>
                                         <tr>
                                             <td class="border p-2">Revenue</td>
-                                            <td class="border p-2"> LKR {{ number_format($totalRevenueLastWeek, 2, '.', ',') }}</td>
+                                            <td class="border p-2"> ฿ {{ number_format($totalRevenueLastWeek, 2, '.', ',') }}</td>
                                             <td class="border p-2">
                                                 @if($percentageRevenueChangeLastWeek === 'N/A')
                                                     {{ $percentageRevenueChangeLastWeek }}
@@ -134,11 +134,11 @@
                                                     <span class="text-red-800"><span class="text-2xl">↓</span> {{ $percentageRevenueChangeLastWeek }} %</span>
                                                 @endif
                                             </td>
-                                            <td class="border p-2">LKR {{ number_format($totalRevenue, 2, '.', ',') }}</td>
+                                            <td class="border p-2">฿s {{ number_format($totalRevenue, 2, '.', ',') }}</td>
                                         </tr>
                                         <tr>
                                             <td class="border p-2">Revenue (Last Month)</td>
-                                            <td class="border p-2">LKR {{ number_format($totalRevenueLastMonth, 2, '.', ',') }}</td>
+                                            <td class="border p-2">฿ {{ number_format($totalRevenueLastMonth, 2, '.', ',') }}</td>
                                             <td class="border p-2">
                                                 @if($percentageRevenueChangeLastMonth === 'N/A')
                                                     {{ $percentageRevenueChangeLastMonth }}

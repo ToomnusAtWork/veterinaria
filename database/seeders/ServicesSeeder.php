@@ -10,15 +10,15 @@ class ServicesSeeder extends Seeder
     public function run(): void
     {
         Service::create([
-            'name' => 'Nail Extensions',
-            'slug' => 'nail-extensions',
-            'description' => 'Get beautiful nail extensions for a stylish look.',
-            'image' => 'nail_extensions.jpg',
-            'price' => 1250.00,
-            'notes' => 'Choose from a variety of nail designs and colors.',
+            'name' => 'Animal Daycare',
+            'slug' => 'Doggy daycare',
+            'description' => 'Service provided for owners to drop off their pets when they are unable to watch them',
+            'image' => 'daycare.jpeg',
+            'price' => 400.00,
+            'notes' => 'Choose a variety of types animal.',
             'allergens' => null, // No allergens in this service
-            'benefits' => 'Adds length and beauty to your nails.',
-            'aftercare_tips' => 'Avoid harsh chemicals on your nails to maintain the extensions.',
+            'benefits' => 'allow your dog to socialise and just be a dog.',
+            'aftercare_tips' => 'Avoid harsh chemicals on dog fur.',
             'cautions' => null, // No specific cautions for this service
 //            'duration_minutes' => 90, // Duration in minutes
             'category_id' => 2, // Replace with the actual category ID
@@ -26,31 +26,31 @@ class ServicesSeeder extends Seeder
         ]);
 
         Service::create([
-            'name' => 'Hair Coloring - Highlights',
-            'slug' => 'hair-coloring-highlights',
-            'description' => 'Add vibrant highlights to your hair for a stunning effect.',
-            'image' => 'hair_coloring_highlights.jpg',
-            'price' => 3000.00,
-            'notes' => 'Consult with our colorist for the best shade selection.',
-            'allergens' => 'Hair dye may contain allergens; inform us of any allergies.',
-            'benefits' => 'Transform your look with beautifully colored highlights.',
-            'aftercare_tips' => 'Use color-safe shampoos and conditioners to preserve color.',
-            'cautions' => 'Patch test required for new clients with allergies.',
+            'name' => 'Consulting',
+            'slug' => 'Animal behavior consulting',
+            'description' => 'offer specialized training and behavior modification focused on Care with Consent, cooperative care.',
+            'image' => 'consult.png',
+            'price' => 100.00,
+            'notes' => 'Consult with our veterinary nurse about your pet behavior.',
+            'allergens' => 'Dog allergy and basic syptomss',
+            'benefits' => 'Get to know more about your animal behavior and understand them better',
+            'aftercare_tips' => 'Do not be afraid of weird symptoms, tell us about risk signal beforehand',
+            'cautions' => 'Care about your pet meal and food nutrition.',
 //            'duration_minutes' => 120, // Duration in minutes
             'category_id' => 3, // Replace with the actual category ID
             'is_hidden' => false,
         ]);
 
         Service::create([
-            'name' => 'Hair Treatment - Deep Conditioning',
-            'slug' => 'hair-treatment-deep-conditioning',
-            'description' => 'Revitalize your hair with deep conditioning treatment.',
-            'image' => 'hair_treatment_deep_conditioning.jpg',
-            'price' => 4000.00,
-            'notes' => 'Recommended for dry and damaged hair.',
+            'name' => 'Checkup',
+            'slug' => 'examinations and Diagnosis',
+            'description' => 'routine wellness exams for pets and they are your cat or dogs best opportunity to achieve long-term health and a high-quality life. ',
+            'image' => 'checkup.jpeg',
+            'price' => 300.00,
+            'notes' => 'Recommended for old pet and should routine checkup oftenly.',
             'allergens' => null, // No allergens in this service
-            'benefits' => 'Nourish and repair your hair for improved texture and shine.',
-            'aftercare_tips' => 'Use recommended hair masks for ongoing maintenance.',
+            'benefits' => 'Find signs of any health problems your cat or dog could be experiencing. ',
+            'aftercare_tips' => 'Use the recommended perscription pill for specific illness.',
             'cautions' => null, // No specific cautions for this service
 //            'duration_minutes' => 60, // Duration in minutes
             'category_id' => 3, // Replace with the actual category ID
@@ -59,15 +59,15 @@ class ServicesSeeder extends Seeder
 
 
         Service::create([
-            'name' => 'Hair Treatment - Scalp Massage',
-            'slug' => 'hair-treatment-scalp-massage',
-            'description' => 'Relaxing scalp massage to rejuvenate your hair and mind.',
-            'image' => 'hair_treatment_scalp_massage.jpg',
-            'price' => 3500.00,
-            'notes' => 'Enjoy a soothing massage with aromatic oils.',
-            'allergens' => 'Massage oils may contain allergens; inform us of any allergies.',
-            'benefits' => 'Promote scalp health and reduce stress with this pampering treatment.',
-            'aftercare_tips' => 'Take time to relax and destress after the treatment.',
+            'name' => 'Emergency care',
+            'slug' => 'emergency vet services ',
+            'description' => 'Advanced diagnostic tools and treatment facilities to handle critical cases effectively',
+            'image' => 'emergency.jpeg',
+            'price' => 1500.00,
+            'notes' => 'Ensure continuity of care for your pet. ',
+            'allergens' => 'Adjust treatment plans as needed',
+            'benefits' => 'Accurate diagnoses and provide timely interventions to save your pet’s life.',
+            'aftercare_tips' => 'Take care of your pet and be nice with them',
             'cautions' => null, // No specific cautions for this service
 //            'duration_minutes' => 45, // Duration in minutes
             'category_id' => 3, // Replace with the actual category ID

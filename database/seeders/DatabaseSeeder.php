@@ -15,12 +15,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
 
         // run location seeder
         $this->call([
@@ -42,6 +36,11 @@ class DatabaseSeeder extends Seeder
                 'id' => UserRolesEnum::Admin,
                 'name' => 'Admin',
                 'status' => true,
+            ],
+            [
+                'id' => UserRolesEnum::Doctor,
+                'name' => 'Doctor',
+                'status' => true,
             ]
 
         ];
@@ -53,7 +52,7 @@ class DatabaseSeeder extends Seeder
         // Create admin user
         \App\Models\User::create([
             'name' => 'Admin',
-            'email' => 'admin@salonbliss.com',
+            'email' => 'admin@petpal.com',
             'password' => Hash::make('adminpassword'),
             'phone_number' => '1234569990',
             'role_id' => UserRolesEnum::Admin,
@@ -61,7 +60,7 @@ class DatabaseSeeder extends Seeder
 
         // create mock customers
         \App\Models\User::create([
-            'name' => 'Customer 1',
+            'name' => 'John Delta',
             'email' => 'cust1@gmail.com',
             'password' => Hash::make('custpassword'),
             'phone_number' => '1299567890',
@@ -69,7 +68,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\User::create([
-            'name' => 'Customer 2',
+            'name' => 'Namura Aki',
             'email' => 'cust2@gmail.com',
             'password' => Hash::make('custpassword'),
             'phone_number' => '1277567890',
@@ -95,11 +94,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-
         // create mock employees
         \App\Models\User::create([
-            'name' => 'Employee 1',
-            'email' => 'emp1@salonbliss.com',
+            'name' => 'Narikun Ketprapakorn',
+            'email' => 'nurse1@petpal.com',
             'password' => Hash::make('emppassword'),
             'phone_number' => '1644567890',
             'role_id' => UserRolesEnum::Employee,
@@ -107,7 +105,7 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::create([
             'name' => 'Employee 2',
-            'email' => 'emp2@salonbliss.com',
+            'email' => 'emp2@petpal.com',
             'password' => Hash::make('emppassword'),
             'phone_number' => '1234523890',
             'role_id' => UserRolesEnum::Employee,
@@ -135,19 +133,19 @@ class DatabaseSeeder extends Seeder
 
         // categories Skin, Makeup, Nails, Hair
         \App\Models\Category::create([
-            'name' => 'Skin',
+            'name' => 'Checkup',
         ]);
 
         \App\Models\Category::create([
-            'name' => 'Makeup',
+            'name' => 'Surgery',
         ]);
 
         \App\Models\Category::create([
-            'name' => 'Hair',
+            'name' => 'Pet daycare',
         ]);
 
         \App\Models\Category::create([
-            'name' => 'Nails',
+            'name' => 'Vaccines',
         ]);
 
         $this->call([
