@@ -11,4 +11,9 @@ return [
         'password' => 'รหัสผ่าน',
         'confirmpass' => 'ยืนยันรหัสผ่าน',
     ],
+    'login' => [
+        'email' => 'อีเมลล์',
+        'password' => 'รหัสผ่าน',
+        'remember' => 'จดจำรหัสผ่าน',
+    ],
 ];

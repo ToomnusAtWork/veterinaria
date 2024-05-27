@@ -23,5 +23,10 @@ return [
         'password' => 'Password',
         'confirmpass' => 'Confirm Password',
     ],
+    'login' => [
+        'email' => 'Email',
+        'password' => 'Password',
+        'remember' => 'Remember me',
+    ],
 
 ];

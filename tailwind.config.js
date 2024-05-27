@@ -12,7 +12,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-
+                kanit: ["kanit", "sans-serif"],
+                REM: ["REM", "sans-serif"],
             },
         },
     },

@@ -12,12 +12,12 @@
 
   This component comes with some `rtl` classes. Please remove them if they are not needed in your project.
 -->
-<section>
+<section class="bg-blue-50">
   <div class="container mx-auto px-8 py-8 lg:py-40 relative flex flex-col lg:flex-row items-center">
       <div class="lg:w-1/2 flex flex-col items-center lg:items-start">
           <h1 class="text-center lg:text-left text-3xl sm:text-5xl font-bold text-blue-700 leading-tight mb-4">PetPal</h1>
           <p class="text-center lg:text-left sm:text-lg text-gray-500 lg:pr-40 leading-relaxed">PetPal focuses on providing top-quality services and offers personalized advice tailored just for you. Our team specializes in customizing Pets Hotel experiences to meet the individual needs of each guest. My Buddy Pet Clinic emphasizes service quality, location, and the professionalism of our team.</p>
-          <a href="#" class="bg-blue-400 hover:bg-blue-500 mt-8 py-3 px-8 text-lg rounded-full font-bold uppercase text-white tracking-widest">Get Started!</a>
+          <a href="#" class="bg-[#8AC0CF] hover:bg-blue-500 mt-8 py-3 px-8 text-lg rounded-full font-bold uppercase text-white tracking-widest">Book an appointment.</a>
           <div class="mt-16 lg:mt-24 flex">
               <span class="w-12 h-1 mx-1 bg-blue-400"></span>
               <span class="w-12 h-1 mx-1 bg-blue-200"></span>
@@ -973,666 +973,425 @@
 
 <!-- our service section -->
 <section class="mx-16 pt-20 lg:pt-[120px] pb-12 lg:pb-[90px]">
-  <div class="container">
-     <div class="flex flex-wrap -mx-4">
-        <div class="w-full px-4">
-           <div class="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
-              <span class="font-semibold text-lg text-primary mb-2 block">
-              Our Services
-              </span>
-              <h2
-                 class="
-                 font-bold
-                 text-3xl
-                 sm:text-4xl
-                 md:text-[40px]
-                 text-dark
-                 mb-4
-                 "
-                 >
-                 What We Offer
-              </h2>
-              <p class="text-base text-body-color">
-                 There are many variations of passages of Lorem Ipsum available
-                 but the majority have suffered alteration in some form.
-              </p>
-           </div>
-        </div>
-     </div>
-     <div class="flex flex-wrap -mx-4">
-        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-           <div
-              class="
-              p-10
-              md:px-7
-              xl:px-10
-              rounded-[20px]
-              bg-white
-              shadow-md
-              hover:shadow-lg
-              mb-8
-              "
-              >
-              <div
-                 class="
-                 w-[70px]
-                 h-[70px]
-                 flex
-                 items-center
-                 justify-center
-                 bg-primary
-                 rounded-2xl
-                 mb-8
-                 "
-                 >
-                 <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <path
-                       d="M18.6746 0.26779C10.0637 -1.33065 1.86522 4.39279 0.266779 13.0037C-0.506658 17.1803 0.421467 21.3568 2.79334 24.8631C5.21678 28.3693 8.82615 30.6897 12.9512 31.4631C13.9308 31.6178 14.859 31.7209 15.7871 31.7209C23.2637 31.7209 29.9668 26.3584 31.359 18.6756C32.9574 10.0647 27.234 1.81466 18.6746 0.26779ZM29.6574 18.3662C29.5543 18.8819 29.4512 19.449 29.2965 19.9131L16.7668 15.2209V1.81466C17.2824 1.86623 17.8496 1.91779 18.3652 2.02091C25.9449 3.4131 30.998 10.735 29.6574 18.3662ZM14.9105 1.81466V14.9115H1.86522C1.91678 14.3959 1.96834 13.8287 2.07147 13.3131C3.20584 6.86779 8.67147 2.22716 14.9105 1.81466ZM13.3121 29.6584C9.65115 28.9881 6.45428 26.9256 4.28865 23.8318C2.79334 21.7178 1.96834 19.2428 1.81365 16.7678H15.6324L28.5746 21.6147C26.048 27.3381 19.7574 30.8443 13.3121 29.6584Z"
-                       fill="white"
-                       />
-                 </svg>
+    <div class="py-16">
+        <div class="xl:container m-auto space-y-16 px-6 text-gray-500 md:px-12">
+          <div>
+            <h1 class="text-5xl">Why us?</h1>
+            <h2 class="mt-4 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+              A technology-first approach to payments <br class="sm:block" hidden />
+              and finance
+            </h2>
+          </div>
+          <div class="md:-mx-8 mt-16 grid gap-8 lg:gap-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div class="group relative p-8 rounded-3xl bg-white dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent border border-gray-100 lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-2xl shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
+              <div class="relative">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/4341/4341111.png"
+                  class="w-10"
+                  width="512"
+                  height="512"
+                  alt="package-delivery illustration"
+                />
+                <h3 class="mt-8 mb-4 text-2xl font-semibold text-gray-800 transition dark:text-white">
+                  Experience pet care
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Neque Dolor, alias quae, quibusdam accusantium, laudantium recusandae tenetur fugiat
+                  non cum doloribus aperiam voluptates nostrum.
+                </p>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
-                 Refreshing Design
-              </h4>
-              <p class="text-body-color">
-                 We dejoy working with discerning clients, people for whom
-                 qualuty, service, integrity & aesthetics.
-              </p>
-           </div>
-        </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-           <div
-              class="
-              p-10
-              md:px-7
-              xl:px-10
-              rounded-[20px]
-              bg-white
-              shadow-md
-              hover:shadow-lg
-              mb-8
-              "
-              >
-              <div
-                 class="
-                 w-[70px]
-                 h-[70px]
-                 flex
-                 items-center
-                 justify-center
-                 bg-primary
-                 rounded-2xl
-                 mb-8
-                 "
-                 >
-                 <svg
-                    width="39"
-                    height="22"
-                    viewBox="0 0 39 22"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <!-- <mask id="path-1-inside-1" fill="white"> -->
-                    <path
-                       fill-rule="evenodd"
-                       clip-rule="evenodd"
-                       d="M19.5004 0C14.6345 0 11.4767 2.14015 10.0251 6.42044C9.95552 6.62552 10.2264 6.7705 10.3756 6.61355C12.182 4.7134 14.2484 4.03687 16.575 4.58345C18.0583 4.93186 19.119 5.94382 20.2921 7.0642C22.2042 8.88862 24.4173 11 29.2502 11C34.1152 11 37.2736 8.85997 38.7247 4.58049C38.7943 4.3754 38.5234 4.23044 38.3742 4.38741C36.5684 6.28738 34.502 6.96375 32.1756 6.41655C30.6915 6.06814 29.6308 5.05618 28.4577 3.93652C26.5456 2.11066 24.3333 0 19.5004 0ZM-nan -nanL9.74981 11C4.88456 11 1.72609 13.1402 0.275037 17.4207C0.205519 17.6258 0.476365 17.7707 0.62555 17.6138C2.43196 15.7135 4.49843 15.0368 6.82441 15.5835C8.30851 15.9319 9.36923 16.9438 10.5423 18.0642C12.4544 19.8886 14.6667 22 19.5004 22C24.3656 22 27.5241 19.8604 28.9752 15.58C29.0447 15.3749 28.7738 15.23 28.6246 15.3869C26.8182 17.2873 24.7517 17.9639 22.425 17.4173C20.9417 17.0681 19.881 16.0562 18.7079 14.9365C16.7958 13.1121 14.5827 11 9.74981 11L-nan -nanL-nan -nanZ"
-                       />
-                    <!-- </mask> -->
-                    <path
-                       d="M16.575 4.58345L16.3463 5.55695L16.3463 5.55696L16.575 4.58345ZM20.2921 7.0642L19.6014 7.78736L19.6018 7.78769L20.2921 7.0642ZM32.1756 6.41655L32.4046 5.44311L32.4041 5.44301L32.1756 6.41655ZM28.4577 3.93652L27.7671 4.65974L27.7673 4.6599L28.4577 3.93652ZM6.82441 15.5835L6.59564 16.5569L6.59586 16.557L6.82441 15.5835ZM10.5423 18.0642L9.85161 18.7874L9.85196 18.7877L10.5423 18.0642ZM22.425 17.4173L22.1959 18.3907L22.1963 18.3908L22.425 17.4173ZM18.7079 14.9365L19.3983 14.2131L19.3982 14.213L18.7079 14.9365ZM0.275037 17.4207L-0.672026 17.0997L0.275037 17.4207ZM0.62555 17.6138L-0.0992438 16.9248L0.62555 17.6138ZM28.9752 15.58L29.9222 15.901L28.9752 15.58ZM28.6246 15.3869L27.8998 14.6979L28.6246 15.3869ZM38.7247 4.58049L37.7777 4.25936L38.7247 4.58049ZM38.3742 4.38741L39.099 5.07632L38.3742 4.38741ZM10.0251 6.42044L9.07806 6.09926L10.0251 6.42044ZM10.3756 6.61355L11.1004 7.30255L10.3756 6.61355ZM19.5004 -1C16.9224 -1 14.7064 -0.432275 12.9214 0.777273C11.1301 1.99111 9.86051 3.79212 9.07806 6.09926L10.9721 6.74162C11.6413 4.76847 12.6764 3.35925 14.0434 2.43295C15.4167 1.50235 17.2126 1 19.5004 1V-1ZM11.1004 7.30255C12.6907 5.62967 14.4042 5.10069 16.3463 5.55695L16.8037 3.60996C14.0926 2.97305 11.6733 3.79712 9.65083 5.92456L11.1004 7.30255ZM16.3463 5.55696C17.5202 5.83268 18.3899 6.63023 19.6014 7.78736L20.9828 6.34104C19.8482 5.25741 18.5964 4.03104 16.8036 3.60995L16.3463 5.55696ZM19.6018 7.78769C20.5507 8.69312 21.6704 9.7678 23.1998 10.5957C24.7495 11.4346 26.6758 12 29.2502 12V10C26.9917 10 25.395 9.50973 24.1519 8.83684C22.8885 8.15292 21.9456 7.2597 20.9824 6.34071L19.6018 7.78769ZM29.2502 12C31.8278 12 34.0437 11.4323 35.8286 10.2229C37.6199 9.00923 38.8895 7.20846 39.6718 4.90163L37.7777 4.25936C37.1088 6.23199 36.0737 7.64098 34.7067 8.56718C33.3334 9.49769 31.5376 10 29.2502 10V12ZM37.6493 3.6985C36.0597 5.37104 34.3464 5.89986 32.4046 5.44311L31.9466 7.38998C34.6577 8.02765 37.0771 7.20371 39.099 5.07632L37.6493 3.6985ZM32.4041 5.44301C31.2295 5.16725 30.3598 4.36966 29.1482 3.21314L27.7673 4.6599C28.9017 5.74271 30.1535 6.96904 31.947 7.39008L32.4041 5.44301ZM29.1483 3.2133C28.1993 2.30704 27.0797 1.23211 25.5504 0.404169C24.0008 -0.434783 22.0747 -1 19.5004 -1V1C21.7589 1 23.3554 1.49011 24.5983 2.16296C25.8614 2.84681 26.8041 3.74014 27.7671 4.65974L29.1483 3.2133ZM9.74981 10C7.17206 10 4.95609 10.5678 3.17112 11.7774C1.3798 12.9913 0.110142 14.7924 -0.672026 17.0997L1.2221 17.7418C1.89099 15.7686 2.92609 14.3594 4.29308 13.433C5.66642 12.5024 7.46231 12 9.74981 12V10ZM1.35034 18.3028C2.94075 16.6297 4.65428 16.1007 6.59564 16.5569L7.05318 14.61C4.34259 13.973 1.92317 14.7973 -0.0992438 16.9248L1.35034 18.3028ZM6.59586 16.557C7.77045 16.8327 8.64013 17.6303 9.85161 18.7874L11.233 17.341C10.0983 16.2573 8.84657 15.031 7.05295 14.6099L6.59586 16.557ZM9.85196 18.7877C10.8008 19.6931 11.9204 20.7678 13.4497 21.5957C14.9993 22.4346 16.9257 23 19.5004 23V21C17.2415 21 15.6448 20.5097 14.4018 19.8368C13.1385 19.1529 12.1958 18.2598 11.2326 17.3407L9.85196 18.7877ZM19.5004 23C22.0781 23 24.294 22.4324 26.079 21.223C27.8704 20.0093 29.14 18.2084 29.9222 15.901L28.0281 15.2589C27.3592 17.232 26.3241 18.6411 24.9572 19.5673C23.5838 20.4978 21.7879 21 19.5004 21V23ZM27.8998 14.6979C26.3095 16.371 24.5959 16.9 22.6537 16.4438L22.1963 18.3908C24.9075 19.0277 27.327 18.2035 29.3494 16.0759L27.8998 14.6979ZM22.6541 16.4439C21.4798 16.1675 20.61 15.3697 19.3983 14.2131L18.0174 15.6599C19.1519 16.7427 20.4035 17.9688 22.1959 18.3907L22.6541 16.4439ZM19.3982 14.213C18.4494 13.3077 17.3296 12.2328 15.8003 11.4047C14.2506 10.5656 12.3242 10 9.74981 10V12C12.0083 12 13.6049 12.4904 14.848 13.1635C16.1115 13.8476 17.0544 14.741 18.0176 15.66L19.3982 14.213ZM-0.672026 17.0997C-0.889639 17.7416 -0.537234 18.2988 -0.109577 18.5315C0.304715 18.7568 0.918575 18.757 1.35034 18.3028L-0.0992438 16.9248C0.18334 16.6276 0.587185 16.6337 0.846137 16.7746C1.11845 16.9227 1.3702 17.3049 1.2221 17.7418L-0.672026 17.0997ZM29.9222 15.901C30.1398 15.2591 29.7874 14.7019 29.3598 14.4693C28.9455 14.2439 28.3316 14.2437 27.8998 14.6979L29.3494 16.0759C29.0669 16.3732 28.663 16.367 28.4041 16.2261C28.1317 16.078 27.88 15.6958 28.0281 15.2589L29.9222 15.901ZM39.6718 4.90163C39.8895 4.25959 39.537 3.70235 39.1093 3.46973C38.695 3.24438 38.0811 3.24419 37.6493 3.6985L39.099 5.07632C38.8164 5.37366 38.4126 5.36747 38.1537 5.22663C37.8814 5.07852 37.6295 4.69631 37.7777 4.25936L39.6718 4.90163ZM9.07806 6.09926C8.86033 6.74124 9.21275 7.29849 9.64037 7.53115C10.0546 7.75655 10.6685 7.7568 11.1004 7.30255L9.65083 5.92456C9.93346 5.62726 10.3373 5.63349 10.5962 5.77436C10.8685 5.9225 11.1203 6.30472 10.9721 6.74162L9.07806 6.09926Z"
-                       fill="white"
-                       mask="url(#path-1-inside-1)"
-                       />
-                 </svg>
+            </div>
+            <div class="group relative p-8 rounded-3xl bg-white dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent border border-gray-100 lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-2xl shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
+              <div class="relative">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/4341/4341160.png"
+                  class="w-10"
+                  width="512"
+                  height="512"
+                  alt="package-delivery illustration"
+                />
+                <h3 class="mt-8 mb-4 text-2xl font-semibold text-gray-800 transition dark:text-white">
+                  24/7 Online Booking Service
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Neque Dolor, alias quae, quibusdam accusantium, laudantium recusandae tenetur fugiat
+                  non cum doloribus aperiam voluptates nostrum.
+                </p>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
-                 Based on Tailwind CSS
-              </h4>
-              <p class="text-body-color">
-                 We dejoy working with discerning clients, people for whom
-                 qualuty, service, integrity & aesthetics.
-              </p>
-           </div>
-        </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-           <div
-              class="
-              p-10
-              md:px-7
-              xl:px-10
-              rounded-[20px]
-              bg-white
-              shadow-md
-              hover:shadow-lg
-              mb-8
-              "
-              >
-              <div
-                 class="
-                 w-[70px]
-                 h-[70px]
-                 flex
-                 items-center
-                 justify-center
-                 bg-primary
-                 rounded-2xl
-                 mb-8
-                 "
-                 >
-                 <svg
-                    width="35"
-                    height="35"
-                    viewBox="0 0 35 35"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <path
-                       d="M10.7734 14.3281H3.82813C2.07813 14.3281 0.65625 12.9062 0.65625 11.1562V4.21094C0.65625 2.46094 2.07813 1.03906 3.82813 1.03906H10.7734C12.5234 1.03906 13.9453 2.46094 13.9453 4.21094V11.1562C13.9453 12.9062 12.5234 14.3281 10.7734 14.3281ZM3.82813 2.95312C3.17188 2.95312 2.57031 3.5 2.57031 4.21094V11.1562C2.57031 11.8125 3.11719 12.4141 3.82813 12.4141H10.7734C11.4297 12.4141 12.0313 11.8672 12.0313 11.1562V4.21094C12.0313 3.55469 11.4844 2.95312 10.7734 2.95312H3.82813Z"
-                       fill="white"
-                       />
-                    <path
-                       d="M31.1719 14.3281H24.2266C22.4766 14.3281 21.0547 12.9062 21.0547 11.1562V4.21094C21.0547 2.46094 22.4766 1.03906 24.2266 1.03906H31.1719C32.9219 1.03906 34.3438 2.46094 34.3438 4.21094V11.1562C34.3438 12.9062 32.9219 14.3281 31.1719 14.3281ZM24.2266 2.95312C23.5703 2.95312 22.9688 3.5 22.9688 4.21094V11.1562C22.9688 11.8125 23.5156 12.4141 24.2266 12.4141H31.1719C31.8281 12.4141 32.4297 11.8672 32.4297 11.1562V4.21094C32.4297 3.55469 31.8828 2.95312 31.1719 2.95312H24.2266Z"
-                       fill="white"
-                       />
-                    <path
-                       d="M10.7734 33.9609H3.82813C2.07813 33.9609 0.65625 32.5391 0.65625 30.7891V23.8438C0.65625 22.0938 2.07813 20.6719 3.82813 20.6719H10.7734C12.5234 20.6719 13.9453 22.0938 13.9453 23.8438V30.7891C13.9453 32.5391 12.5234 33.9609 10.7734 33.9609ZM3.82813 22.5859C3.17188 22.5859 2.57031 23.1328 2.57031 23.8438V30.7891C2.57031 31.4453 3.11719 32.0469 3.82813 32.0469H10.7734C11.4297 32.0469 12.0313 31.5 12.0313 30.7891V23.8438C12.0313 23.1875 11.4844 22.5859 10.7734 22.5859H3.82813Z"
-                       fill="white"
-                       />
-                    <path
-                       d="M31.1719 33.9609H24.2266C22.4766 33.9609 21.0547 32.5391 21.0547 30.7891V23.8438C21.0547 22.0938 22.4766 20.6719 24.2266 20.6719H31.1719C32.9219 20.6719 34.3438 22.0938 34.3438 23.8438V30.7891C34.3438 32.5391 32.9219 33.9609 31.1719 33.9609ZM24.2266 22.5859C23.5703 22.5859 22.9688 23.1328 22.9688 23.8438V30.7891C22.9688 31.4453 23.5156 32.0469 24.2266 32.0469H31.1719C31.8281 32.0469 32.4297 31.5 32.4297 30.7891V23.8438C32.4297 23.1875 31.8828 22.5859 31.1719 22.5859H24.2266Z"
-                       fill="white"
-                       />
-                 </svg>
+            </div>
+            <div class="group relative p-8 rounded-3xl bg-white dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent border border-gray-100 lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-2xl shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
+              <div class="relative">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/4341/4341134.png"
+                  class="w-10"
+                  width="512"
+                  height="512"
+                  alt="package-delivery illustration"
+                />
+                <h3 class="mt-8 mb-4 text-2xl font-semibold text-gray-800 transition dark:text-white">
+                  Affordable Pet Hotel
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Neque Dolor, alias quae, quibusdam accusantium, laudantium recusandae tenetur fugiat
+                  non cum doloribus aperiam voluptates nostrum.
+                </p>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
-                 300+ Components
-              </h4>
-              <p class="text-body-color">
-                 We dejoy working with discerning clients, people for whom
-                 qualuty, service, integrity & aesthetics.
-              </p>
-           </div>
-        </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-           <div
-              class="
-              p-10
-              md:px-7
-              xl:px-10
-              rounded-[20px]
-              bg-white
-              shadow-md
-              hover:shadow-lg
-              mb-8
-              "
-              >
-              <div
-                 class="
-                 w-[70px]
-                 h-[70px]
-                 flex
-                 items-center
-                 justify-center
-                 bg-primary
-                 rounded-2xl
-                 mb-8
-                 "
-                 >
-                 <svg
-                    width="35"
-                    height="35"
-                    viewBox="0 0 35 35"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <path
-                       d="M17.5 7.875C8.20312 7.875 0.65625 16.0781 0.65625 26.1406C0.65625 26.6875 1.09375 27.125 1.64062 27.125H33.3594C33.9062 27.125 34.3438 26.6875 34.3438 26.1406C34.3438 16.0781 26.7969 7.875 17.5 7.875ZM19.4687 25.2109L17.9922 20.5078C17.8281 20.0156 17.1719 20.0156 17.0078 20.5078L15.5312 25.2109H2.625C3.0625 16.625 9.57031 9.78906 17.5 9.78906C25.4297 9.78906 31.9375 16.625 32.375 25.2109H19.4687Z"
-                       fill="white"
-                       />
-                    <path
-                       d="M17.5 13.7812C16.9531 13.7812 16.5156 14.2187 16.5156 14.7656V16.1875C16.5156 16.7344 16.9531 17.1719 17.5 17.1719C18.0469 17.1719 18.4844 16.7344 18.4844 16.1875V14.7656C18.4844 14.2187 18.0469 13.7812 17.5 13.7812Z"
-                       fill="white"
-                       />
-                    <path
-                       d="M25.8672 17.8828L24.9922 18.8125C24.6094 19.1953 24.6094 19.7969 24.9922 20.1797C25.1563 20.3438 25.4297 20.4531 25.6484 20.4531C25.9219 20.4531 26.1406 20.3438 26.3594 20.1797L27.2344 19.25C27.6172 18.8672 27.6172 18.2656 27.2344 17.8828C26.8516 17.5 26.25 17.5 25.8672 17.8828Z"
-                       fill="white"
-                       />
-                    <path
-                       d="M9.13281 17.8828C8.80468 17.5 8.14843 17.4453 7.76562 17.8281C7.38281 18.1562 7.32812 18.8125 7.71093 19.1953L8.53125 20.125C8.69531 20.3437 8.96874 20.4531 9.24218 20.4531C9.46093 20.4531 9.67968 20.3984 9.89843 20.2344C10.2812 19.9062 10.3359 19.25 9.95312 18.8672L9.13281 17.8828Z"
-                       fill="white"
-                       />
-                 </svg>
+            </div>
+            <div class="group relative p-8 rounded-3xl bg-white dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent border border-gray-100 lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-2xl shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
+              <div class="relative">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/4341/4341139.png"
+                  class="w-10"
+                  width="512"
+                  height="512"
+                  alt="package-delivery illustration"
+                />
+                <h3 class="mt-8 mb-4 text-2xl font-semibold text-gray-800 transition dark:text-white">
+                  Awarded Service
+                </h3>
+                <p class="text-gray-600 dark:text-gray-300">
+                  Neque Dolor, alias quae, quibusdam accusantium, laudantium recusandae tenetur fugiat
+                  non cum doloribus aperiam voluptates nostrum.
+                </p>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
-                 Speed Optimized
-              </h4>
-              <p class="text-body-color">
-                 We dejoy working with discerning clients, people for whom
-                 qualuty, service, integrity & aesthetics.
-              </p>
-           </div>
-        </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-           <div
-              class="
-              p-10
-              md:px-7
-              xl:px-10
-              rounded-[20px]
-              bg-white
-              shadow-md
-              hover:shadow-lg
-              mb-8
-              "
-              >
-              <div
-                 class="
-                 w-[70px]
-                 h-[70px]
-                 flex
-                 items-center
-                 justify-center
-                 bg-primary
-                 rounded-2xl
-                 mb-8
-                 "
-                 >
-                 <svg
-                    width="35"
-                    height="35"
-                    viewBox="0 0 35 35"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <path
-                       d="M29.5312 21.6562L28.6563 21.1641L29.6953 20.5625C30.7344 19.9062 31.3359 18.8125 31.2812 17.6094C31.2266 16.4063 30.625 15.3125 29.5312 14.7109L27.8906 13.7813L29.6406 12.6875C30.6797 12.0313 31.2812 10.9375 31.2266 9.73438C31.1719 8.53125 30.5703 7.4375 29.4766 6.83594L19.25 1.09375C18.2109 0.492187 16.9531 0.546875 15.9141 1.09375L5.41406 7.21875C4.375 7.82031 3.71875 8.91406 3.71875 10.1172C3.71875 11.3203 4.375 12.4141 5.41406 13.0156L7.10938 14L5.41406 14.9844C4.375 15.5859 3.71875 16.6797 3.71875 17.8828C3.71875 19.0859 4.32031 20.1797 5.41406 20.7812L6.39844 21.3281L5.46875 21.875C4.42969 22.4766 3.77344 23.5703 3.77344 24.7734C3.77344 25.9766 4.375 27.0703 5.46875 27.6719L15.9141 33.6875C16.4609 34.0156 17.0078 34.125 17.6094 34.125C18.2109 34.125 18.8125 33.9609 19.3594 33.6328L29.6953 27.2891C30.7344 26.6328 31.3359 25.5391 31.2812 24.3359C31.2266 23.2969 30.625 22.2031 29.5312 21.6562ZM5.63281 10.1172C5.63281 9.57031 5.90625 9.13281 6.34375 8.85938L16.8438 2.78906C17.0625 2.67969 17.3359 2.57031 17.5547 2.57031C17.7734 2.57031 18.0469 2.625 18.2656 2.73437L28.5469 8.47656C28.9844 8.75 29.2578 9.1875 29.3125 9.73438C29.3125 10.2812 29.0391 10.7188 28.6016 10.9922L18.3203 17.3906C17.8828 17.6641 17.2812 17.6641 16.8438 17.3906L6.39844 11.375C5.90625 11.1562 5.63281 10.6641 5.63281 10.1172ZM5.63281 17.9375C5.63281 17.3906 5.90625 16.9531 6.34375 16.6797L9.02344 15.1484L15.8594 19.0859C16.4062 19.4141 16.9531 19.5234 17.5547 19.5234C18.1562 19.5234 18.7578 19.3594 19.3047 19.0312L26.0312 14.875L28.6016 16.2969C29.0391 16.5703 29.3125 17.0078 29.3672 17.5547C29.3672 18.1016 29.0938 18.5391 28.6563 18.8125L18.3203 25.2656C17.8828 25.5391 17.2812 25.5391 16.8438 25.2656L6.39844 19.25C5.90625 18.9766 5.63281 18.4844 5.63281 17.9375ZM28.6563 25.8125L18.3203 32.2109C17.8828 32.4844 17.2812 32.4844 16.8438 32.2109L6.39844 26.1953C5.96094 25.9219 5.6875 25.4844 5.6875 24.9375C5.6875 24.3906 5.96094 23.9531 6.39844 23.6797L8.3125 22.5859L15.8594 26.9609C16.4062 27.2891 16.9531 27.3984 17.5547 27.3984C18.1562 27.3984 18.7578 27.2344 19.3047 26.9062L26.7969 22.2578L28.6563 23.2969C29.0938 23.5703 29.3672 24.0078 29.4219 24.5547C29.3672 25.0469 29.0938 25.5391 28.6563 25.8125Z"
-                       fill="white"
-                       />
-                 </svg>
+            </div>
+            <div class="group relative p-8 rounded-3xl bg-white dark:border-gray-700 dark:bg-gray-800 dark:lg:bg-transparent border border-gray-100 lg:border-transparent hover:border-gray-100 dark:shadow-none dark:hover:border-gray-700 dark:hover:bg-gray-800 shadow-2xl shadow-gray-600/10 lg:shadow-transparent lg:hover:shadow-gray-600/10 sm:gap-8 sm:flex transition duration-300">
+                <div class="relative">
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4341/4341160.png"
+                    class="w-10"
+                    width="512"
+                    height="512"
+                    alt="package-delivery illustration"
+                  />
+                  <h3 class="mt-8 mb-4 text-2xl font-semibold text-gray-800 transition dark:text-white">
+                    Book 24 Hour service
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    Neque Dolor, alias quae, quibusdam accusantium, laudantium recusandae tenetur fugiat
+                    non cum doloribus aperiam voluptates nostrum.
+                  </p>
+                </div>
               </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
-                 Fully Customizable
-              </h4>
-              <p class="text-body-color">
-                 We dejoy working with discerning clients, people for whom
-                 qualuty, service, integrity & aesthetics.
-              </p>
-           </div>
+          </div>
         </div>
-        <div class="w-full md:w-1/2 lg:w-1/3 px-4">
-           <div
-              class="
-              p-10
-              md:px-7
-              xl:px-10
-              rounded-[20px]
-              bg-white
-              shadow-md
-              hover:shadow-lg
-              mb-8
-              "
-              >
-              <div
-                 class="
-                 w-[70px]
-                 h-[70px]
-                 flex
-                 items-center
-                 justify-center
-                 bg-primary
-                 rounded-2xl
-                 mb-8
-                 "
-                 >
-                 <svg
-                    width="35"
-                    height="35"
-                    viewBox="0 0 35 35"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    >
-                    <path
-                       d="M4.04684 15.5859C4.2109 15.5859 4.37497 15.5859 4.48434 15.5313L10.5547 13.3984C11.0468 13.2344 11.3203 12.6875 11.1562 12.1953C10.9922 11.7031 10.4453 11.4297 9.95309 11.5938L6.28903 12.9063C8.09372 7.92969 12.8515 4.53906 18.375 4.53906C24.2265 4.53906 29.3672 8.42188 30.789 14.0547C30.8984 14.5469 31.4453 14.875 31.9375 14.7656C32.4297 14.6563 32.7578 14.1094 32.6484 13.6172C31.0078 7.16406 25.1015 2.67969 18.375 2.67969C11.8125 2.67969 6.12497 6.89063 4.26559 13.0156L2.57028 8.25781C2.40622 7.76563 1.85934 7.49219 1.36715 7.65625C0.874967 7.82031 0.60153 8.36719 0.765592 8.85938L2.84372 14.8203C3.00778 15.2578 3.55465 15.5859 4.04684 15.5859Z"
-                       fill="white"
-                       />
-                    <path
-                       d="M34.2343 27.2891L31.9922 21.3828C31.8828 21.0547 31.6093 20.7812 31.2812 20.6719C30.9531 20.5625 30.625 20.5078 30.2968 20.6719L24.2812 22.9687C23.789 23.1328 23.5156 23.7344 23.7343 24.2266C23.8984 24.7187 24.5 24.9922 24.9922 24.7734L28.7109 23.3516C26.6328 27.6719 22.2031 30.5156 17.1718 30.5156C11.6484 30.5156 6.78122 27.0703 5.0859 21.9297C4.86715 21.4375 4.32028 21.1641 3.82809 21.3281C3.3359 21.4922 3.06247 22.0391 3.22653 22.5312C5.19528 28.4375 10.7734 32.4297 17.1172 32.4297C23.1328 32.4297 28.4922 28.875 30.6797 23.4609L32.4297 28C32.5937 28.3828 32.9218 28.6016 33.3047 28.6016C33.414 28.6016 33.5234 28.6016 33.6328 28.5469C34.1797 28.3281 34.4531 27.7813 34.2343 27.2891Z"
-                       fill="white"
-                       />
-                 </svg>
-              </div>
-              <h4 class="font-semibold text-xl text-dark mb-3">
-                 Regular Updates
-              </h4>
-              <p class="text-body-color">
-                 We dejoy working with discerning clients, people for whom
-                 qualuty, service, integrity & aesthetics.
-              </p>
-           </div>
-        </div>
-     </div>
-  </div>
+      </div>
+                                          
 </section>
 
 <!-- testermomial section -->
 <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
-  <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
-  <div class="mx-auto max-w-2xl lg:max-w-4xl">
-    <img class="mx-auto h-12" src="https://tailwindui.com/img/logos/workcation-logo-indigo-600.svg" alt="">
-    <figure class="mt-10">
-      <blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-        <p>"The challenge of leadership is to be strong, but not rude; be kind, but not weak; be bold, but not bully; be thoughtful, but not lazy; be humble, but not timid; be proud, but not arrogant; have humor, but without folly." </p>
-      </blockquote>
-      <figcaption class="mt-10">
-        <img class="mx-auto h-10 w-10 rounded-full" src="data:image/png;base64,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" alt="">
-        <div class="mt-4 flex items-center justify-center space-x-3 text-base">
-          <div class="font-semibold text-gray-900">Peranut Toomnus</div>
-          <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
-            <circle cx="1" cy="1" r="1" />
-          </svg>
-          <div class="text-gray-600">CEO of PetPal</div>
-        </div>
-      </figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- gallery section -->
-<section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-20">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Master Cleanse Reliac Heirloom</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies heirloom.</p>
-    </div>
-    <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/3 sm:w-1/2 p-4">
-        <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/600x360">
-          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
-            <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+  
+    <div class="py-16"> 
+        <div class="container m-auto space-y-8 px-6 text-gray-500 md:px-12 lg:px-20">
+          <div
+            class="justify-center gap-6 text-center md:flex md:text-left lg:items-center lg:gap-16"
+          >
+            <div class="order-last mb-6 space-y-6 md:mb-0 md:w-6/12 lg:w-6/12">
+              <h1 class="text-4xl font-bold text-gray-800 md:text-5xl dark:text-white">
+                Buy now and benefit up to <span class="text-primary dark:text-sky-300">30% off</span>
+              </h1>
+              <p class="text-lg text-gray-600 dark:text-gray-300">
+                Be part of millions people around the world using tailus in modern User Interfaces.
+              </p>
+              <div class="flex flex-wrap gap-6">
+                <a
+                  href="#"
+                  class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                >
+                  <span class="relative text-base font-semibold text-white dark:text-dark"
+                    >Shop now</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
+                >
+                  <span
+                    class="relative text-base font-semibold text-primary dark:text-white"
+                    >More about</span
+                  >
+              </a>
+            </div>
+            </div>
+            <div class="grid grid-cols-5 grid-rows-4 gap-4 md:w-5/12 lg:w-6/12">
+              <div class="col-span-2 row-span-4">
+                <img
+                  src="images/products/kushagra.webp"
+                  class="rounded-full"
+                  width="640"
+                  height="960"
+                  alt="shoes"
+                  loading="lazy"
+                />
+              </div>
+              <div class="col-span-2 row-span-2">
+                <img
+                  src="images/products/iman.webp"
+                  class="h-full w-full rounded-xl object-cover object-top"
+                  width="640"
+                  height="640"
+                  alt="shoe"
+                  loading="lazy"
+                />
+              </div>
+              <div class="col-span-3 row-span-3">
+                <img
+                  src="images/products/daniel.webp"
+                  class="h-full w-full rounded-xl object-cover object-top"
+                  width="640"
+                  height="427"
+                  alt="shoes"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="lg:w-1/3 sm:w-1/2 p-4">
-        <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/601x361">
-          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-            <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          </div>
-        </div>
-      </div>
-      <div class="lg:w-1/3 sm:w-1/2 p-4">
-        <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/603x363">
-          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The 400 Blows</h1>
-            <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          </div>
-        </div>
-      </div>
-      <div class="lg:w-1/3 sm:w-1/2 p-4">
-        <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/602x362">
-          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Neptune</h1>
-            <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          </div>
-        </div>
-      </div>
-      <div class="lg:w-1/3 sm:w-1/2 p-4">
-        <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/605x365">
-          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Holden Caulfield</h1>
-            <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          </div>
-        </div>
-      </div>
-      <div class="lg:w-1/3 sm:w-1/2 p-4">
-        <div class="flex relative">
-          <img alt="gallery" class="absolute inset-0 w-full h-full object-cover object-center" src="https://dummyimage.com/606x366">
-          <div class="px-8 py-10 relative z-10 w-full border-4 border-gray-200 bg-white opacity-0 hover:opacity-100">
-            <h2 class="tracking-widest text-sm title-font font-medium text-indigo-500 mb-1">THE SUBTITLE</h2>
-            <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Alper Kamu</h1>
-            <p class="leading-relaxed">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      </div>      
 </section>
 
 <!-- team section -->
 <section>
-  <div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white dark:bg-gray-800">
-      <div class="container xl:max-w-6xl mx-auto px-4">
-          <!-- section header -->
-          <header class="text-center mx-auto mb-12">
-              <h2 class="text-2xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
-                  <span class="font-light">Our</span> Team
-              </h2>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 60" style="margin: 0 auto;height: 35px;" xml:space="preserve">
-                  <circle cx="50.1" cy="30.4" r="5" class="stroke-primary" style="fill: transparent;stroke-width: 2;stroke-miterlimit: 10;"></circle>
-                  <line x1="55.1" y1="30.4" x2="100" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
-                  <line x1="45.1" y1="30.4" x2="0" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
-              </svg>
-          </header>
-          <!-- end section header -->
-          <!-- row -->
-          <div class="flex flex-wrap flex-row -mx-4 justify-center">
-              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
-                      <!-- team block -->
-                      <div class="relative overflow-hidden px-6">
-                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar1.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
-                      </div>
-                      <div class="pt-6 text-center">
-                          <p class="text-lg leading-normal font-bold mb-1">Joe Antonio</p>
-                          <p class="text-gray-500 leading-relaxed font-light">Founder CEO</p>
-                          <!-- social icon -->
-                          <div class="mt-2 mb-5 space-x-2">
-                              <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
-                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Facebook link" href="#">
-                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Instagram link" href="#">
-                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="#">
-                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
-                                  </svg>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- end team block -->
-              </div>
-              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-                  <!-- team block -->
-                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
-                      <div class="relative overflow-hidden px-6">
-                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
-                      </div>
-                      <div class="pt-6 text-center">
-                          <p class="text-lg leading-normal font-bold mb-1">Sarah Daeva</p>
-                          <p class="text-gray-500 leading-relaxed font-light">Marketing</p>
-                          <!-- social icon -->
-                          <div class="mt-2 mb-5 space-x-2">
-                              <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
-                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Facebook link" href="#">
-                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Instagram link" href="#">
-                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="#">
-                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
-                                  </svg>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- end team block -->
-              </div>
-              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-                  <!-- team block -->
-                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
-                      <div class="relative overflow-hidden px-6">
-                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
-                      </div>
-                      <div class="pt-6 text-center">
-                          <p class="text-lg leading-normal font-bold mb-1">Daniel Emo</p>
-                          <p class="text-gray-500 leading-relaxed font-light">Sales manager</p>
-                          <!-- social icon -->
-                          <div class="mt-2 mb-5 space-x-2">
-                              <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
-                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Facebook link" href="#">
-                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Instagram link" href="#">
-                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="#">
-                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
-                                  </svg>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- end team block -->
-              </div>
-              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-                  <!-- team block -->
-                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInUp;">
-                      <div class="relative overflow-hidden px-6">
-                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
-                      </div>
-                      <div class="pt-6 text-center">
-                          <p class="text-lg leading-normal font-bold mb-1">Toni Lana</p>
-                          <p class="text-gray-500 leading-relaxed font-light">UI/UX Designer</p>
-                          <!-- social icon -->
-                          <div class="mt-2 mb-5 space-x-2">
-                              <a class="hover:text-blue-700" aria-label="Twitter link" href="#">
-                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Facebook link" href="#">
-                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Instagram link" href="#">
-                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="#">
-                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
-                                  </svg>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- end team block -->
-              </div>
+  
+    <div class="py-20">
+        <div class="xl:container mx-auto px-6 md:px-12">
+          <div class="mb-16 md:w-2/3 lg:w-1/2">
+            <h2 class="mb-4 text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+              Meet Our Team
+            </h2>
+            <p class="text-gray-600 dark:text-gray-300">
+              Tailus prides itself not only on award-winning technology, but also on the talent of its
+              people of some of the brightest minds and most experienced executives in business.
+            </p>
           </div>
-          <!-- end row -->
-      </div>
-  </div>
+          <div class="grid gap-6 px-4 sm:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div class="group relative rounded-3xl  space-y-6 overflow-hidden">
+              <img
+                class="mx-auto h-[26rem] w-full grayscale object-cover object-top ransition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                src="images/woman1.jpg"
+                alt="woman"
+                loading="lazy"
+                width="640"
+                height="805"
+              />
+              <div class="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
+                <div>
+                  <h4 class="text-xl font-semibold dark:text-gray-700 text-white">Hentoni Doe</h4>
+                  <span class="block text-sm text-gray-500">CEO-Founder</span>
+                </div>
+                <p class="mt-8 text-gray-300 dark:text-gray-600">Quae labore quia tempora dolor impedit. Possimus, sint ducimus ipsam?</p>
+              </div>
+              
+            </div>
+            <div class="group relative rounded-3xl  space-y-6 overflow-hidden">
+              <img
+                class="mx-auto h-[26rem] w-full grayscale object-cover object-top ransition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                src="images/woman.jpg"
+                alt="woman"
+                loading="lazy"
+                width="640"
+                height="805"
+              />
+              <div class="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
+                <div>
+                  <h4 class="text-xl font-semibold dark:text-gray-700 text-white">Hentoni Doe</h4>
+                  <span class="block text-sm text-gray-500">CEO-Founder</span>
+                </div>
+                <p class="mt-8 text-gray-300 dark:text-gray-600">Quae labore quia tempora dolor impedit. Possimus, sint ducimus ipsam?</p>
+              </div>
+              
+            </div>
+            <div class="group relative rounded-3xl  space-y-6 overflow-hidden">
+              <img
+                class="mx-auto h-[26rem] w-full grayscale object-cover object-top transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                src="images/man.jpg"
+                alt="woman"
+                loading="lazy"
+                width="640"
+                height="805"
+              />
+              <div class="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
+                <div>
+                  <h4 class="text-xl font-semibold dark:text-gray-700 text-white">Hentoni Doe</h4>
+                  <span class="block text-sm text-gray-500">CEO-Founder</span>
+                </div>
+                <p class="mt-8 text-gray-300 dark:text-gray-600">Quae labore quia tempora dolor impedit. Possimus, sint ducimus ipsam?</p>
+              </div>
+              
+            </div>
+            <div class="group relative rounded-3xl  space-y-6 overflow-hidden">
+              <img
+                class="mx-auto h-[26rem] w-full grayscale object-cover object-top ransition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                src="images/woman1.jpg"
+                alt="woman"
+                loading="lazy"
+                width="640"
+                height="805"
+              />
+              <div class="absolute bottom-0 inset-x-0 h-max mt-auto px-8 py-6 bg-gray-800 dark:bg-white translate-y-24 transition duration-300 ease-in-out group-hover:translate-y-0">
+                <div>
+                  <h4 class="text-xl font-semibold dark:text-gray-700 text-white">Hentoni Doe</h4>
+                  <span class="block text-sm text-gray-500">CEO-Founder</span>
+                </div>
+                <p class="mt-8 text-gray-300 dark:text-gray-600">Quae labore quia tempora dolor impedit. Possimus, sint ducimus ipsam?</p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>      
 </section> 
 
+<!-- FAQ section -->
+<section>
+    <!-- component -->
+<div class="lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-4">
+    <h1 class="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold">FAQ's</h1>
+    <h1 class="text-center dark:text-white lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold">Freqeuntly Asked question</h1>
+
+    <div class="lg:w-8/12 w-full mx-auto">
+        <!-- Question 1 -->
+        <hr class="w-full lg:mt-10 md:mt-12 md:mb-8 my-8" />
+
+        <div class="w-full md:px-6">
+            <div id="mainHeading" class="flex justify-between items-center w-full">
+                <div class="">
+                    <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 md:leading-4 text-gray-800"><span class="lg:mr-6 mr-4 dark:text-white lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">Q1.</span> How do i know if a product is available in boutiques?</p>
+                </div>
+                <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                    <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                    <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                </button>
+            </div>
+            <div id="menu" class="hidden mt-6 w-full">
+                <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">Remember you can query the status of your orders any time in My orders in the My account section. if you are not resigered at Mango.com, you can access dierectly in the Orders section. In this cause, you will have enter your e-mail address and order number.</p>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+
+        <hr class="w-full lg:mt-10 my-8" />
+
+        <div class="w-full md:px-6">
+            <div id="mainHeading" class="flex justify-between items-center w-full">
+                <div class="">
+                    <p class="flex justify-center items-center  font-medium text-base leading-6 lg:leading-4 text-gray-800"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">Q2.</span> How can i find the prices or get other information about chanel products?</p>
+                </div>
+                <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                    <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                    <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                </button>
+            </div>
+            <div id="menu" class="hidden mt-6 w-full">
+                <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">Remember you can query the status of your orders any time in My orders in the My account section. if you are not resigered at Mango.com, you can access dierectly in the Orders section. In this cause, you will have enter your e-mail address and order number.</p>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+
+        <hr class="w-full lg:mt-10 my-8" />
+
+        <div class="w-full md:px-6">
+            <div id="mainHeading" class="flex justify-between items-center w-full">
+                <div class="">
+                    <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">Q3.</span>How many collections come out every year?</p>
+                </div>
+                <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                    <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                    <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                </button>
+            </div>
+            <div id="menu" class="hidden mt-6 w-full">
+                <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">Remember you can query the status of your orders any time in My orders in the My account section. if you are not resigered at Mango.com, you can access dierectly in the Orders section. In this cause, you will have enter your e-mail address and order number.</p>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+
+        <hr class="w-full lg:mt-10 my-8" />
+
+        <div class="w-full md:px-6">
+            <div id="mainHeading" class="flex justify-between items-center w-full">
+                <div class="">
+                    <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">Q4.</span>Are all of the fashion collections features on the website?</p>
+                </div>
+                <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                    <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                    <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                </button>
+            </div>
+            <div id="menu" class="hidden mt-6 w-full">
+                <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">Remember you can query the status of your orders any time in My orders in the My account section. if you are not resigered at Mango.com, you can access dierectly in the Orders section. In this cause, you will have enter your e-mail address and order number.</p>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+
+        <hr class="w-full lg:mt-10 my-8" />
+
+        <div class="w-full md:px-6">
+            <div id="mainHeading" class="flex justify-between items-center w-full">
+                <div class="">
+                    <p class="flex justify-center items-center dark:text-white font-medium text-base leading-6 lg:leading-4 text-gray-800"><span class="lg:mr-6 dark:text-white mr-4 lg:text-2xl md:text-xl text-lg leading-6 md:leading-5 lg:leading-4 font-semibold text-gray-800">Q5.</span>Where do i find products that i have seen in magazines or Social Media?</p>
+                </div>
+                <button aria-label="toggler" class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800" data-menu>
+                    <img class="transform dark:hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2.svg" alt="toggler">
+                    <img class="transform dark:block hidden " src="https://tuk-cdn.s3.amazonaws.com/can-uploader/faq-8-svg2dark.svg" alt="toggler">
+                </button>
+            </div>
+            <div id="menu" class="hidden mt-6 w-full">
+                <p class="text-base leading-6 text-gray-600 dark:text-gray-300 font-normal">Remember you can query the status of your orders any time in My orders in the My account section. if you are not resigered at Mango.com, you can access dierectly in the Orders section. In this cause, you will have enter your e-mail address and order number.</p>
+            </div>
+        </div>
+
+        <hr class="w-full lg:mt-10 my-8" />
+    </div>
+</div>
+
+<script>
+let elements = document.querySelectorAll("[data-menu]");
+for (let i = 0; i < elements.length; i++) {
+let main = elements[i];
+
+main.addEventListener("click", function () {
+let element = main.parentElement.parentElement;
+let indicators = main.querySelectorAll("img");
+let child = element.querySelector("#menu");
+let h = element.querySelector("#mainHeading>div>p");
+
+h.classList.toggle("font-semibold");
+child.classList.toggle("hidden");
+// console.log(indicators[0]);
+indicators[0].classList.toggle("rotate-180");
+});
+}
+    </script>
+</section>
+
 <!-- footer section -->
-<footer class="bg-blue-50 dark:bg-gray-900">
+<footer class="bg-[#262626] ">
       <div class="container px-6 py-8 mx-auto">
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
               <div class="sm:col-span-2">
-                  <h1 class="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">Getting to know you.</h1>
+                  <h1 class="max-w-lg text-xl font-semibold tracking-tight text-cyan-950 xl:text-2xl dark:text-white">Getting to know you.</h1>
   
                   <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
                       <input id="email" type="text" class="px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300" placeholder="Email Address">
               
-                      <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
+                      <button class="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-blue-900 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
                           Contact us
                       </button>
                   </div>
               </div>
   
               <div>
-                  <p class="font-semibold text-gray-800 dark:text-white">Quick Link</p>
+                  <p class="font-semibold text-slate-50 dark:text-white">Quick Link</p>
   
                   <div class="flex flex-col items-start mt-5 space-y-2">
-                      <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Home</a>
-                      <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Who We Are</a>
-                      <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Our Philosophy</a>
+                      <a href="#" class="text-slate-50 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Home</a>
+                      <a href="#" class="text-slate-50 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Who We Are</a>
+                      <a href="#" class="text-slate-50 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Our Philosophy</a>
                   </div>
               </div>
   
@@ -1640,9 +1399,9 @@
                   <p class="font-semibold text-gray-800 dark:text-white">Industries</p>
   
                   <div class="flex flex-col items-start mt-5 space-y-2">
-                      <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Retail & E-Commerce</a>
-                      <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Information Technology</a>
-                      <a href="#" class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Finance & Insurance</a>
+                      <a href="#" class="text-slate-50 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Retail & E-Commerce</a>
+                      <a href="#" class="text-slate-50 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Information Technology</a>
+                      <a href="#" class="text-slate-50 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-blue-500">Finance & Insurance</a>
                   </div>
               </div>
           </div>
