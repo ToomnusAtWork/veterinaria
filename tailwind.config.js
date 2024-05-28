@@ -15,6 +15,9 @@ module.exports = {
                 kanit: ["kanit", "sans-serif"],
                 REM: ["REM", "sans-serif"],
             },
+            backgroundImage: {
+                'guest-pattern': "url('/public/images/company/guestBG.svg')",
+              }
         },
     },
 

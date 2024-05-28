@@ -5,7 +5,7 @@
 </x-nav-link>
 
 <x-nav-link href="{{ route('deals') }}" :active="request()->routeIs('deals')">
-    {{ __('Product') }}
+    {{ __('Store') }}
 </x-nav-link>
 
 <x-dropdown align="right" width="48">

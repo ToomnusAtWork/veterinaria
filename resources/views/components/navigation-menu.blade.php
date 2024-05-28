@@ -49,9 +49,9 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @else
-                    <x-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
+                    <x-button href="{{ route('login') }}" :active="request()->routeIs('login')">
                         {{ __('Login') }}
-                    </x-nav-link>
+                    </x-button>
 
                     <x-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
                         {{ __('Register') }}
