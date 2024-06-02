@@ -184,10 +184,10 @@
                         <template x-for="slide in slides" :key="slide">
                         <div
                             x-show="activeSlide === slide"
-                            class="p-24 font-bold text-5xl h-64 flex items-center bg-teal-500 text-white rounded-lg">
-                            <span class="w-12 text-center" x-text="slide"></span>
-                            <span class="text-teal-300">/</span>
-                            <span class="w-12 text-center" x-text="slides.length"></span>
+                            class="p-16 font-bold text-5xl max-w-xl flex items-center text-white rounded-lg ">
+                            <img :src="'/images/company/toy/' + activeSlide + '.jpeg'" 
+                                class="object-scale-down rounded-2xl max-w-sm border-4 "
+                                alt="product" />
                         </div>
                         </template>
                         
@@ -195,14 +195,14 @@
                         <div class="absolute inset-0 flex">
                         <div class="flex items-center justify-start w-1/2">
                             <button 
-                            class="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
+                            class="bg-sky-300 text-blue-900 hover:text-white font-bold hover:shadow-lg rounded-full w-12 h-12 -ml-6"
                             x-on:click="activeSlide = activeSlide === 1 ? slides.length : activeSlide - 1">
                             &#8592;
                             </button>
                         </div>
                         <div class="flex items-center justify-end w-1/2">
                             <button 
-                            class="bg-teal-100 text-teal-500 hover:text-orange-500 font-bold hover:shadow rounded-full w-12 h-12 -mr-6"
+                            class="bg-sky-300 text-blue-900 hover:text-white font-bold hover:shadow-lg rounded-full w-12 h-12 -mr-6"
                             x-on:click="activeSlide = activeSlide === slides.length ? 1 : activeSlide + 1">
                             &#8594;
                             </button>
@@ -213,10 +213,10 @@
                         <div class="absolute w-full flex items-center justify-center px-4">
                         <template x-for="slide in slides" :key="slide">
                             <button
-                            class="flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-teal-600 hover:shadow-lg"
+                            class="flex-1 w-4 h-2 mt-4 mx-2 mb-0 rounded-full overflow-hidden transition-colors duration-200 ease-out hover:bg-blue-950 hover:shadow-lg"
                             :class="{ 
-                                'bg-orange-600': activeSlide === slide,
-                                'bg-teal-300': activeSlide !== slide 
+                                'bg-emerald-300': activeSlide === slide,
+                                'bg-sky-400': activeSlide !== slide 
                             }" 
                             x-on:click="activeSlide = slide"
                             ></button>
@@ -435,7 +435,7 @@
           </div>
     </section>
 
-    <!-- our service section -->
+    {{-- <!-- our service section -->
     <section>
         <!-- component -->
         <h1 class="text-xl font-bold m-5 text-center">Our Services</h1>
@@ -563,7 +563,7 @@
                 // run G.load() if new data loaded with ajax
 
         </script>
-    </section> 
+    </section>  --}}
 
     <!-- meet our team section -->
     <section>
@@ -656,8 +656,6 @@
             </div>
           </div>          
     </section>
-
-
 
     <!-- FAQ section -->
     <section class="bg-blue-50">

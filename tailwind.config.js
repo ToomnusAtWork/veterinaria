@@ -17,6 +17,7 @@ module.exports = {
             },
             backgroundImage: {
                 'guest-pattern': "url('/public/images/company/guestBG.svg')",
+                'banner': "url('/public/images/company/banner.png')",
               }
         },
     },
