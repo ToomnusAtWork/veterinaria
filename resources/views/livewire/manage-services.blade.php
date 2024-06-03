@@ -56,17 +56,17 @@
                 </th>
                 <td class="px-6 py-4  max-w-0">
                     <div class="font-medium text-gray-700">
-                        <img src="{{ asset('images/' . $service->image) }}" alt="" class="w-20 h-20 object-cover">
+                        <img src="{{ asset('images/services/' . $service->image) }}" alt="" class="w-20 h-20 object-cover">
                     </div>
                 </td>
 
                 <td class="px-6 py-4 max-w-0">{{ $service->description }}</td>
 
                 <td class="px-6 py-4  max-w-0">
-                    <div class="font-medium text-gray-700">{{ $service->price}}</div>
+                    <div class="font-medium text-gray-700">{{ $service->price}}฿</div>
                 </td>
                 <td class="px-6 py-4  max-w-0">
-{{--                    @dd($service->category->name)--}}
+                        {{-- @dd($service->category->name) --}}
                     <div class="font-medium text-gray-700">{{ $service->category?->name}}</div>
                 </td>
                 <td class="px-6 py-4 ">
@@ -104,16 +104,13 @@
                         <x-danger-button wire:click="confirmServiceDeletion({{ $service->id }})" wire:loading.attr="disabled">
                             {{ __('Delete') }}
                         </x-danger-button>
-
-
-
-{{--                        <x-button href="">--}}
-{{--                            <svg width="20" height="20" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">                                <path d="M9.00977 21.39H19.0098C20.0706 21.39 21.0881 20.9685 21.8382 20.2184C22.5883 19.4682 23.0098 18.4509 23.0098 17.39V7.39001C23.0098 6.32915 22.5883 5.31167 21.8382 4.56152C21.0881 3.81138 20.0706 3.39001 19.0098 3.39001H7.00977C5.9489 3.39001 4.93148 3.81138 4.18134 4.56152C3.43119 5.31167 3.00977 6.32915 3.00977 7.39001V12.39" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>--}}
-{{--                                <path d="M1.00977 18.39H11.0098" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>--}}
-{{--                                <path d="M1.00977 15.39H5.00977" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>--}}
-{{--                                <path d="M22.209 5.41992C16.599 16.0599 9.39906 16.0499 3.78906 5.41992" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>--}}
-{{--                                <script xmlns=""/></svg>--}}
-{{--                        </x-button>--}}
+                            {{-- <x-button href="">
+                                <svg width="20" height="20" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">                                <path d="M9.00977 21.39H19.0098C20.0706 21.39 21.0881 20.9685 21.8382 20.2184C22.5883 19.4682 23.0098 18.4509 23.0098 17.39V7.39001C23.0098 6.32915 22.5883 5.31167 21.8382 4.56152C21.0881 3.81138 20.0706 3.39001 19.0098 3.39001H7.00977C5.9489 3.39001 4.93148 3.81138 4.18134 4.56152C3.43119 5.31167 3.00977 6.32915 3.00977 7.39001V12.39" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1.00977 18.39H11.0098" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M1.00977 15.39H5.00977" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22.209 5.41992C16.599 16.0599 9.39906 16.0499 3.78906 5.41992" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <script xmlns=""/></svg>
+                            </x-button> --}}
                     </div>
                 </td>
             </tr>
@@ -193,20 +190,20 @@
                             </select>
                         </div>
 
-{{--                        <div>--}}
-{{--                            <label for="duration_minutes" class="block text-sm font-medium text-gray-700">Duration</label>--}}
+                        {{-- <div>
+                            <label for="duration_minutes" class="block text-sm font-medium text-gray-700">Duration</label>
 
-{{--                            <select wire:model="newService.duration_minutes" id="duration_minutes" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">--}}
+                            <select wire:model="newService.duration_minutes" id="duration_minutes" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 
-{{--                                    <option disabled selected value="">Select Duration</option>--}}
-{{--                                    @for ($hours = 0; $hours <= 3; $hours++)--}}
-{{--                                        @for ($minutes = 15; $minutes <= 45; $minutes += 15)--}}
-{{--                                            <option value="{{ ($hours * 60) + $minutes }}">{{ $hours > 0 ? $hours . 'h ' : '' }}{{ $minutes }} min</option>--}}
-{{--                                        @endfor--}}
-{{--                                    @endfor--}}
-{{--                                @error('newService.duration_minutes') <span class="text-red-500">{{ $message }}</span>@enderror--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
+                                    <option disabled selected value="">Select Duration</option>
+                                    @for ($hours = 0; $hours <= 3; $hours++)
+                                        @for ($minutes = 15; $minutes <= 45; $minutes += 15)
+                                            <option value="{{ ($hours * 60) + $minutes }}">{{ $hours > 0 ? $hours . 'h ' : '' }}{{ $minutes }} min</option>
+                                        @endfor
+                                    @endfor
+                                @error('newService.duration_minutes') <span class="text-red-500">{{ $message }}</span>@enderror
+                            </select>
+                        </div> --}}
                     </div>
                 <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                     <div>
@@ -283,10 +280,5 @@
 
             </x-slot>
         </x-dialog-modal>
-
-
-
-
-
-</div>
+    </div>
 </div>

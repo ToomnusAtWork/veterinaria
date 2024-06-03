@@ -36,7 +36,7 @@ class ManageServices extends Component
         'newService.description' => 'required|string|min:1|max:255',
         'newService.price' => 'required|numeric|min:0',
         'newService.is_hidden' => 'boolean',
-        'newService.category_id' => 'required|integer|min:1|exists:categories,id',
+        'newService.category_id' => 'required|integer|min:1|exists:categories, id',
         'newService.allergens' => 'nullable|string|min:1|max:255',
         'newService.cautions' => 'nullable|string|min:1|max:255',
         // duration should be increments of 15 minutes max 24 hours : )

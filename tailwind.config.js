@@ -16,7 +16,7 @@ module.exports = {
                 REM: ["REM", "sans-serif"],
             },
             backgroundImage: {
-                'guest-pattern': "url('/public/images/company/guestBG.svg')",
+                'guest-pattern': "url('/public/images/company/authBG.jpg')",
                 'banner': "url('/public/images/company/banner.png')",
               }
         },

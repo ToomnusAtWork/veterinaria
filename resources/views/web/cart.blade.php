@@ -43,7 +43,7 @@
                                             <span class="font-semibold"> {{ $service->name }}</span>
                                         </div>
                                     </td>
-                                    <td class="py-4">LKR {{ number_format($service->price, 2, '.', ',') }}</td>
+                                    <td class="py-4">THB {{ number_format($service->price, 2, '.', ',') }}</td>
                                     <td class="py-4">
                                       {{ $service->pivot->date}}
                                     </td>
@@ -83,7 +83,7 @@
                         <h2 class="text-lg font-semibold mb-4">Summary</h2>
                         <div class="flex justify-between mb-2">
                             <span>Subtotal</span>
-                            <span>LKR {{ number_format($cart?->total, 2, '.', ',') }}</span>
+                            <span>THB {{ number_format($cart?->total, 2, '.', ',') }}</span>
 
                         </div>
 {{--                        <div class="flex justify-between mb-2">--}}

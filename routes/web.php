@@ -87,6 +87,11 @@ Route::middleware(Localization::class)->group(function () {
                     Route::get('appointments', function () {
                         return view('dashboard.manage-appointments.index');
                     })->name('manageappointments');
+                    
+                    Route::get('products', function () {
+                        return view('dashboard.manage-products.index');
+                    })->name('manageproducts');
+                    
                 } );
 
 

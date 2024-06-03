@@ -137,7 +137,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Category::create([
-            'name' => 'Surgery',
+            'name' => 'Remove plaque',
         ]);
 
         \App\Models\Category::create([
@@ -145,12 +145,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Category::create([
-            'name' => 'Vaccines',
+            'name' => 'Vaccination',
         ]);
 
         $this->call([
             ServicesSeeder::class,
             TimeSlotSeeder::class,
+            ProductSeeder::class,
         ]);
 
 
