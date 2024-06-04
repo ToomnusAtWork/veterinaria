@@ -7,13 +7,13 @@
     <img class="h-48 w-full object-cover object-center" src="{{ asset('images/services/'. $service->image)}}"
          alt="Product Image"/>
     <div class="p-4">
-        <h2 class="mb-2 text-lg font-medium  text-gray-900">{{ $service->name}}</h2>
+        <h2 class="mb-2 text-lg font-medium border-b-4 border-b-blue-400 text-gray-900">{{ $service->name}}</h2>
         <p class="mb-2 text-base text-gray-700">{{ $service->description}}</p>
 
         <div class="fixed pt-9 bottom-2 w-4/5">
             <div class="flex items-center mb-1">
                 <div>
-                    <p class="mr-2 text-lg font-semibold text-gray-900">฿ {{ $service->price}}</p>
+                    <p class="mr-2 mb-4 text-lg font-semibold text-gray-900">฿ {{ $service->price}}</p>
 {{--                    <p class="text-sm  font-medium text-gray-500 line-through">LKR 4,000.00</p>--}}
                 </div>
 {{--                <p class="ml-auto text-lg font-medium text-green-500">10% off</p>--}}

@@ -10,6 +10,6 @@ class DisplayDeal extends Controller
     function index() {
         // $deals = Deal::all();
         // return view('web.deals', compact('deals'));
-        return view('web.shop');
+        // return view('web.shop',);
     }
 }

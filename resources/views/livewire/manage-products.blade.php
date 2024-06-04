@@ -112,7 +112,7 @@
           {{ $products->links() }}
         </div>
 
-        <x-dialog-modal wire:model="confirmingproductDeletion">
+        <x-dialog-modal wire:model="confirmingProductDeletion">
             <x-slot name="title">
                 {{ __('Delete product') }}
             </x-slot>
@@ -124,20 +124,20 @@
 
             <x-slot name="footer">
                 <div class="flex gap-3">
-                <x-secondary-button wire:click="$set('confirmingproductDeletion', false)" wire:loading.attr="disabled">
+                <x-secondary-button wire:click="$set('confirmingProductDeletion', false)" wire:loading.attr="disabled">
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
-                    {{-- <x-danger-button wire:click="deleteproduct({{ $confirmingproductDeletion }})" wire:loading.attr="disabled">
+                    <x-danger-button wire:click="deleteproduct({{ $confirmingProductDeletion }})" wire:loading.attr="disabled">
                         {{ __('Delete') }}
-                    </x-danger-button> --}}
+                    </x-danger-button>
                 </div>
 
             </x-slot>
         </x-dialog-modal>
 
 
-        <x-dialog-modal wire:model="confirmingproductAdd">
+        <x-dialog-modal wire:model="confirmingProductAdd">
             <x-slot name="title">
                 {{-- {{ __('Add a new product') }} --}}
                 {{ isset($this->newproduct->id) ? 'Edit product' : 'Add product' }}
@@ -197,7 +197,7 @@
                     </div>
                     <div class="flex justify-end mt-4 gap-2">
 
-                        <x-secondary-button wire:click="$set('confirmingproductAdd', false)" wire:loading.attr="disabled">
+                        <x-secondary-button wire:click="$set('confirmingProductAdd', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
                         </x-secondary-button>
                         <x-button wire:click="saveproduct">Save</x-button>

@@ -4,7 +4,7 @@
     {{ __('Services') }}
 </x-nav-link>
 
-<x-nav-link href="{{ route('deals') }}" :active="request()->routeIs('deals')">
+<x-nav-link href="{{ route('products') }}" :active="request()->routeIs('products')">
     {{ __('Store') }}
 </x-nav-link>
 

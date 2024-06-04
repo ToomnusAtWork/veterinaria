@@ -74,14 +74,14 @@ class ManageProducts extends Component
     {
         $this->reset(['newProduct']);
         $this->reset(['image']);
-        $this->confirmProductAdd = true;
+        $this->confirmingProductAdd = true;
     }
 
     public function confirmProductEdit(Product $newProduct)
     {
         $this->newProduct = $newProduct;
         $this->image = $newProduct->image;
-        $this->confirmProductAdd = true;
+        $this->confirmingProductAdd = true;
     }
 
     public function saveProduct() 

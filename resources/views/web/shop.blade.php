@@ -1,5 +1,5 @@
 <x-app-layout>
-  <livewire:customer-product-view />
+  <livewire:customer-product-view" />
 </x-app-layout>
 
 

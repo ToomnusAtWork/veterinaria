@@ -49,9 +49,9 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @else
-                    <x-button href="{{ route('login') }}" :active="request()->routeIs('login')">
+                    <x-primary-button href="{{ route('login') }}" :active="request()->routeIs('login')">
                         {{ __('Login') }}
-                    </x-button>
+                    </x-primary-button>
 
                     <x-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
                         {{ __('Register') }}
@@ -208,7 +208,7 @@
             </x-responsive-nav-link>
 
             <x-responsive-nav-link href="#">
-                {{ __('Deals') }}
+                {{ __('Products') }}
             </x-responsive-nav-link>
 
 
