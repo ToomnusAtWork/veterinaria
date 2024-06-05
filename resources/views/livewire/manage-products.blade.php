@@ -128,7 +128,7 @@
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
-                    <x-danger-button wire:click="deleteproduct({{ $confirmingProductDeletion }})" wire:loading.attr="disabled">
+                    <x-danger-button wire:click="deleteProduct({{ $confirmingProductDeletion }})" wire:loading.attr="disabled">
                         {{ __('Delete') }}
                     </x-danger-button>
                 </div>
@@ -146,26 +146,33 @@
             <x-slot name="content">
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" wire:model="newproduct.name" id="name" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                        @error('newproduct.name') <span class="text-red-500">{{ $message }}</span>@enderror
+                        <input type="text" wire:model="newProduct.name" id="name" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        @error('newProduct.name') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
                     <div>
                         <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
-                        <textarea id="description" wire:model="newproduct.description"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
-                        @error('newproduct.description') <span class="text-red-500">{{ $message }}</span>@enderror
+                        <textarea id="description" wire:model="newProduct.description"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                        @error('newProduct.description') <span class="text-red-500">{{ $message }}</span>@enderror
                     </div>
 
                     <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-3">
                         <div>
                             <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
-                            <input type="text" wire:model="newproduct.price" id="price" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <input type="text" wire:model="newProduct.price" id="price" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
 
-                            @error('newproduct.price') <span class="text-red-500">{{ $message }}</span>@enderror
+                            @error('newProduct.price') <span class="text-red-500">{{ $message }}</span>@enderror
+
+                        </div>
+                        <div>
+                            <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
+                            <input type="text" wire:model="newProduct.quantity" id="quantity" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+
+                            @error('newProduct.quantity') <span class="text-red-500">{{ $message }}</span>@enderror
 
                         </div>
 
                         <div>
-                            <label for="category_id" class="block text-sm font-medium text-gray-700">Category</label>
+                            {{-- <label for="category_id" class="block text-sm font-medium text-gray-700">Category</label> --}}
 
                             {{-- <select wire:model="newproduct.category_id" id="category_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option disabled selected value="">Select Category</option>
@@ -200,9 +207,8 @@
                         <x-secondary-button wire:click="$set('confirmingProductAdd', false)" wire:loading.attr="disabled">
                             {{ __('Cancel') }}
                         </x-secondary-button>
-                        <x-button wire:click="saveproduct">Save</x-button>
+                        <x-button wire:click="saveProduct">Save</x-button>
                     </div>
-
 
             </x-slot>
 

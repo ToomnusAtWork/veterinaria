@@ -56,7 +56,7 @@ class ManageProducts extends Component
         return view('livewire.manage-products', compact('products'));
     }
 
-    public function confirmProducteDeletion($id)
+    public function confirmProductDeletion($id)
     {
         $this->confirmingProductDeletion = $id;
 

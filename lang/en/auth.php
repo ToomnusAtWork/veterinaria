@@ -22,11 +22,13 @@ return [
         'phonenum' => 'Phone Number',
         'password' => 'Password',
         'confirmpass' => 'Confirm Password',
+        
     ],
     'login' => [
         'email' => 'Email',
         'password' => 'Password',
         'remember' => 'Remember me',
+        'question' => 'Dont have an account?',
     ],
 
 ];

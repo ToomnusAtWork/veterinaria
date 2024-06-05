@@ -7,6 +7,9 @@ namespace Database\Seeders;
 use App\Enums\UserRolesEnum;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,7 +22,10 @@ class DatabaseSeeder extends Seeder
         // run location seeder
         $this->call([
             LocationSeeder::class,
+            CategoryProductSeeder::class,
         ]);
+
+        
 
         $userroles = [
             [
@@ -147,6 +153,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Category::create([
             'name' => 'Vaccination',
         ]);
+
 
         $this->call([
             ServicesSeeder::class,

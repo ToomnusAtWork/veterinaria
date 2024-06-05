@@ -104,7 +104,7 @@ class ManageServices extends Component
 
     }
 
-    public function confirmServiceEdit( Service $newService ) {
+    public function confirmServiceEdit(Service $newService) {
         $this->newService = $newService;
 
         $this->image = $newService->image;

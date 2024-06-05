@@ -49,7 +49,7 @@
             <tr class="hover:bg-gray-50">
                 <td class="pl-6 py-4  max-w-0">{{ $service->id }}</td>
 
-                <th class="flex gap-3 px-6 py-4 font-normal text-gray-900  max-w-0">
+                <th class="gap-3 px-6 py-4 font-normal text-gray-900  max-w-0">
 
                     <div class="font-medium text-gray-700">{{ $service->name}}</div>
 
@@ -96,7 +96,6 @@
                             <x-button>
                                 {{ __('View') }}
                             </x-button>
-
                         </a>
                         <x-warning-button wire:click="confirmServiceEdit({{ $service->id }})" wire:loading.attr="disabled">
                             {{ __('Edit') }}

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->integer('quantity');
             $table->decimal('price', 8, 2);
-            $table->foreignId('product_category_id')->nullable()->index();
+            $table->foreignId('product_category_id')->nullable()->constrained();
             $table->timestamps();
         });
     }

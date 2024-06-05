@@ -42,8 +42,8 @@
                         </select>
                     </div>
                     <input type="search" id="default-search" name="search"
-                        class="w-full -mt-4 mb-4 flex items-center justify-center rounded-full text-sm text-gray-900 border-2 border-gray-100  bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder="Search Product">
+                        class="w-full h-12 -mt-4 mb-4 flex items-center justify-center rounded-full text-sm text-gray-900 border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Look for something?">
                     <button
                         class="w-full py-2.5 flex items-center justify-center gap-2 rounded-full bg-indigo-600 text-white font-semibold text-xs shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-200  ">
                         <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
