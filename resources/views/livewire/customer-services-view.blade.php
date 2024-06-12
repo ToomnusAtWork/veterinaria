@@ -1,3 +1,5 @@
+{{-- @include('web.navigation') --}}
+
 <div class="bg-white">
     <div>
         <!--

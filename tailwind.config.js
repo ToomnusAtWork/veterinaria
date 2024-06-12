@@ -13,12 +13,14 @@ module.exports = {
         extend: {
             fontFamily: {
                 kanit: ["kanit", "sans-serif"],
-                REM: ["REM", "sans-serif"],
             },
             backgroundImage: {
                 'guest-pattern': "url('/public/images/company/authBG.jpg')",
                 'banner': "url('/public/images/company/banner.png')",
-              }
+            },colors: {
+                'purp-primary': '#A89EE2',
+                'purp-secondary': '#736BAA',
+            },
         },
     },
 

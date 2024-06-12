@@ -3,7 +3,7 @@
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                 <div class="pro-detail w-full flex flex-col justify-center order-last lg:order-none max-lg:max-w-[608px] max-lg:mx-auto">
-                    <p class="font-medium text-lg text-indigo-600 mb-4">Product Info &nbsp; / &nbsp; {{ $ProductQuery->name }}</p>
+                    <p class="font-medium text-lg text-indigo-600 mb-4">Home &nbsp; / &nbsp; Product Info &nbsp; / &nbsp; {{ $ProductQuery->name }}</p>
                     <h2 class="mb-2 font-manrope font-bold text-3xl leading-10 text-gray-900">{{ $ProductQuery->name }}</h2>
                     <div class="flex flex-col sm:flex-row sm:items-center mb-6">
                         <h6 class="font-manrope font-semibold text-2xl leading-9 text-gray-900 pr-5 sm:border-r border-gray-200 mr-5">

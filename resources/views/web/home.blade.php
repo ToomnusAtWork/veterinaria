@@ -1,25 +1,24 @@
 <x-app-layout>
-  <x-slot name="mainLogoRoute">
-    {{ route('home') }}
-  </x-slot>
+    <x-slot name="mainLogoRoute">
+        {{ route('home') }}
+    </x-slot>
 
-<div class="relative">
-
-    <section class="bg-[#E4F1FD]">
-    <div class="container mx-auto px-8 py-4 lg:py-24 relative flex flex-col lg:flex-row items-center">
-        <div class="lg:w-1/2 flex flex-col items-center lg:items-start">
-            <h1 class="text-center lg:text-left text-3xl sm:text-7xl font-bold text-blue-700 leading-tight mb-4">PetPal</h1>
-            <p class="text-center lg:text-left sm:text-lg text-gray-500 lg:pr-40 leading-relaxed">PetPal focuses on providing top-quality services and offers personalized advice tailored just for you. Our team specializes in customizing Pets Hotel experiences to meet the individual needs of each guest. My Buddy Pet Clinic emphasizes service quality, location, and the professionalism of our team.</p>
-                <a href="{{route('services')}}" class="bg-blue-500 hover:bg-blue-600 hover:text-zinc-100 mt-8 py-3 px-8 text-lg rounded-full font-bold uppercase text-white tracking-widest">Book an appointment.</a>
-            <div class="mt-16 lg:mt-24 flex">
-                <span class="w-12 h-1 mx-1 bg-blue-400"></span>
-                <span class="w-12 h-1 mx-1 bg-blue-200"></span>
-                <span class="w-12 h-1 mx-1 bg-blue-200"></span>
-            </div>
-        </div>
-        <div class="w-full sm:w-2/4  top-0 right-0 bottom-0 mt-16 lg:mr-8">
-            <img src="{{ asset('/images/company/happydog.svg') }}" alt="HappyPetIMG">
-            </div>
+    <div class="relative">
+        <section class="bg-purp-primary">
+            <div class="container mx-auto px-8 py-4 lg:py-12 relative flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 flex flex-col items-center lg:items-start">
+                    <h1 class="text-center lg:text-left text-3xl sm:text-4xl font-bold text-blue-700 leading-tight mb-4">Where healthy pets are happy pets.</h1>
+                    <p class="text-center lg:text-left sm:text-lg text-black lg:pr-40 font-light leading-relaxed">PetPal focuses on providing top-quality services and offers personalized advice tailored just for you. Our team specializes in customizing Pets Hotel experiences to meet the individual needs of each guest. My Buddy Pet Clinic emphasizes service quality, location, and the professionalism of our team.</p>
+                        <a href="{{ route('services') }}" class="bg-blue-500 hover:bg-blue-600 hover:text-zinc-100 mt-8 py-3 px-8 text-md rounded-lg font-semibold uppercase text-white tracking-widest">Book an appointment.</a>
+                    <div class="mt-16 lg:mt-24 flex">
+                        <span class="w-12 h-1 mx-1 bg-blue-300"></span>
+                        <span class="w-12 h-1 mx-1 bg-blue-200"></span>
+                        <span class="w-12 h-1 mx-1 bg-blue-200"></span>
+                    </div>
+                </div>
+                <div class="w-full sm:w-2/4 bg-gray-100  rounded-full top-0 right-0 bottom-0 mt-8 lg:mr-8">
+                    <img class="rounded-full" src="{{ asset('/images/company/vettie.png') }}" alt="HappyPetIMG">
+                </div>
     </div>
     </section>
 

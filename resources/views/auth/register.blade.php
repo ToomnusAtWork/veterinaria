@@ -9,9 +9,15 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <div>
-                <x-label for="name" value="{{ __('auth.register.name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+            <div class="w-full flex">
+                <div class="w-1/2 mr-3">
+                    <x-label for="firstname" value="{{ __('auth.register.firstname') }}" />
+                    <x-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus autocomplete="firstname" />
+                </div>
+                <div class="w-1/2 ml-3">
+                    <x-label for="lastname" value="{{ __('auth.register.lastname') }}" />
+                    <x-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus autocomplete="lastname" />
+                </div>
             </div>
 
             <div class="mt-4">
@@ -21,7 +27,7 @@
 
             <div class="mt-4">
                 <x-label for="phone_number" value="{{ __('auth.register.phonenum') }}" />
-                <span class="text-xs">eg: 081-2345689</span>
+                <span class="text-xs">eg: 081-2345678</span>
                 <x-input id="phone_number" class="block mt-1 w-full" type="text" name="phone_number" :value="old('phone_number')" required autocomplete="phone_number" />
             </div>
 
