@@ -20,6 +20,7 @@ module.exports = {
             },colors: {
                 'purp-primary': '#A89EE2',
                 'purp-secondary': '#736BAA',
+                'shady-purp': '#7C57D3',
             },
         },
     },

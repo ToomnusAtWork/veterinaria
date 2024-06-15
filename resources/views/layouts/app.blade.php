@@ -20,39 +20,21 @@
         @livewireStyles
     </head>
     <body class="font-kanit antialiased">
-        {{-- <x-urgent-banner /> --}}
-
         {{-- <div class="min-h-screen bg-white"> --}}
-            <x-navigation-menu>
-                
-                <!-- Pass the main logo from page to the nav menu component-->
-                <x-slot name="mainLogoRoute">
-                    @isset($mainLogoRoute)
-                        {{ $mainLogoRoute }}
-                    @endisset
-                </x-slot>
 
-                <!-- Pass the nav links from page to the nav menu component-->
-                <x-slot name="navlinks">
-                    @isset($navlinks)
-                        {{ $navlinks }}             
-                    @endif
-            </x-slot>
-            </x-navigation-menu>
+        <!-- Page Heading -->
+        @if (isset($header))
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
+                    {{ $header }}
+                </div>
+            </header>
+        @endif
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+        <!-- Page Content -->
+        <main>
+            {{ $slot }}
+        </main>
         {{-- </div> --}}
 
         @stack('modals')

@@ -21,6 +21,21 @@ class Product extends Model
     public function productcategory()
     {
         return $this->belongsTo(ProductCategory::class);
+    }   
+
+    public function scopeRating()
+    {
+        return ;
+    }
+
+    public function scopeRecent()
+    {
+        return ;
+    }
+
+    public function scopePopular()
+    {
+        return ;
     }
 
     public function scopeOrderByPrice($query, $order)

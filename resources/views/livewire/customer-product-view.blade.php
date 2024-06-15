@@ -1,6 +1,13 @@
 <x-app-layout>
+    @include('layouts.page-navigation')
+    <div class="bg-[url('/public/images/company/banner3.png')] bg-no-repeat min-h-screen">
+        {{-- <img src="{{ asset('images/company/banner2.png') }}" alt="banner_image" class="absolute inset-0 w-full h-full object-fit"> --}}
+        <div class="relative inset-y-1/4">
+            <h1 class="flex text-8xl ml-10 pt-32 font-semibold text-black">Shop</h1>
+        </div>
+    </div>
     <div class="bg-white">
-        <div class="py-8 sm:py-16 lg:mx-auto lg:max-w-7xl lg:px-8">
+        <div class="py-8 sm:py-6 lg:mx-auto lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-12">
             <div class="col-span-12 md:col-span-3 mx-2 w-full max-md:max-w-md max-md:mx-auto">
                 <div class="box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">

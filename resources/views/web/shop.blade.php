@@ -1,4 +1,5 @@
 <x-app-layout>
+    @include('layouts.page-navigation')
   <livewire:customer-product-view" />
 </x-app-layout>
 

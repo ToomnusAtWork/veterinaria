@@ -56,10 +56,10 @@
             </div>
         </div>
 
-        <div class="bg-black max-w-screen relative py-24">
-            <img src="{{ asset('images/company/banner.png') }}" alt="banner_image" class="absolute inset-0 w-full h-full object-cover shadow-xl">
-            <div class="relative inset-y-1/2">
-                <h1 class="flex text-4xl font-bold justify-center text-blue-700">Services</h1>
+        <div class="bg-[url('/public/images/company/banner2.png')] bg-no-repeat min-h-screen">
+            {{-- <img src="{{ asset('images/company/banner2.png') }}" alt="banner_image" class="absolute inset-0 w-full h-full object-fit"> --}}
+            <div class="relative inset-y-1/4">
+                <h1 class="flex text-8xl ml-10 pt-32 font-semibold text-shady-purp">Services</h1>
             </div>
         </div>
 
@@ -68,7 +68,6 @@
             {{-- Top section --}}
             <section aria-labelledby="products-heading" class="pb-8 pt-6">
                 <h2 id="products-heading" class="sr-only">Services</h2>
-
                 <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
                     <!-- Filters -->
                     <form class="hidden lg:block">
@@ -87,15 +86,15 @@
                                     </svg>
                                </button>
                             </div>
-
                         </div>
+
                         <div class="border-b border-gray-200 py-6">
                             <h3 class="-my-3 flow-root">
                                 <!-- Expand/collapse section button -->
                                 <button type="button"
                                         class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500"
                                         aria-controls="filter-section-1" aria-expanded="false">
-                                    <span class="font-medium text-gray-900">Category</span>
+                                    <span class="font-medium text-gray-900">Pet Care Services</span>
                                     <span class="ml-6 flex items-center">
                                     <!-- Expand icon, show/hide based on section open state. -->
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -129,7 +128,7 @@
                                 <button type="button"
                                         class="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500"
                                         aria-controls="filter-section-2" aria-expanded="false">
-                                    <span class="font-medium text-gray-900">Treatment Center</span>
+                                    <span class="font-medium text-gray-900">Pet Treatment Center</span>
                                     <span class="ml-6 flex items-center">
                                     <!-- Expand icon, show/hide based on section open state. -->
                                     <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -174,7 +173,7 @@
                     </form>
 
                     <!-- Product grid -->
-                    <div class="lg:col-span-3 flex flex-col flex-wrap gap-2 border-l  md:flex-row mt-3 pb-7 h-max ">
+                    <div class="lg:col-span-3 flex flex-col flex-wrap gap-2  md:flex-row mt-3 pb-7 h-max ">
                         <!-- Your content -->
                         <div class="w-full">
                             {{-- <div class="flex justify-end mt-5 mx-2">
