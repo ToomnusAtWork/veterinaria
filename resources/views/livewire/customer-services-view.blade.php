@@ -56,14 +56,15 @@
             </div>
         </div>
 
-        <div class="bg-[url('/public/images/company/banner2.png')] bg-no-repeat min-h-screen">
-            {{-- <img src="{{ asset('images/company/banner2.png') }}" alt="banner_image" class="absolute inset-0 w-full h-full object-fit"> --}}
-            <div class="relative inset-y-1/4">
-                <h1 class="flex text-8xl ml-10 pt-32 font-semibold text-shady-purp">Services</h1>
+        <div class="bg-[url('/public/images/company/banner1.png')] w-full bg-cover bg-no-repeat min-h-screen">
+            <div class="flex">
+                <div class="absolute h-full inset-y-1/2">
+                    <h1 class="flex text-8xl sm:ml-32 ml-10 font-semibold text-black">Services</h1>
+                </div>
             </div>
         </div>
 
-        <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 bg-">
             
             {{-- Top section --}}
             <section aria-labelledby="products-heading" class="pb-8 pt-6">

@@ -27,15 +27,16 @@ Route::middleware(Localization::class)->group(function () {
 
     Route::get('/', [App\Http\Controllers\HomePageController::class, 'index'])->name('home');
 
-    Route::get('/services', [App\Http\Controllers\DisplayService::class, 'index'])->name('services');
-    Route::get('/services/{slug}', [App\Http\Controllers\DisplayService::class, 'show'])->name('view-service');
+    Route::get('services', [App\Http\Controllers\DisplayService::class, 'index'])->name('services');
+    Route::get('services/{slug}', [App\Http\Controllers\DisplayService::class, 'show'])->name('view-service');
     // Route::get('/services/{id}', [App\Http\Controllers\ServiceDisplay::class, 'show'])->name('services.show');
-    Route::get('/products', [App\Http\Controllers\DisplayProduct::class, 'index'])->name('products');
-    Route::get('/product/{name}', [App\Http\Controllers\DisplayProduct::class, 'show'])->name('view-product');
-    Route::get('/deals', [App\Http\Controllers\DisplayDeal::class, 'index'])->name('deals');
+    Route::get('products', [App\Http\Controllers\DisplayProduct::class, 'index'])->name('products');
+    Route::get('product/{name}', [App\Http\Controllers\DisplayProduct::class, 'show'])->name('view-product');
+    Route::get('deals', [App\Http\Controllers\DisplayDeal::class, 'index'])->name('deals');
 
 
     // Users needs to be logged in for these routes
+    // add admin route specificly
     Route::middleware([
         'auth:sanctum',
         config('jetstream.auth_session'),
