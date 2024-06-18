@@ -33,6 +33,7 @@ Route::middleware(Localization::class)->group(function () {
     Route::get('products', [App\Http\Controllers\DisplayProduct::class, 'index'])->name('products');
     Route::get('product/{name}', [App\Http\Controllers\DisplayProduct::class, 'show'])->name('view-product');
     Route::get('deals', [App\Http\Controllers\DisplayDeal::class, 'index'])->name('deals');
+    Route::get('shelter', [App\Http\Controllers\ShelterController::class, 'index'])->name('shelter');
 
 
     // Users needs to be logged in for these routes
