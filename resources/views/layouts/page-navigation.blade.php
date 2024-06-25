@@ -1,4 +1,4 @@
-{{-- <x-urgent-banner /> --}}
+<x-urgent-banner />
 <x-navigation-menu>
                 
     <!-- Pass the main logo from page to the nav menu component-->

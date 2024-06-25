@@ -101,7 +101,6 @@ class ManageServices extends Component
         $this->reset(['image']);
         $this->confirmingServiceAdd = true;
 
-
     }
 
     public function confirmServiceEdit(Service $newService) {

@@ -33,7 +33,7 @@ class ManageProducts extends Component
             'newProduct.description' => 'required|string|min:1',
             'newProduct.price' => 'required|numeric|min:0',
             'newProduct.quantity' => 'required|numeric|min:1',
-            'newProduct.product_category_id' => 'required|integer|min:1|exists:product_categories, id',
+            // 'newProduct.product_category_id' => 'required|integer|min:1|exists:product_categories, id',
         ];
         // check if image is an instance of UploadedFile
         if ($this->image instanceof \Illuminate\Http\UploadedFile) {
@@ -65,7 +65,7 @@ class ManageProducts extends Component
     public function deleteProduct(Product $product)
     {
         $product->delete();
-        session()->flash('message', 'Produc successfully deleted.');
+        session()->flash('message', 'Product successfully deleted.');
         $this->confirmingProductDeletion = false;
 
     }
@@ -90,7 +90,7 @@ class ManageProducts extends Component
         $this->validateOnly('newProduct.description');
         $this->validateOnly('newProduct.price');
         $this->validateOnly('newProduct.quantity');
-        $this->validateOnly('newProduct.product_category_id');
+        // $this->validateOnly('newProduct.product_category_id');
 
         if (isset($this->newProduct['id'])) 
         {
@@ -102,11 +102,11 @@ class ManageProducts extends Component
                 $originalImage = str_replace('storage', 'public', $originalImage);
                 Storage::delete($originalImage);
 
-                $this->image = $this->image->store('images', 'public');
+                $this->image = $this->image->store('product-images', 'public');
             }
 
             // save new product
-            $this->newProdcut['image'] = $this->image;
+            $this->newProduct['image'] = $this->image;
             $this->newProduct->save();
 
             

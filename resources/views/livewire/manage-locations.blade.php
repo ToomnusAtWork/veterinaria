@@ -58,7 +58,7 @@
 
 
                         <td>
-                            <div class="flex gap-1 mt-5">
+                            <div class="flex gap-1 align-middle">
                                 <x-button wire:click="confirmLocationEdit({{ $location->id }})" wire:loading.attr="disabled">
                                     {{ __('Edit') }}
                                 </x-button>

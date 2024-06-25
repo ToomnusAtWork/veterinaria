@@ -1,7 +1,6 @@
 <x-app-layout>
     @include('layouts.page-navigation')
     <div class="bg-[url('/public/images/company/banner2.png')] w-full bg-cover bg-no-repeat min-h-screen">
-        {{-- <img src="{{ asset('images/company/banner2.png') }}" alt="banner_image" class="absolute inset-0 w-full h-full object-fit"> --}}
         <div class="flex">
             <div class="absolute h-full inset-y-1/2">
                 <h1 class="flex text-8xl sm:ml-32 ml-10 font-semibold text-black">Shop</h1>
@@ -578,4 +577,5 @@
         
         
         </div>
+        @include('layouts.page-footer')
 </x-app-layout>

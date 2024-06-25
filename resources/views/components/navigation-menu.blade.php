@@ -1,11 +1,11 @@
 @php
     $userRole = Auth::User()?->role()->first()->name;
 @endphp
-<nav x-data="{ open: false }" class="bg-purp-primary shadow shadow-purp-primary z-50 sticky top-0">
+<nav x-data="{ open: false }" class="bg-inherit backdrop-filter backdrop-blur-lg shadow-sm shadow-zinc-500 z-50 sticky top-0">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 sticky z-50">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="flex shrink-0 align-middle">
                 <!-- Logo -->
                @if(isset($mainLogoRoute))
                     @php
@@ -24,8 +24,8 @@
                 </div>
             </div>
 
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            <div class="hidden sm:flex sm:items-center sm:ml-4">
+                <div class="hidden space-x-4 sm:-my-px sm:ml-6 sm:flex">
                     <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                         <svg width="24px" height="24px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.4816 14.79C16.4044 14.1496 16.1808 13.5356 15.8281 12.9956C15.4754 12.4556 15.003 12.004 14.4476 11.676C13.7112 11.2339 12.8685 11.0003 12.0096 11.0003C11.1507 11.0003 10.308 11.2339 9.5716 11.676C9.01621 12.004 8.54384 12.4556 8.1911 12.9956C7.83837 13.5356 7.61475 14.1496 7.5376 14.79C7.48943 15.1361 7.35883 15.4655 7.15679 15.7506C6.95475 16.0356 6.68717 16.268 6.3766 16.428C5.65544 16.8014 5.08938 17.4176 4.77833 18.1678C4.46729 18.9179 4.43126 19.7539 4.6766 20.528C4.86627 21.0934 5.19438 21.6022 5.63104 22.0083C6.06769 22.4144 6.59901 22.7048 7.1766 22.853C7.76773 23.0188 8.38931 23.0449 8.99224 22.9291C9.59517 22.8134 10.1629 22.559 10.6506 22.186C11.0413 21.8887 11.5187 21.7277 12.0096 21.7277C12.5005 21.7277 12.9779 21.8887 13.3686 22.186C13.8563 22.559 14.424 22.8134 15.027 22.9291C15.6299 23.0449 16.2515 23.0188 16.8426 22.853C17.4202 22.7048 17.9515 22.4144 18.3882 22.0083C18.8248 21.6022 19.1529 21.0934 19.3426 20.528C19.5879 19.7539 19.5519 18.9179 19.2409 18.1678C18.9298 17.4176 18.3638 16.8014 17.6426 16.428C17.332 16.268 17.0645 16.0356 16.8624 15.7506C16.6604 15.4655 16.5298 15.1361 16.4816 14.79V14.79Z" stroke="#71717A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -47,9 +47,7 @@
             </div>
 
             <div class="hidden sm:flex space-x-5 sm:items-center sm:ml-6">
-
-                <x-shopping-cart>
-                    
+                <x-shopping-cart>    
                 </x-shopping-cart>
 
                  <!-- Navigation Links form pages-->
@@ -229,7 +227,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden md:hidden">
 
         <div class="pt-2 pb-3 space-y-1">
 
@@ -237,11 +235,11 @@
                 {{ __('Home') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link href="#">
+            <x-responsive-nav-link href="{{ route('services') }}" :active="request()->routeIs('services')">
                 {{ __('Services') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link href="#">
+            <x-responsive-nav-link href="{{ route('products') }}" :active="request()->routeIs('products')">
                 {{ __('Products') }}
             </x-responsive-nav-link>
 

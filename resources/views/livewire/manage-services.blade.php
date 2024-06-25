@@ -2,7 +2,7 @@
     <div class="flex justify-between mx-7">
         <h2 class="text-2xl font-bold">Services</h2>
 
-        <x-button wire:click="confirmServiceAdd"  class="px-5 py-2 text-white bg-blue-500 rounded-md hover:bg--600">
+        <x-button wire:click="confirmServiceAdd" class="px-5 py-2 text-white bg-blue-500 rounded-md hover:bg--600">
             Create
         </x-button>
     </div>
