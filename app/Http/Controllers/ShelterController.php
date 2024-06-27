@@ -8,6 +8,6 @@ class ShelterController extends Controller
 {
     public function index()
     {
-        return view('web.shelter');
+        return view('shelter.shelter');
     }
 }

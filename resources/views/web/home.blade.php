@@ -1,5 +1,5 @@
-<x-app-layout>
-    @include('layouts.page-navigation')
+@extends('layouts.app')
+@section('content')
     <x-slot name="mainLogoRoute">
         {{ route('home') }}
     </x-slot>
@@ -648,8 +648,4 @@
                 }
             </script>
         </section>
-
-        <!-- footer section -->
-        @include('layouts.page-footer')
-
-</x-app-layout>
+@endsection

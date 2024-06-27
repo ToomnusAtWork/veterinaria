@@ -19,25 +19,15 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-kanit antialiased">
-        {{-- <div class="min-h-screen bg-white"> --}}
+    <body class="font-kanit bg-white antialiased">
+        @include('layouts._nav')
 
-        <!-- Page Heading -->
-        @if (isset($header))
-            <header class="bg-zinc-50 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
-                    {{ $header }}
-                </div>
-            </header>
-        @endif
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
-        {{-- </div> --}}
+        @yield('content')
 
-        @stack('modals')
+        
+        @include('layouts._footer')
+        @stack('app')
 
         @livewireScripts
     </body>

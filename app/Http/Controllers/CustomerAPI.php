@@ -26,13 +26,6 @@ class CustomerAPI extends Controller
             'password' => 'required|min:8',
         ]);
 
-        // json to send to create this
-        // {
-        //     "name": "APICustomer 1",
-        //     "email": "APIcustomer1@gmail",
-        //     "phone_number": "1234567890",
-        //     "password": "custpassword"
-        // }
 
         // create customer
         $customer = User::create([

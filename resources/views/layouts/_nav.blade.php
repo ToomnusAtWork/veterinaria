@@ -1,6 +1,5 @@
 <x-urgent-banner />
 <x-navigation-menu>
-                
     <!-- Pass the main logo from page to the nav menu component-->
     <x-slot name="mainLogoRoute">
         @isset($mainLogoRoute)

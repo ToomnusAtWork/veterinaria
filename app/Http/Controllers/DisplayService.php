@@ -16,7 +16,7 @@ class DisplayService extends Controller
     {
         $services = Service::orderByPrice('PriceLowToHigh')->where('is_hidden', false)->paginate(10);
 
-        return view('web.services', compact('services'));
+        return view('service.overview', compact('services'));
     }
 
     // show single service page

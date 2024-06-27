@@ -16,7 +16,7 @@
                     <p class="mr-2 mb-4 text-lg font-semibold text-gray-900">฿ {{ $service->price}}</p>
                 </div>
             </div>
-            <a href="{{route('view-service', ['slug' => $service->slug])}}"><x-button>Book Now</x-button></a>
+            <a href="{{route('services.show', ['slug' => $service->slug])}}"><x-button>Book Now</x-button></a>
         </div>
     </div>
 </div>
