@@ -1,4 +1,4 @@
-<x-app-layout>
+{{-- <x-app-layout> --}}
     <section class="mt-10">
         <h3 class="text-xl font-medium my-2">Book Your Appointment</h3>
     
@@ -115,4 +115,5 @@
         </form>
     </section>
     
-</x-app-layout>
+{{-- </x-app-layout> --}}
+{{--  --}}

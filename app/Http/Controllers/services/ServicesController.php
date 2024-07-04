@@ -25,6 +25,6 @@ class ServicesController extends Controller
 
     public function show()
     {
-
-    }
+        return view('web.view-service');
+    }   
 }

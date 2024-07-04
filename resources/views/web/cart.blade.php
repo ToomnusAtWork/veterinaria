@@ -1,9 +1,8 @@
-<x-app-layout>
+{{-- <x-app-layout> --}}
     <div class="bg-gray-100 py-8" x-data="{ showCheckoutConfirmation: false }">
         <div class="container mx-auto px-4 md:w-11/12">
             <h1 class="text-2xl font-semibold mb-4">Cart</h1>
             @if(session('unavailable_time_slots'))
-
 
                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                     <strong class="font-bold">Oops!</strong>
@@ -132,4 +131,4 @@
 
 
 
-</x-app-layout>
+{{-- </x-app-layout> --}}

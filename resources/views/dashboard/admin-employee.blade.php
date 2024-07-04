@@ -67,15 +67,6 @@
         </div>
 
 
-        {{-- <div class="bg-blue-500  shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600  text-white font-medium group">
-          <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
-            <svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="stroke-current text-blue-800  transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </div>
-          <div class="text-right">
-            <p class="text-2xl">$75,257</p>
-            <p>Balances</p>
-          </div>
-        </div> --}}
         <div class="bg-blue-500  shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600  text-white font-medium group">
           <div class="flex justify-center items-center w-14 h-14 bg-white rounded-full transition-all duration-300 transform group-hover:rotate-12">
             <svg width="30" height="30" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="stroke-current text-blue-800  transform transition-transform duration-500 ease-in-out"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
@@ -123,11 +114,10 @@
             </div>
         </div>
       </div>
-
-     <div class="mt-4">
+     <div class="m-8">
          @foreach($locations as $location)
-             <h1 class=" m-3 font-medium text-gray-800 text-2xl mb-2">{{ $location->name }}</h1>
-
+         <h1 class="m-3 font-medium text-gray-800 text-2xl mb-2">{{ $location->name }}</h1>
+         <div id="calendar" class="overflow-auto"></div>
              <div class="grid md:grid-cols-2">
                  <div class="m-3">
                      <h2 class="font-medium text-gray-800 text-xl mb-2">Today's Schedule</h2>
@@ -144,14 +134,7 @@
      </div>
 
 
-
-
-
-
-
-
-
-
  </div>
 
 </x-dashboard>
+

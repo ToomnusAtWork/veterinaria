@@ -1,4 +1,4 @@
-@if(Auth::User())
+{{-- @if(Auth::User()) --}}
 
     {{-- Only admin can manage the users at the moment --}}
     {{-- @if(Auth::User()->role()->first()->name == 'Admin')
@@ -6,4 +6,4 @@
             {{ __('Manage Users') }}
         </x-nav-link>
     @endif --}}
-@endif
+{{-- @endif --}}

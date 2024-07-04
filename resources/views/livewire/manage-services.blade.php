@@ -92,11 +92,11 @@
                 </td>
                 <td>
                     <div class="mt-5 ">
-                        <a href="{{ route('view-service', ['slug' => $service->slug ])  }}">
+                        {{-- <a href="{{ route('view-service', ['slug' => $service->slug ])  }}">
                             <x-button>
                                 {{ __('View') }}
                             </x-button>
-                        </a>
+                        </a> --}}
                         <x-warning-button wire:click="confirmServiceEdit({{ $service->id }})" wire:loading.attr="disabled">
                             {{ __('Edit') }}
                         </x-warning-button>
