@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'pets shelter'])
 @section('content')
     <div class="bg-[url('/public/images/company/banner3.png')] w-full bg-cover bg-no-repeat min-h-screen">
         <div class="flex">

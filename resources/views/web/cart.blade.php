@@ -1,4 +1,4 @@
-{{-- <x-app-layout> --}}
+
     <div class="bg-gray-100 py-8" x-data="{ showCheckoutConfirmation: false }">
         <div class="container mx-auto px-4 md:w-11/12">
             <h1 class="text-2xl font-semibold mb-4">Cart</h1>
@@ -128,7 +128,3 @@
 
     </div>
 
-
-
-
-{{-- </x-app-layout> --}}

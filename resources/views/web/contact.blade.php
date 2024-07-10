@@ -1,6 +1,6 @@
-<x-app-layout>
-    @include('layouts.page-navigation')
-
+@extends('layouts.app', ['title' => 'contact'])
+@include('layouts.page-navigation')
+@section('content')
     <section>
         <div class="relative w-full h-96"><img class="absolute h-full w-full object-cover object-center" src="https://bucket.material-tailwind.com/magic-ai/bbe71871de8b4d6f23bb0f17a6d5aa342f3dea72677ba7238b18defa3741244d.jpg" alt="nature image" />
           <div class="absolute inset-0 h-full w-full bg-black/50"></div>
@@ -60,4 +60,4 @@
           </div>
         </div>
     </section>
-</x-app-layout>
+@endsection

@@ -4,12 +4,12 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Enums\UserRolesEnum;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-
+use App\Enums\UserRolesEnum;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,37 +23,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LocationSeeder::class,
             CategoryProductSeeder::class,
+            RoleSeeder::class,
+            PermissionSeeder::class,
         ]);
 
-        
-
-        $userroles = [
-            [
-                'id' => UserRolesEnum::Customer,
-                'name' => 'Customer',
-                'status' => true,
-            ],
-            [
-                'id' => UserRolesEnum::Employee,
-                'name' => 'Employee',
-                'status' => true,
-            ],
-            [
-                'id' => UserRolesEnum::Admin,
-                'name' => 'Admin',
-                'status' => true,
-            ],
-            [
-                'id' => UserRolesEnum::Doctor,
-                'name' => 'Doctor',
-                'status' => true,
-            ]
-
-        ];
-
-        foreach ($userroles as $role) {
-            \App\Models\Role::create($role);
-        }
 
         // Create admin user
         \App\Models\User::create([

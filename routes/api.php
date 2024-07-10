@@ -19,12 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-//Route::get('/hello', function () {
-//    return response()->json(['message' => 'Hello World!'], 200);
-//});
-
-
-
 Route::post('/tokens/create', function (Request $request) {
     $token = $request->user()->createToken($request->token_name);
 
