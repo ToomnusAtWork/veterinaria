@@ -16,33 +16,33 @@ class RoleSeeder extends Seeder
     {
         $userroles = [
             [
-                'id' => UserRolesEnum::Admin,
-                'name' => 'Admin',
+                'id' => UserRolesEnum::Admin->value,
+                'name' => UserRolesEnum::Admin->name,
                 'status' => true,
             ],
             [
-                'id' => UserRolesEnum::PropertyOwner,
-                'name' => 'Property Owner',
+                'id' => UserRolesEnum::PropertyOwner->value,
+                'name' => UserRolesEnum::PropertyOwner->name,
                 'status' => true,
             ],
             [
-                'id' => UserRolesEnum::Doctor,
-                'name' => 'Doctor',
+                'id' => UserRolesEnum::Doctor->value,
+                'name' => UserRolesEnum::Doctor->name,
                 'status' => true,
             ],
             [
-                'id' => UserRolesEnum::Nurse,
-                'name' => 'Nurse',
+                'id' => UserRolesEnum::Nurse->value,
+                'name' => UserRolesEnum::Nurse->name,
                 'status' => true,
             ],
             [
-                'id' => UserRolesEnum::Employee,
-                'name' => 'Employee',
+                'id' => UserRolesEnum::Employee->value,
+                'name' => UserRolesEnum::Employee->name,
                 'status' => true,
             ],
             [
-                'id' => UserRolesEnum::Customer,
-                'name' => 'Customer',
+                'id' => UserRolesEnum::Customer->value,
+                'name' => UserRolesEnum::Customer->name,
                 'status' => true,
             ],
         ];

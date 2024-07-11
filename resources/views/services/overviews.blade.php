@@ -1,12 +1,16 @@
 @extends('layouts.app', ['title' => 'Service'])
 @section('content')
-    <div class="bg-[url('/public/images/company/banner1.png')] w-full bg-cover bg-no-repeat min-h-screen">
+
+    <!-- Service banner section -->
+    <div class="bg-service-banner w-full bg-cover bg-no-repeat min-h-screen">
         <div class="flex">
             <div class="absolute h-full inset-y-1/2">
                 <h1 class="flex text-7xl sm:text-8xl sm:ml-32 ml-10 font-semibold text-black">บริการนัดคิว</h1>
             </div>
         </div>
     </div>
+
+    <!-- Small tab section -->
     <div x-data="{
         tabSelected: 1,
         tabId: $id('tabs'),
@@ -319,7 +323,7 @@
                                                                     clip-rule="evenodd" />
                                                             </svg>
                                                         </button>
-                                                        <button x-on:click = "isSettingsPanelOpen=!isSettingsPanelOpen" type="button"
+                                                        {{-- <button x-on:click = "isSettingsPanelOpen=!isSettingsPanelOpen" type="button"
                                                             class="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6">
                                                             <span aria-hidden="true">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5"
@@ -345,7 +349,7 @@
                                                                     </line>
                                                                 </svg>
                                                             </span>
-                                                        </button>
+                                                        </button> --}}
                                                     </div>
                                                 </div>
                 

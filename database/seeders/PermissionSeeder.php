@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Permission;
 use App\Models\Role;
+use App\Enums\UserRolesEnum;
 
 class PermissionSeeder extends Seeder
 {
@@ -16,18 +17,21 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        // $allRoles = Role::all()->keyBy('id');
+        $allRoles = Role::all()->keyBy('id');
  
         $permissions = [
-            'create-role',
-            // 'edit-role' => [Role::where('name', 'admin')],
-            // 'delete-role' => [Role::where('name', 'admin')],
+            'create-role' => [UserRolesEnum::Admin->value],
+            'edit-role' => [UserRolesEnum::Admin->value],
+            'delete-role' => [UserRolesEnum::Admin->value],
             // 'create-user' => [Role::where('name', 'admin')],
-            'edit-appointment',
+            'edit-appointment' => [UserRolesEnum::Customer->value],
         ];
  
-        foreach ($permissions as $permission) {
-            Permission::create(['name' => $permission]);
-          }
+        foreach ($permissions as $key => $roles) {
+            $permission = Permission::create(['name' => $key]);
+            foreach ($roles as $role) {
+                $allRoles[$role]->permissions()->attach($permission->id);
+            }
+        }
     }
 }

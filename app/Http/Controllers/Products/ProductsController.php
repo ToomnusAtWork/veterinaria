@@ -18,7 +18,9 @@ class ProductsController extends Controller
 
         // $filter = $this->getFilter(['rating', 'popular', 'recent', 'priceLowToHigh' ,'PriceHighToLow']);
 
-        $products = Product::orderByPrice('PriceLowToHigh')->paginate(10);
-        return view('livewire.customer-product-view', compact('products'));
+        $products = Product::orderByPrice('created_at', 'DESC')->paginate(10);
+        return view('livewire.customer-product-view', [
+            'products' => $products,
+        ]);
     }
 }

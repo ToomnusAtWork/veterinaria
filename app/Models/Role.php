@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Enums\UserRolesEnum;
 
 class Role extends Model
 {
@@ -13,6 +14,10 @@ class Role extends Model
         'name',
         'status'
     ];
+
+    // protected $casts = [
+    //     'name' => UserRolesEnum::class,
+    // ];
 
     public function users()
     {
