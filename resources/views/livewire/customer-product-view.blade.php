@@ -1,5 +1,6 @@
 @extends('layouts.app', ['title' => 'Product'])
 @section('content')
+    <!-- Products banner section -->
     <div class="bg-[url('/public/images/company/banner2.png')] w-full bg-cover bg-no-repeat min-h-screen">
         <div class="flex">
             <div class="absolute inset-y-1/2">
@@ -7,6 +8,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Rectangular section -->
     <div class="bg-white">
         <div class="py-8 sm:py-12 lg:mx-auto lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-12">
@@ -165,7 +168,9 @@
                     <div class="py-8 md:py-0 lg:mx-auto lg:max-w-7xl lg:px-8">
                         <div class="flex items-center justify-between px-4 sm:px-6 lg:px-0">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900">We found 5 items</h2>
-                            <div class="flex items-center">
+                            {{-- <h1>10 20 30</h1> --}}
+                            <x-products.filter :selectedFilter="$filter"  />
+                            {{-- <div class="flex items-center">
                                 <div x-data="{ showSortMenu: false, selectedSort: 'Most Popular' }" class="relative inline-block text-left">
                                     <div>
                                         <button @click=" showSortMenu =! showSortMenu" type="button"
@@ -259,7 +264,7 @@
                                             clip-rule="evenodd" />
                                     </svg>
                                 </button>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="relative mt-8">

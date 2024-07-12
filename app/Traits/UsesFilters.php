@@ -1,6 +1,7 @@
 <?php
-namespace App\Traits;
+declare(strict_types=1);
 
+namespace App\Traits;
 trait UsesFilters 
 {
     public function getFilter(array $options = ['rating', 'popular', 'recent', 'PriceLowToHigh' ,'PriceHighToLow'], string $default = 'recent'): string

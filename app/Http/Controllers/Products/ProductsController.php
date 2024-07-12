@@ -4,10 +4,15 @@ namespace App\Http\Controllers\products;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Traits\UsesFilters;
 use App\Models\Product;
+use App\Models\ProductCategory;
+
 
 class ProductsController extends Controller
 {
+    use UsesFilters;
+
     public function __construct()
     {
         $this->middleware([Authenticate::class, EnsureEmailIsVerified::class], ['except' => ['index', 'show']]);
@@ -16,11 +21,16 @@ class ProductsController extends Controller
     public function index()
     {
 
-        // $filter = $this->getFilter(['rating', 'popular', 'recent', 'priceLowToHigh' ,'PriceHighToLow']);
+        $filter = $this->getFilter(['rating', 'popular', 'recent', 'priceLowToHigh', 'priceHighToLow']);
+
+        $CategoryTag = ProductCategory::wherehas('products', function ($query) {
+            $query->where('status', 1);
+        })->orderBy('name')->get();
 
         $products = Product::orderByPrice('created_at', 'DESC')->paginate(10);
         return view('livewire.customer-product-view', [
             'products' => $products,
+            'filter' => $filter,
         ]);
     }
 }
