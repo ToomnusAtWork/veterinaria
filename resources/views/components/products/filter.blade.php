@@ -1,5 +1,5 @@
 <div class="flex items-center">
-    <div x-data="{ showSortMenu: false, selectedSort: false }" 
+    <div x-data="{ showSortMenu: false, selectedSort: '' }" 
         class="relative inline-block text-left">
         <button @click=" showSortMenu =! showSortMenu" type="button"
             class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900"
@@ -18,46 +18,48 @@
             tabindex="-1"
             x-cloak>
             <div class="py-1">
-                <a  href="{{ route('products', ['filter' => 'popular']) . '#products' }}"
-                    aria-current="{{ $selectedFilter === 'popular' ? 'page' : 'false' }}"
-                    class="block px-4 py-2 text-sm {{ $selectedFilter === 'popular' ? 'font-medium text-gray-900 hover:bg-gray-100' : 'text-gray-500 hover:bg-gray-100' }}" 
-                    x-on:click="selectedSort = 'Most Popular'; showSortMenu = false;" 
-                    :selectedSort='Most Popular';
-                    value="1"
-                >
-                    Most Popular
-                </a>
-                <a href="{{ route('products', ['filter' => 'rating']) . '#products' }}"
-                   aria-current="{{ $selectedFilter === 'rating' ? 'page' : 'false' }}"
-                    class="block px-4 py-2 text-sm {{ $selectedFilter === 'rating' ? 'font-medium text-gray-900 hover:bg-gray-100' : 'text-gray-500 hover:bg-gray-100' }}" 
-                    x-on:click="selectedSort = 'Best Rating'; showSortMenu = false;" 
+                <a 
+                    href="{{ route('products', ['filter' => 'aphabetical']) . '#products' }}"
+                   aria-current="{{ $selectedFilter === 'aphabetical' ? 'page' : 'false' }}"
+                    class="block px-4 py-2 text-sm {{ $selectedFilter === 'aphabetical' ? 'font-medium text-gray-900 hover:bg-gray-100' : 'text-gray-500 hover:bg-gray-100' }}" 
+                    @click="selectedSort = 'aphabetical order'; showSortMenu = false;" 
                     value="2"
-                    :selectedSort='Most Popular';
                 >
-                    Best Rating
+                    Aphabetical Order
                 </a>
-                <a href="{{ route('products', ['filter' => 'recent']) . '#products' }}"
+                <a 
+                href="{{ route('products', ['filter' => 'recent']) . '#products' }}"
                     aria-current="{{ $selectedFilter === 'recent' ? 'page' : 'false' }}"
                     class="block px-4 py-2 text-sm {{ $selectedFilter === 'recent' ? 'font-medium text-gray-900 hover:bg-gray-100' : 'text-gray-500 hover:bg-gray-100' }}" 
-                    @click="selectedSort = 'Most Recent'; showSortMenu = false;"
-                    value="3"
+                    @click="selectedSort = 'Most Recent'; showSortMenu = false; "
                 >
-                Newest</a>
-                {{-- <a href="#"
-                    :class="(selectedIndex === 3) ? 'font-medium text-gray-900' : 'text-gray-500'"
-                    class="text-gray-500 block px-4 py-2 text-sm" role="menuitem"
-                    tabindex="-1" id="menu-item-3"
-                    wire:click.prevent='sortByMostPopular("PriceLowToHigh")'
-                    @click="showSortMenu = false; selectedIndex = 3; selectedSort = 'Price: Low to High';">Price:
-                    Low to High
+                    Newest
                 </a>
-                <a href="#"
-                    :class="(selectedIndex === 4) ? 'font-medium text-gray-900' : 'text-gray-500'"
-                    class="text-gray-500 block px-4 py-2 text-sm" role="menuitem"
-                    tabindex="-1" id="menu-item-4"
-                    wire:click.prevent='sortByMostPopular("PriceHighToLow")'
-                    @click="showSortMenu = false; selectedIndex = 4; selectedSort = 'Price: High to Low';">
-                    Price:High to Low</a> --}}
+                <a 
+                    href="{{ route('products', ['filter' => 'popular ']) . '#products' }}"
+                   aria-current="{{ $selectedFilter === 'popular ' ? 'page' : 'false' }}"
+                    class="block px-4 py-2 text-sm {{ $selectedFilter === 'popular ' ? 'font-medium text-gray-900 hover:bg-gray-100' : 'text-gray-500 hover:bg-gray-100' }}" 
+                    @click="selectedSort = 'Popular'; showSortMenu = false;" 
+                    value="2"
+                >
+                    Most Popular 
+                </a>
+                <a 
+                href="{{ route('products', ['filter' => 'priceLowToHigh']) . '#products' }}"
+                    aria-current="{{ $selectedFilter === 'priceLowToHigh' ? 'page' : 'false' }}"
+                    class="block px-4 py-2 text-sm {{ $selectedFilter === 'priceLowToHigh' ? 'font-medium text-gray-900 hover:bg-gray-100' : 'text-gray-500 hover:bg-gray-100' }}" 
+                    @click="selectedSort = 'Price:Low to High'; showSortMenu = false; "
+                >
+                    Price: Low to High
+                </a>
+                <a 
+                href="{{ route('products', ['filter' => 'priceHighToLow']) . '#products' }}"
+                    aria-current="{{ $selectedFilter === 'priceHighToLow' ? 'page' : 'false' }}"
+                    class="block px-4 py-2 text-sm {{ $selectedFilter === 'priceHighToLow' ? 'font-medium text-gray-900 hover:bg-gray-100' : 'text-gray-500 hover:bg-gray-100' }}" 
+                    @click="selectedSort = 'Price:High to Low'; showSortMenu = false; "
+                >
+                    Price: High to Low
+                </a>
             </div>
         </div>
     </div>

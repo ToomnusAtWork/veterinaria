@@ -10,26 +10,19 @@
     </div>
 
     <!-- Rectangular section -->
-    <div class="bg-white">
+    <div class="bg-cobberstone">
         <div class="py-8 sm:py-12 lg:mx-auto lg:max-w-7xl lg:px-8">
             <div class="grid grid-cols-12">
-                <div class="col-span-12 md:col-span-3 mx-2 w-full max-md:max-w-md max-md:mx-auto">
-                    <div class="box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
-                        <h6 class="font-medium text-base leading-7 text-black mb-5">Filter</h6>
-                        <h3 class="font-medium text-sm text-gray-600 mt-8 mb-4">Price Range</h3>
-                        <div class="flex items-center mb-5 gap-1">
-                            <input type="min" id="default-min" name="min"
-                                class="w-full h-10 flex px-4 items-center justify-center rounded-full text-sm text-gray-900 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="min">
-                            <p class="px-1 font-normal text-sm leading-6 text-gray-600">to</p>
-                            <input type="max" id="default-max" name="max"
-                                class="w-full h-10 flex px-4 items-center justify-center rounded-full text-sm text-gray-900 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
-                                placeholder="max">
-                        </div>
 
+                <!-- Side Bar -->
+                <div class="col-span-12 md:col-span-3 mx-2 w-full max-md:max-w-md max-md:mx-auto">
+
+                    <!-- Search Box -->
+                    <div class="box w-full md:max-w-sm mb-4">
+                        <h6 class="font-medium text-base leading-7 text-black">Search Products</h6>
                         <input type="search" id="default-search" name="search"
-                            class="w-full h-12 mt-4 mb-4 flex items-center justify-center rounded-full text-sm text-gray-900 border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="Look for something?">
+                            class="w-full h-11 mt-4 mb-4 flex items-center justify-center rounded-full text-sm text-gray-900 border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Find a product">
                         <button
                             class="w-full py-2.5 flex items-center justify-center gap-2 rounded-full bg-indigo-600 text-white font-semibold text-xs shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-200  ">
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
@@ -41,70 +34,48 @@
                             Search
                         </button>
                     </div>
+                    <!-- End of Search Box -->
 
-                    <div class="mt-7 box rounded-xl border border-gray-300 bg-white p-6 w-full md:max-w-sm">
+                    <!-- Fitler Box -->
+                    <div class="box rounded-xl border border-gray-100 bg-white p-6 w-full md:max-w-sm">
                         <div class="flex items-center justify-between w-full pb-3 border-b border-gray-200 mb-7">
+                            <h6 class="font-medium text-base leading-7 text-black">Filter</h6>
+                            <p
+                                class="font-medium text-xs text-indigo-600 hover:text-gray-500 cursor-pointer transition-all duration-500 ">
+                                RESET
+                            </p>
+                        </div>
+                        <h3 class="font-medium text-sm text-gray-600 mt-6 mb-4">Price Range</h3>
+                        <div class="flex items-center mb-5 gap-1">
+                            <input type="min" id="default-min" name="min"
+                                class="w-full h-10 flex px-4 items-center justify-center rounded-full text-sm text-gray-900 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="min">
+                            <p class="px-1 font-normal text-sm leading-6 text-gray-600">to</p>
+                            <input type="max" id="default-max" name="max"
+                                class="w-full h-10 flex px-4 items-center justify-center rounded-full text-sm text-gray-900 border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="max">
+                        </div>
+                        <button
+                            class="w-full py-2.5 flex items-center justify-center gap-2 rounded-full bg-indigo-600 text-white font-semibold text-xs shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-200  ">
+                            Apply Filter
+                        </button>
+                    </div>
+                    <!-- End of Filter Box -->
+
+                    <!-- Category Box -->
+                    <div class="mt-6 box rounded-xl border border-gray-100 bg-white p-6 w-full md:max-w-sm">
+                        <div class="flex items-center justify-between w-full pb-3 border-b border-gray-200 mb-6">
                             <p class="font-medium text-base leading-7 text-black ">Category</p>
                             <p
-                                class="font-medium text-xs text-gray-500 cursor-pointer transition-all duration-500 hover:text-indigo-600">
-                                RESET</p>
+                                class="font-medium text-xs text-indigo-600 hover:text-gray-500 cursor-pointer transition-all duration-500 ">
+                                RESET
+                            </p>
                         </div>
 
-                        <div class="w-full mb-7">
-                            <div class='accordion-group grid grid-cols-1 gap-5 sm:gap-9'
-                                data-accordion="default-accordion">
-                                <div class='accordion ' id='category-heading-one'>
-                                    <button
-                                        class='accordion-toggle group accordion-active:text-indigo-600 inline-flex items-center justify-between leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600 active:text-indigo-600'
-                                        aria-controls='category-collapse-one'>
-                                        <h5 class="font-medium text-sm text-gray-900">
-                                            Availability
-                                        </h5>
-                                        <svg class='text-gray-900 transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180'
-                                            width='22' height='22' viewBox='0 0 22 22' fill='none'
-                                            xmlns='http://www.w3.org/2000/svg'>
-                                            <path
-                                                d='M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25'
-                                                stroke='currentColor' stroke-width='1.6' stroke-linecap='round'
-                                                stroke-linejoin='round'></path>
-                                        </svg>
-
-                                    </button>
-                                    <div id='category-collapse-one'
-                                        class='accordion-content w-full px-0 overflow-hidden pr-4 max-h-0 '
-                                        aria-labelledby='category-heading-one'>
-
-                                        <div class="box flex flex-col gap-2 mt-5">
-
-                                            <div class="flex items-center mb-2">
-                                                <input id="checkbox-option-1" type="checkbox" value=""
-                                                    class="checkbox-white w-5 h-5 appearance-none border border-gray-500  rounded mr-1 hover:border-indigo-100 hover:bg-indigo-600 checked:bg-no-repeat checked:bg-center checked:border-indigo-100 checked:bg-indigo-600 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                                <label for="checkbox-option-1"
-                                                    class="ml-1 font-normal text-xs cursor-pointer  text-gray-600">option-1</label>
-                                            </div>
-                                            <div class="flex items-center mb-2">
-                                                <input id="checkbox-option-2" type="checkbox" value=""
-                                                    class="checkbox-white w-5 h-5 appearance-none border border-gray-500  rounded mr-1 hover:border-indigo-100 hover:bg-indigo-600 checked:bg-no-repeat checked:bg-center checked:border-indigo-600 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                                <label for="checkbox-option-2"
-                                                    class="ml-1 font-normal text-xs cursor-pointer  text-gray-600">option-2</label>
-                                            </div>
-                                            <div class="flex items-center mb-2">
-                                                <input id="checkbox-option-3" type="checkbox" value=""
-                                                    class="checkbox-white w-5 h-5 appearance-none border border-gray-500  rounded mr-1 hover:border-indigo-600 hover:bg-indigo-600 checked:bg-no-repeat checked:bg-center checked:border-indigo-600 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                                <label for="checkbox-option-3"
-                                                    class="ml-1 font-normal text-xs cursor-pointer  text-gray-600">option-3</label>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <label for="Offer" class="font-medium text-sm leading-6 text-gray-600 mb-1">Offer</label>
-                        <div class="relative w-full mb-7">
+                        <label for="Offer" class="font-medium text-sm leading-6 text-gray-600">Tags</label>
+                        <div class="relative w-full mt-1 mb-4">
                             <select id="Offer"
-                                class="h-12 border border-gray-300 text-gray-900 text-xs font-medium rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white">
+                                class="h-12 border border-gray-300 text-gray-900 text-xs font-medium rounded-full  block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white">
                                 <option selected>5% off upi discount</option>
                                 <option value="option 1">option 1</option>
                                 <option value="option 2">option 2</option>
@@ -112,33 +83,34 @@
                                 <option value="option 4">option 4</option>
                             </select>
                         </div>
-                        <p class="font-medium text-sm leading-6 text-black mb-3">Discount</p>
+                        <p class="font-medium text-sm leading-6 text-black mb-3">Category</p>
                         <div class="box flex flex-col gap-2">
                             <div class="flex items-center">
-                                <input id="checkbox-default-1" type="checkbox" value=""
-                                    class="w-5 h-5 appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                <label for="checkbox-default-1"
-                                    class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">20% or
-                                    more</label>
+                                <input checked id="purple-radio" type="radio" value="" name="colored-radio"
+                                    class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <label for="purple-radio"
+                                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pet Toy</label>
                             </div>
                             <div class="flex items-center">
-                                <input id="checkbox-default-2" type="checkbox" value=""
-                                    class="w-5 h-5 appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                <label for="checkbox-default-2"
-                                    class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">30% or
-                                    more</label>
+                                <input checked id="purple-radio" type="radio" value="" name="colored-radio"
+                                    class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                <label for="purple-radio"
+                                    class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Pet Food</label>
                             </div>
                             <div class="flex items-center">
-                                <input id="checkbox-default-3" type="checkbox" value=""
-                                    class="w-5 h-5 appearance-none border border-gray-300  rounded-md mr-2 hover:border-indigo-500 hover:bg-indigo-100 checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100 checked:bg-[url('https://pagedone.io/asset/uploads/1689406942.svg')]">
-                                <label for="checkbox-default-3"
-                                    class="text-xs font-normal text-gray-600 leading-4 cursor-pointer">50% or
-                                    more</label>
+                                <div class="flex items-center">
+                                    <input checked id="purple-radio" type="radio" value="" name="colored-radio"
+                                        class="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 focus:ring-purple-500 dark:focus:ring-purple-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                    <label for="purple-radio"
+                                        class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nutrition
+                                        Products</label>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- End of Category Box -->
 
-                    <div class="box rounded-xl border border-gray-300 mt-5 bg-white p-6 w-full md:max-w-sm">
+                    <div class="box rounded-xl border border-gray-300 mt-6 bg-white p-6 w-full md:max-w-sm">
                         <h6 class="font-medium text-base leading-7 text-black mb-5">Brands</h6>
                         <div class="box flex flex-col gap-2">
                             <div class="flex items-center">
@@ -164,12 +136,15 @@
                         </div>
                     </div>
                 </div>
+                <!-- End of Side Bar -->
+
+                <!-- Main product display -->
                 <div class="col-span-12 md:col-span-9">
                     <div class="py-8 md:py-0 lg:mx-auto lg:max-w-7xl lg:px-8">
                         <div class="flex items-center justify-between px-4 sm:px-6 lg:px-0">
-                            <h2 class="text-2xl font-bold tracking-tight text-gray-900">We found 5 items</h2>
+                            <h2 class="text-2xl font-bold tracking-tight text-gray-900">We found {{ number_format($products->total()) }} items</h2>
                             {{-- <h1>10 20 30</h1> --}}
-                            <x-products.filter :selectedFilter="$filter"  />
+                            <x-products.filter :selectedFilter="$filter" />
                             {{-- <div class="flex items-center">
                                 <div x-data="{ showSortMenu: false, selectedSort: 'Most Popular' }" class="relative inline-block text-left">
                                     <div>
@@ -280,9 +255,9 @@
                                                             <div class="absolute flex flex-col top-0 right-0 p-3">
                                                                 <button
                                                                     class="transition ease-in duration-300 bg-gray-800  hover:text-purple-500 shadow hover:shadow-md text-gray-500 rounded-full w-8 h-8 text-center p-1"><svg
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                        class="h-6 w-6" fill="none"
-                                                                        viewBox="0 0 24 24" stroke="currentColor">
+                                                                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                                        fill="none" viewBox="0 0 24 24"
+                                                                        stroke="currentColor">
                                                                         <path stroke-linecap="round"
                                                                             stroke-linejoin="round" stroke-width="2"
                                                                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -306,8 +281,7 @@
                                                     </div> --}}
                                                                     </a>
                                                                 </div>
-                                                                <div
-                                                                    class="text-md text-white font-thin mt-1 truncate">
+                                                                <div class="text-md text-white font-thin mt-1 truncate">
                                                                     {{ $product->description }} </div>
                                                                 <div class="text-lg text-white mt-1">Price:
                                                                     {{ $product->price }} ฿</div>
@@ -329,29 +303,24 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div
-                                                                class="flex space-x-2 text-sm font-medium justify-start">
-                                                                <a
-                                                                    href="{{ route('view-product', [$product->name]) }}">
+                                                            <div class="flex space-x-2 text-sm font-medium justify-start">
+                                                                <a href="{{ route('view-product', [$product->name]) }}">
                                                                     <button
                                                                         class="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
                                                                         <span>Add Cart</span>
                                                                     </button>
                                                                 </a>
-                                                                <a
-                                                                    href="{{ route('view-product', [$product->name]) }}">
+                                                                <a href="{{ route('view-product', [$product->name]) }}">
                                                                     <button
                                                                         class="transition ease-in duration-300 bg-gray-700 hover:bg-gray-800 border hover:border-gray-500 border-gray-700 hover:text-white  hover:shadow-lg text-gray-400 rounded-full w-9 h-9 text-center p-2">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
                                                                             class="" fill="none"
                                                                             viewBox="0 0 24 24" stroke="currentColor">
                                                                             <path stroke-linecap="round"
-                                                                                stroke-linejoin="round"
-                                                                                stroke-width="2"
+                                                                                stroke-linejoin="round" stroke-width="2"
                                                                                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                                             <path stroke-linecap="round"
-                                                                                stroke-linejoin="round"
-                                                                                stroke-width="2"
+                                                                                stroke-linejoin="round" stroke-width="2"
                                                                                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                                         </svg>
                                                                     </button>
@@ -622,6 +591,7 @@
 
                     </div>
                 </div>
+                <!-- End of main product display -->
             </div>
         </div>
 
@@ -632,5 +602,3 @@
 
     </div>
 @endsection
-
-

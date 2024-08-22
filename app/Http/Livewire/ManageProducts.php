@@ -33,7 +33,7 @@ class ManageProducts extends Component
             'newProduct.description' => 'required|string|min:1',
             'newProduct.price' => 'required|numeric|min:0',
             'newProduct.quantity' => 'required|numeric|min:1',
-            // 'newProduct.product_category_id' => 'required|integer|min:1|exists:product_categories, id',
+            'newProduct.product_category_id' => 'required|integer|min:1|exists:product_categories, id',
         ];
         // check if image is an instance of UploadedFile
         if ($this->image instanceof \Illuminate\Http\UploadedFile) {
@@ -51,7 +51,8 @@ class ManageProducts extends Component
             $query->where('name', 'like', '%'.$this->search.'%')
                 ->orwhere('description', 'like', '%'.$this->search.'%')
                 ->orwhere('price', 'like', '%'.$this->search.'%');
-        })->orderByPrice('PriceLowToHigh')
+        })
+        // ->orderByPrice('PriceLowToHigh')
             ->paginate(10);
         return view('livewire.manage-products', compact('products'));
     }
@@ -90,7 +91,7 @@ class ManageProducts extends Component
         $this->validateOnly('newProduct.description');
         $this->validateOnly('newProduct.price');
         $this->validateOnly('newProduct.quantity');
-        // $this->validateOnly('newProduct.product_category_id');
+        $this->validateOnly('newProduct.product_category_id');
 
         if (isset($this->newProduct['id'])) 
         {

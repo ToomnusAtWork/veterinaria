@@ -101,7 +101,7 @@
                             </div>
                         </div>
 
-                        <label for="Offer" class="font-medium text-sm leading-6 text-gray-600 mb-1">Offer</label>
+                        <label for="Offer" class="font-medium text-sm leading-6 text-gray-600 mb-1">type</label>
                         <div class="relative w-full mb-7">
                             <select id="Offer"
                                 class="h-12 border border-gray-300 text-gray-900 text-xs font-medium rounded-full block w-full py-2.5 px-4 appearance-none relative focus:outline-none bg-white">
@@ -169,7 +169,7 @@
                         <div class="flex items-center justify-between px-4 sm:px-6 lg:px-0">
                             <h2 class="text-2xl font-bold tracking-tight text-gray-900">We found 5 items</h2>
                             {{-- <h1>10 20 30</h1> --}}
-                            <x-products.filter :selectedFilter="$filter"  />
+                            <x-products.filter :selectedFilter="$filter" />
                             {{-- <div class="flex items-center">
                                 <div x-data="{ showSortMenu: false, selectedSort: 'Most Popular' }" class="relative inline-block text-left">
                                     <div>

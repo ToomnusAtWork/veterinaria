@@ -25,6 +25,7 @@ module.exports = {
                 'purp-secondary': '#736BAA',
                 'shady-purp': '#7C57D3',
                 'shady-gray': '#FAF9F9',
+                'cobberstone': '#F7F7F7',
             },
         },
     },

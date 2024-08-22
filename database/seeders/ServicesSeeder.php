@@ -4,11 +4,15 @@ namespace Database\Seeders;
 
 use App\Models\Service;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 class ServicesSeeder extends Seeder
 {
     public function run(): void
     {
+        $faker = Faker::create();
+        $productCategoryIds = DB::table('categories')->pluck('id'); 
         Service::create([
             'name' => 'Animal Daycare',
             'slug' => 'Doggy daycare',
@@ -21,7 +25,7 @@ class ServicesSeeder extends Seeder
             'aftercare_tips' => 'Avoid harsh chemicals on dog fur.',
             'cautions' => null, // No specific cautions for this service
 //            'duration_minutes' => 90, // Duration in minutes
-            'category_id' => 2, // Replace with the actual category ID
+            'category_id' => $faker->randomElement($productCategoryIds),
             'is_hidden' => false,
         ]);
 
@@ -37,7 +41,7 @@ class ServicesSeeder extends Seeder
             'aftercare_tips' => 'Do not be afraid of weird symptoms, tell us about risk signal beforehand',
             'cautions' => 'Care about your pet meal and food nutrition.',
 //            'duration_minutes' => 120, // Duration in minutes
-            'category_id' => 3, // Replace with the actual category ID
+            'category_id' => $faker->randomElement($productCategoryIds),
             'is_hidden' => false,
         ]);
 
@@ -53,7 +57,7 @@ class ServicesSeeder extends Seeder
             'aftercare_tips' => 'Use the recommended perscription pill for specific illness.',
             'cautions' => null, // No specific cautions for this service
 //            'duration_minutes' => 60, // Duration in minutes
-            'category_id' => 3, // Replace with the actual category ID
+            'category_id' => $faker->randomElement($productCategoryIds),
             'is_hidden' => false,
         ]);
 
@@ -70,7 +74,7 @@ class ServicesSeeder extends Seeder
             'aftercare_tips' => 'Take care of your pet and be nice with them',
             'cautions' => null, // No specific cautions for this service
 //            'duration_minutes' => 45, // Duration in minutes
-            'category_id' => 3, // Replace with the actual category ID
+            'category_id' => $faker->randomElement($productCategoryIds),
             'is_hidden' => false,
         ]);
 

@@ -27,7 +27,7 @@ Route::middleware(Localization::class)->group(function () {
 
     Route::get('/', [App\Http\Controllers\HomePageController::class, 'index'])->name('home');
     Route::get('services', [App\Http\Controllers\services\ServicesController::class, 'index'])->name('services');
-    Route::get('services/{slug}', [App\Http\Controllers\DisplayServiceController::class, 'show'])->name('services.show');
+    Route::get('services/{slug}', [App\Http\Controllers\DisplayService::class, 'show'])->name('services.show');
     Route::get('products', [App\Http\Controllers\products\ProductsController::class, 'index'])->name('products');
     Route::get('product/{name}', [App\Http\Controllers\products\ProductsController::class, 'show'])->name('view-product');
     Route::get('deals', [App\Http\Controllers\DisplayDeal::class, 'index'])->name('deals');

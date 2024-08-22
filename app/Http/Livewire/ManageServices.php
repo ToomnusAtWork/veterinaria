@@ -29,32 +29,31 @@ class ManageServices extends Component
     public $newService, $name, $description, $price, $is_hidden, $image = false;
 
     protected function rules()
-{
-    $rules = [
-        'newService.name' => 'required|string|min:1|max:255',
-        'newService.slug' => 'unique:services,slug,' . ($this->newService['id'] ?? ''),
-        'newService.description' => 'required|string|min:1|max:255',
-        'newService.price' => 'required|numeric|min:0',
-        'newService.is_hidden' => 'boolean',
-        'newService.category_id' => 'required|integer|min:1|exists:categories, id',
-        'newService.allergens' => 'nullable|string|min:1|max:255',
-        'newService.cautions' => 'nullable|string|min:1|max:255',
-        // duration should be increments of 15 minutes max 24 hours : )
-//        'newService.duration_minutes' => 'nullable|integer|min:15|max:1440|multiple_of:15',
-        'newService.benefits' => 'nullable|string|min:1|max:255',
-        'newService.aftercare_tips' => 'nullable|string|min:1|max:255',
-        'newService.notes' => 'nullable|string|min:1|max:255',
+    {
+        $rules = [
+            'newService.name' => 'required|string|min:1|max:255',
+            'newService.slug' => 'unique:services,slug,' . ($this->newService['id'] ?? ''),
+            'newService.description' => 'required|string|min:1|max:255',
+            'newService.price' => 'required|numeric|min:0',
+            'newService.is_hidden' => 'boolean',
+            'newService.category_id' => 'required|integer|min:1|exists:categories, id',
+            'newService.allergens' => 'nullable|string|min:1|max:255',
+            'newService.cautions' => 'nullable|string|min:1|max:255',
+            // duration should be increments of 15 minutes max 24 hours : )
+    //        'newService.duration_minutes' => 'nullable|integer|min:15|max:1440|multiple_of:15',
+            'newService.benefits' => 'nullable|string|min:1|max:255',
+            'newService.aftercare_tips' => 'nullable|string|min:1|max:255',
+            'newService.notes' => 'nullable|string|min:1|max:255',
 
-    ];
-    // check if image is an instance of UploadedFile
-    if ($this->image instanceof \Illuminate\Http\UploadedFile) {
-
-        $rules['image'] = 'required|image|mimes:jpg,jpeg,png,svg,gif,webp|max:204800';
-    } else {
-        $rules['image'] = 'required|string|min:1|max:255';
+        ];
+        // check if image is an instance of UploadedFile
+        if ($this->image instanceof \Illuminate\Http\UploadedFile) {
+            $rules['image'] = 'required|image|mimes:jpg,jpeg,png,svg,gif,webp|max:204800';
+        } else {
+            $rules['image'] = 'required|string|min:1|max:255';
+        }
+        return $rules;
     }
-    return $rules;
-}
 
 
     public function render()
@@ -120,14 +119,13 @@ class ManageServices extends Component
     $this->validateOnly('newService.description');
     $this->validateOnly('newService.price');
     $this->validateOnly('newService.is_hidden');
-    $this->validateOnly('newService.category_id');
+    // $this->validateOnly('newService.category_id');
     $this->validateOnly('newService.allergens');
     $this->validateOnly('newService.cautions');
 //    $this->validateOnly('newService.duration_minutes');
     $this->validateOnly('newService.benefits');
     $this->validateOnly('newService.aftercare_tips');
     $this->validateOnly('newService.notes');
-
 
 
         if (isset($this->newService['id'])) {

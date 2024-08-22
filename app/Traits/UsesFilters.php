@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace App\Traits;
 trait UsesFilters 
 {
-    public function getFilter(array $options = ['rating', 'popular', 'recent', 'PriceLowToHigh' ,'PriceHighToLow'], string $default = 'recent'): string
+    public function getFilter(array $options = ['alphabetical', 'popular', 'recent', 'priceLowToHigh' ,'priceHighToLow'], string $default = 'alphabetical'): string
     {
         $filter = request('filter');
         $filter = is_array($filter) ? '' : (string) request('filter');

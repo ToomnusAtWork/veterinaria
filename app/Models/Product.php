@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Product extends Model
 {
@@ -23,14 +24,14 @@ class Product extends Model
         return $this->belongsTo(ProductCategory::class);
     }   
 
-    public function scopeRating()
+    public function scopeAlphabetical(Builder $query): Builder
     {
-        return ;
+        return $query->orderBy('name', 'asc');
     }
 
-    public function scopeRecent()
+    public function scopeRecent(Builder $query): Builder
     {
-        return ;
+        return $query->orderBy('created_at', 'desc');
     }
 
     public function scopePopular()
@@ -38,16 +39,14 @@ class Product extends Model
         return ;
     }
 
-    public function scopeOrderByPrice($query, $order)
+    public function scopePriceLowToHigh(Builder $query): Builder
     {
-        if ($order === 'PriceLowToHigh') {
-            return $query->orderBy('price', 'asc');
-        } elseif ($order === 'PriceHighToLow') {
-            return $query->orderBy('price', 'desc');
-        }
-
-        // default is PriceLowToHigh
         return $query->orderBy('price', 'asc');
+    }
+
+    public function scopePriceHighToLow(Builder $query): Builder
+    {
+        return $query->orderBy('price', 'desc');
     }
 
 }

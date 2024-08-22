@@ -179,11 +179,10 @@
 
                         <div>
                             <label for="category_id" class="block text-sm font-medium text-gray-700">Category</label>
-
                             <select wire:model="newService.category_id" id="category_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option disabled selected value="">Select Category</option>
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name}}</option>
+                                    <option value="{{ $category->id }}"> {{ $category->name}} </option>
                                 @endforeach
                                 @error('newService.category_id') <span class="text-red-500">{{ $message }}</span>@enderror
                             </select>
