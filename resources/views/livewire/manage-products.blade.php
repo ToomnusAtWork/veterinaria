@@ -1,5 +1,5 @@
-
-    <div>
+@section('title', 'Admin manage product')
+    <div class="lg:ml-[280px]">
         <div class="flex justify-between mx-7">
             <h2 class="text-2xl font-bold">Product</h2>
             <x-button wire:click="confirmProductAdd" class="px-5 py-2 text-white bg-blue-500 rounded-md hover:bg--600">
@@ -15,44 +15,58 @@
         </div>
     
         <div class="overflow-auto rounded-lg border border-gray-200 shadow-md m-5">
-            <div class="w-1/3 float-right m-4">
-                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
-                <div class="relative">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-                        </svg>
+            <div class="flex justify-between">
+                
+                <div x-data="{ isOpen: false, openedWithKeyboard: false }" class="relative p-2 m-3" @keydown.esc.window="isOpen = false, openedWithKeyboard = false">
+                    <!-- Toggle Button -->
+                    <button type="button" @click="isOpen = ! isOpen" class="inline-flex cursor-pointer items-center gap-2 whitespace-nowrap rounded-md border border-neutral-300 bg-neutral-50 px-4 py-2 text-sm font-medium tracking-wide transition hover:opacity-75 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-800 dark:border-neutral-700 dark:bg-neutral-900 dark:focus-visible:outline-neutral-300" aria-haspopup="true" @keydown.space.prevent="openedWithKeyboard = true" @keydown.enter.prevent="openedWithKeyboard = true" @keydown.down.prevent="openedWithKeyboard = true" :class="isOpen || openedWithKeyboard ? 'text-neutral-900 dark:text-white' : 'text-neutral-600 dark:text-neutral-300'" :aria-expanded="isOpen || openedWithKeyboard">
+                        Select an item
+                        <svg aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 rotate-0">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+                        </svg>        
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div x-cloak x-show="isOpen || openedWithKeyboard" x-transition x-trap="openedWithKeyboard" @click.outside="isOpen = false, openedWithKeyboard = false" @keydown.down.prevent="$focus.wrap().next()" @keydown.up.prevent="$focus.wrap().previous()" class="absolute ml-2 top-11 left-0 flex w-1/2 min-w-[20px] flex-col overflow-hidden rounded-md border border-neutral-300 bg-neutral-50 py-1.5 dark:border-neutral-700 dark:bg-neutral-900" role="menu">
+                        <a href="#" class="bg-neutral-50 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-50/5 dark:hover:text-white dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">20</a>
+                        <a href="#" class="bg-neutral-50 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-50/5 dark:hover:text-white dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">30</a>
+                        <a href="#" class="bg-neutral-50 px-4 py-2 text-sm text-neutral-600 hover:bg-neutral-900/5 hover:text-neutral-900 focus-visible:bg-neutral-900/10 focus-visible:text-neutral-900 focus-visible:outline-none dark:bg-neutral-900 dark:text-neutral-300 dark:hover:bg-neutral-50/5 dark:hover:text-white dark:focus-visible:bg-neutral-50/10 dark:focus-visible:text-white" role="menuitem">50</a>
                     </div>
-                    <input type="search" wire:model="search" id="default-search" name="search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search products...">
-                    <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+                </div>
+                <div class="w-1/3 float-right m-4">
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                            </svg>
+                        </div>
+                        <input type="search" wire:model="search" id="default-search" name="search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search products...">
+                        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+                    </div>
                 </div>
             </div>
+            
     
-            <table class="w-full border-collapse bg-white text-left text-sm text-gray-500 overflow-x-scroll min-w-screen">
+            <table class="w-full border-collapse bg-white text-center text-sm text-gray-500 overflow-x-scroll min-w-screen">
               <thead class="bg-gray-50">
                 <tr>
                   <th scope="col" class="pl-6 py-4 font-medium text-gray-900">Id</th>
-                  <th scope="col" class="px-4 py-4 font-medium text-gray-900">Product</th>
+                  <th scope="col" class="px-4 py-4 font-medium text-gray-900">Product Name</th>
                   <th scope="col" class="px-6 py-4 font-medium text-gray-900">Photo</th>
                   <th scope="col" class="px-6 py-4 font-medium text-gray-900">Description</th>
                   <th scope="col" class="px-6 py-4 font-medium text-gray-900">Price</th>
                   <th scope="col" class="px-6 py-4 font-medium text-gray-900">Quantity</th>
-                  {{-- <th scope="col" class="px-6 py-4 font-medium text-gray-900">Visibility</th> --}}
                   <th scope="col" class="px-6 py-4 font-medium text-gray-900">Actions</th>
-                  <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-    
                 @foreach ($products as $product)
-                <tr class="hover:bg-gray-50">
+                <tr class="hover:bg-gray-50 text-pretty text-center">
                     <td class="pl-6 py-4  max-w-0">{{ $product->id }}</td>
-    
-                    <th class="flex gap-3 px-6 py-4 font-normal text-gray-900  max-w-0">
-    
-                        <div class="font-medium text-gray-700">{{ $product->name }}</div>
-    
-                    </th>
+
+                    <td class="px-6 py-4 font-normal text-gray-900 w-fit ">
+                        <div class="font-medium text-gray-700 text-center align-middle">{{ $product->name }}</div>
+                    </td>
                     <td class="px-6 py-4  max-w-0">
                         <div class="font-medium text-gray-700">
                             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-20 h-20 object-cover">
@@ -66,27 +80,6 @@
                     </td>
                     <td class="px-6 py-4  max-w-0">
                         <div class="font-medium text-gray-700">{{ $product->quantity}}</div>
-                    </td>
-                    <td class="px-6 py-4 ">
-                        <div>
-                        
-                        {{-- @if($product->is_hidden == true)
-                            <span
-                            class="inline-flex items-center gap-1 rounded-full bg-red-50 px-2 py-1 text-xs font-medium text-red-600"
-                          >
-                            <span class="h-1.5 w-1.5 rounded-full bg-red-600"></span>
-                            Hidden
-                          </span>
-                        @else
-                            <span
-                            class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-medium text-green-600"
-                            >
-                            <span class="h-1.5 w-1.5 rounded-full bg-green-600"></span>
-                            Visible
-                            </span>
-                        @endif --}}
-    
-                        </div>
                     </td>
                     <td>
                         <div class="align-middle">
@@ -111,6 +104,36 @@
             </table>
             <div class="p-5">
               {{ $products->links() }}
+              {{-- <div class="flex flex-col lg:flex-row justify-between">
+                <div class="flex flex-col lg:flex-row items-center space-x-2 text-xs">
+                  <button class="py-2 px-4 bg-white text-gray-600 font-medium rounded hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center">
+                    10 items
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+              
+                  <p class="text-gray-500 mt-4 lg:mt-0">Showing 1 to 10 of 95 entires</p>
+                </div>
+              
+                <nav aria-label="Pagination" class="flex justify-center items-center text-gray-600 mt-8 lg:mt-0">
+                  <a href="#" class="p-2 mr-4 rounded hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                  </a>
+                  <a href="#" class="px-4 py-2 rounded bg-gray-200 text-gray-900 font-medium hover:bg-gray-100"> 1 </a>
+                  <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 2 </a>
+                  <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 3 </a>
+                  <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> ... </a>
+                  <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 9 </a>
+                  <a href="#" class="p-2 ml-4 rounded hover:bg-gray-100">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </nav>
+              </div> --}}
             </div>
     
             <x-dialog-modal wire:model="confirmingProductDeletion">
@@ -120,7 +143,6 @@
     
                 <x-slot name="content">
                     {{ __('Are you sure you want to delete the product?') }}
-    
                 </x-slot>
     
                 <x-slot name="footer">
@@ -215,6 +237,7 @@
                 <x-slot name="footer">
                 </x-slot>
             </x-dialog-modal>
+            
         </div>
     
     </div>

@@ -53,7 +53,7 @@ class ManageProducts extends Component
                 ->orwhere('price', 'like', '%'.$this->search.'%');
         })
         // ->orderByPrice('PriceLowToHigh')
-            ->paginate(10);
+            ->paginate(2);
         return view('livewire.manage-products', compact('products'));
     }
 

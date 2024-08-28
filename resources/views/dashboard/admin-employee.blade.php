@@ -3,15 +3,18 @@
     $role = UserRolesEnum::from(Auth::user()->role_id)->name;
 @endphp
 <x-dashboard>
+  <!-- TOP NAV FOR ADMIN -->
+  <x-dashboard.topnav>
+    {{ __('Dashboard') }}
+  </x-dashboard.topnav>
+  <!-- END OF TOP NAV FOR ADMIN -->
+  {{-- <x-slot name="header">
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+          {{ __('dashboard') }}
+      </h2>
+  </x-slot> --}}
 
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
- <div>
-
+ <div class="lg:ml-[280px] relative h-full max-h-screen rounded-xl transition-all duration-200 bg-white">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 gap-4">
       
         <div class="bg-blue-500  shadow-lg rounded-md flex items-center justify-between p-3 border-b-4 border-blue-600  text-white font-medium group">

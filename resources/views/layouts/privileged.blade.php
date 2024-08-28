@@ -22,7 +22,6 @@
     </head>
     <body class="font-kanit bg-white antialiased">
 
-
         @yield('content')
 
         
