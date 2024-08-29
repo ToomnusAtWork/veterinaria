@@ -1,4 +1,6 @@
-<x-dashboard>
+@extends('layouts.privileged')
+@section('content')
+
     <div class="container mx-auto p-1">
         <div class="pb-2 mb-3">
 
@@ -115,4 +117,5 @@
 
         </div>
     </div>
-</x-dashboard>
+
+@endsection

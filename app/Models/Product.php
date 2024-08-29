@@ -19,6 +19,11 @@ class Product extends Model
         'product_category_id'
     ];
 
+    public function title(): string
+    {
+        return $this->title;
+    }
+
     public function productcategory()
     {
         return $this->belongsTo(ProductCategory::class);

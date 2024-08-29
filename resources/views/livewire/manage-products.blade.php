@@ -1,4 +1,4 @@
-@section('title', 'Admin manage product')
+
     <div class="lg:ml-[280px]">
         <div class="flex justify-between mx-7">
             <h2 class="text-2xl font-bold">Product</h2>

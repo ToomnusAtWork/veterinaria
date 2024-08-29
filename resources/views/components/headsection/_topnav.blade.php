@@ -1,8 +1,8 @@
 <nav class="flex h-28 lg:ml-[260px] mb-5 lg:h-[96px]" id="navbarTop" navbar-scroll="true">
     <div class="sm:flex items-stretch justify-between grow lg:mb-0 mb-5 py-5 px-10">
-        <x-dashboard.page-links>
+        <x-headsection.page-links>
             {{ $slot }}
-        </x-dashboard.page-links>
+        </x-headsection.page-links>
         <div class="flex items-center lg:shrink-0 lg:flex-nowrap">
             <div class="relative lg:hidden flex items-center sm:ml-2 ml-auto"> 
                 <a href="javascript:void(0)" class="flex items-center justify-center w-12 h-12 text-base font-medium leading-normal text-center align-middle transition-colors duration-150 ease-in-out bg-transparent border border-solid shadow-none cursor-pointer rounded-2xl text-stone-500 border-stone-200 hover:text-primary active:text-primary focus:text-primary" onclick="(function(){document.querySelector('.group\\/sidebar').classList.toggle('-translate-x-full');})();"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

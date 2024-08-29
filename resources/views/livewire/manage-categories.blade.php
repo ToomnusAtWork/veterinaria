@@ -1,4 +1,4 @@
-<div>
+<div class='ml-[300px]'>
     <div>
         <div class="flex justify-between mx-7">
             <h2 class="text-2xl font-bold">Categories</h2>

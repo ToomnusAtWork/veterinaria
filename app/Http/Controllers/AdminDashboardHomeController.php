@@ -69,7 +69,7 @@ class AdminDashboardHomeController extends Controller
 
 
 
-        return view('dashboard.admin-employee', [
+        return view('admin.dashboard.index', [
             'totalCustomers' => $totalCustomers,
             'totalEmployees' => $totalEmployees,
             'totalServicesActive' => $totalServicesActive,

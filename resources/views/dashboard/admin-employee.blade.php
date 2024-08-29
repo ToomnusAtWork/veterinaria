@@ -1,7 +1,4 @@
-@php
-    use App\Enums\UserRolesEnum;
-    $role = UserRolesEnum::from(Auth::user()->role_id)->name;
-@endphp
+
 <x-dashboard>
   <!-- TOP NAV FOR ADMIN -->
   <x-dashboard.topnav>

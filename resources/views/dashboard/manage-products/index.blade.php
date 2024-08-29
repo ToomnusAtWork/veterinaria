@@ -1,9 +1,11 @@
 
-<x-dashboard>
-   <!-- TOP NAV FOR ADMIN -->
-   <x-dashboard.topnav>
-         {{ __('Product') }}
-   </x-dashboard.topnav>
-   <!-- END OF TOP NAV FOR ADMIN -->
+@extends('layouts.privileged', ['title' => 'Admin Dashboard'])
+
+@section('content')
+   <x-headsection._topnav>
+      {{ __('Product') }}
+  </x-headsection._topnav>
+
    <livewire:manage-products />
-</x-dashboard>
+
+@endsection
