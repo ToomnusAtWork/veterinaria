@@ -72,5 +72,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Cart::class);
     }
+
+    public function isAdmin(): bool
+    {
+        $this->role_id() == self::Admin;
+    }
 }
 

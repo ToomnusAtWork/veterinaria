@@ -38,6 +38,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\UserSuspendedRedirect::class,
             \App\Http\Middleware\Localization::class,
+            // \App\Http\Middleware\VerifyAdmin::class,
         ],
 
         'api' => [
@@ -55,6 +56,7 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $middlewareAliases = [
+        'admin' => \App\Http\Middleware\VerifyAdmin::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,

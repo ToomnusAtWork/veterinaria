@@ -4,11 +4,7 @@
     <x-headsection._topnav>
         {{ __('Manage User') }}
     </x-headsection._topnav>
-    <div class="ml-[300px]">
-        <x-button>
-            <a href="{{ route('users.create') }}">Add User</a>
-        </x-button>
-    </div>
+    
     <div x-data="{ showModal: false }">
         <div class="ml-[300px] overflow-auto rounded-lg border border-gray-200 shadow-md m-5">
 
@@ -181,8 +177,4 @@
         </div>
     </div>
 @endsection
-<x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        {{ __('Manage Users') }}
-    </h2>
-</x-slot>
+

@@ -9,7 +9,7 @@ $maxWidth = [
     'lg' => 'sm:max-w-lg',
     'xl' => 'sm:max-w-xl',
     '2xl' => 'sm:max-w-2xl',
-][$maxWidth ?? '2xl'];
+][$maxWidth ?? 'lg'];
 @endphp
 
 <div
@@ -29,6 +29,7 @@ $maxWidth = [
                     x-transition:leave-end="opacity-0">
         <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
     </div>
+
 
     <div x-show="show" class="mb-6 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full {{ $maxWidth }} sm:mx-auto"
                     x-trap.inert.noscroll="show"

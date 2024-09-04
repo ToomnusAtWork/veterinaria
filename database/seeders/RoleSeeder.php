@@ -21,8 +21,8 @@ class RoleSeeder extends Seeder
                 'status' => true,
             ],
             [
-                'id' => UserRolesEnum::PropertyOwner->value,
-                'name' => UserRolesEnum::PropertyOwner->name,
+                'id' => UserRolesEnum::Manager->value,
+                'name' => UserRolesEnum::Manager->name,
                 'status' => true,
             ],
             [

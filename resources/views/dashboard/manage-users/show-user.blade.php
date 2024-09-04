@@ -1,10 +1,15 @@
 @extends('layouts.privileged')
-@section('content')
 
-    <div class="container mx-auto p-1">
+@section('content')
+<x-headsection._topnav>
+    {{ __('Show User /') }}
+    {{ $user-> name }}
+</x-headsection._topnav>
+<div class="ml-[300px]">
+    <div class="container mx-auto p-3">
         <div class="pb-2 mb-3">
 
-                <div class="bg-white p-3 shadow-sm rounded-sm" x-data="{ showFullInfo : false}">
+                <div class="bg-white p-3 shadow-sm border-2 rounded-md" x-data="{ showFullInfo : false}">
                     <div class="text-center my-2">
                         <img class="h-16 w-16 rounded-full mx-auto"
                              src="{{ $user->profile_photo_url }}"
@@ -16,45 +21,25 @@
                     </div>
                     <div class="text-gray-700" >
                         <div class="grid md:grid-cols-2 text-sm">
-{{--                            <div class="grid grid-cols-2">--}}
-{{--                                <div class="px-4 py-2 font-semibold">First Name</div>--}}
-{{--                                <div class="px-4 py-2">Jane</div>--}}
-{{--                            </div>--}}
-{{--                            <div class="grid grid-cols-2">--}}
-{{--                                <div class="px-4 py-2 font-semibold">Last Name</div>--}}
-{{--                                <div class="px-4 py-2">Doe</div>--}}
-{{--                            </div>--}}
-{{--                            <div class="grid grid-cols-2">--}}
-{{--                                <div class="px-4 py-2 font-semibold">Gender</div>--}}
-{{--                                <div class="px-4 py-2">Female</div>--}}
-{{--                            </div>--}}
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Phone No.</div>
                                 <div class="px-4 py-2">{{ $user->phone_number }}</div>
                             </div>
-{{--                            <div class="grid grid-cols-2">--}}
-{{--                                <div class="px-4 py-2 font-semibold">Current Address</div>--}}
-{{--                                <div class="px-4 py-2">Beech Creek, PA, Pennsylvania</div>--}}
-{{--                            </div>--}}
-{{--                            <div class="grid grid-cols-2">--}}
-{{--                                <div class="px-4 py-2 font-semibold">Permanant Address</div>--}}
-{{--                                <div class="px-4 py-2">Arlington Heights, IL, Illinois</div>--}}
-{{--                            </div>--}}
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Email.</div>
+                                <div class="px-4 py-2 font-semibold">Email</div>
                                 <div class="px-4 py-2">
-                                    <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->email }}</a>
+                                    <a class="text-blue-800" href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                 </div>
                             </div>
-
-{{--                            <div class="grid grid-cols-2">--}}
-{{--                                <div class="px-4 py-2 font-semibold">Birthday</div>--}}
-{{--                                <div class="px-4 py-2">Feb 06, 1998</div>--}}
-{{--                            </div>--}}
 
                         </div>
                         <ul
                             class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
+                            <li class="flex items-center py-3">
+                                <span>Role</span>
+                                <span class="ml-auto">{{ $user->role->name }}</span>
+                            </li>
+
                             <li class="flex items-center py-3">
                                 <span>Status</span>
                                 @if ($user->status == 1)
@@ -89,17 +74,15 @@
                                 </li>
                                 <li class="flex items-center py-3">
                                     <span>Last Purchase Amount</span>
-                                    <span class="ml-auto"> LKR {{ $appointments->where('status', true)->sortByDesc('created_at')->first()?->total }}</span>
+                                    <span class="ml-auto"> THB {{ $appointments->where('status', true)->sortByDesc('created_at')->first()?->total }}</span>
                                 </li>
 
                                 <li class="flex items-center py-3">
                                     <span>Total Purchases</span>
-                                    <span class="ml-auto"> LKR {{ $appointments->where('status', true)?->sum('total') }}</span>
+                                    <span class="ml-auto"> THB {{ $appointments->where('status', true)?->sum('total') }}</span>
                                 </li>
-                                <li class="flex items-center py-3">
-                                    <span>Last Cancellation</span>
-                                    <span class="ml-auto">  {{ $appointments->where('status', false)->sortByDesc('created_at')->first()?->service->name}}</span>
-                                </li>
+
+                                
                             </div>
                         </ul>
                     </div>
@@ -110,12 +93,14 @@
             </div>
 
         </div>
-        <div class="w-full">
+        {{-- <div class="w-full">
 
             <livewire:manage-appointments :user-id="$user->id" :select-filter="'upcoming'" />
 
 
-        </div>
+        </div> --}}
     </div>
+</div>
+    
 
 @endsection

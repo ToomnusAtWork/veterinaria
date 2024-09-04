@@ -104,36 +104,6 @@
             </table>
             <div class="p-5">
               {{ $products->links() }}
-              {{-- <div class="flex flex-col lg:flex-row justify-between">
-                <div class="flex flex-col lg:flex-row items-center space-x-2 text-xs">
-                  <button class="py-2 px-4 bg-white text-gray-600 font-medium rounded hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center">
-                    10 items
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                    </svg>
-                  </button>
-              
-                  <p class="text-gray-500 mt-4 lg:mt-0">Showing 1 to 10 of 95 entires</p>
-                </div>
-              
-                <nav aria-label="Pagination" class="flex justify-center items-center text-gray-600 mt-8 lg:mt-0">
-                  <a href="#" class="p-2 mr-4 rounded hover:bg-gray-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </a>
-                  <a href="#" class="px-4 py-2 rounded bg-gray-200 text-gray-900 font-medium hover:bg-gray-100"> 1 </a>
-                  <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 2 </a>
-                  <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 3 </a>
-                  <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> ... </a>
-                  <a href="#" class="px-4 py-2 rounded hover:bg-gray-100"> 9 </a>
-                  <a href="#" class="p-2 ml-4 rounded hover:bg-gray-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </nav>
-              </div> --}}
             </div>
     
             <x-dialog-modal wire:model="confirmingProductDeletion">
@@ -159,20 +129,19 @@
                 </x-slot>
             </x-dialog-modal>
     
-    
             <x-dialog-modal wire:model="confirmingProductAdd">
                 <x-slot name="title">
-                    {{ isset($this->newProduct->id) ? 'Edit product' : 'Add product' }}
+                    {{ isset($this->newProduct->id) ? 'Edit Product' : 'Add Product' }}
                 </x-slot>
     
                 <x-slot name="content">
                         <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <label for="name" class="block mt-4 text-sm font-medium text-gray-700">Name</label>
                             <input type="text" wire:model="newProduct.name" id="name" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             @error('newProduct.name') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div>
-                            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                            <label for="description" class="block mt-4 text-sm font-medium text-gray-700">Description</label>
                             <textarea id="description" wire:model="newProduct.description"  class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
                             @error('newProduct.description') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
@@ -194,15 +163,15 @@
                             </div>
     
                             <div>
-                                {{-- <label for="category_id" class="block text-sm font-medium text-gray-700">Category</label> --}}
+                                <label for="category_id" class="block text-sm font-medium text-gray-700">Category</label>
     
-                                {{-- <select wire:model="newproduct.category_id" id="category_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <select wire:model="newProduct.category_id" id="category_id" class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                     <option disabled selected value="">Select Category</option>
                                     @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name}}</option>
                                     @endforeach
                                     @error('newproduct.category_id') <span class="text-red-500">{{ $message }}</span>@enderror
-                                </select> --}}
+                                </select>
                             </div>
                         </div>
     
@@ -224,6 +193,7 @@
     
                             </div>
                         </div>
+
                         <div class="flex justify-end mt-4 gap-2">
     
                             <x-secondary-button wire:click="$set('confirmingProductAdd', false)" wire:loading.attr="disabled">

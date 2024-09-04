@@ -29,6 +29,7 @@ class ManageLocations extends Component
         "location.telephone_number" => "required|string|min_digits:10|max_digits:10",
         "location.status" => "required|boolean",
     ];
+    
     public function render()
     {
         $this->locations = Location::when($this->search, function ($query) {

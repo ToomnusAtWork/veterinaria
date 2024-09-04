@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Livewire\WithPagination;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Log;
@@ -20,7 +21,7 @@ class ManageProducts extends Component
     public $confirmingProductEdit = false;
 
     public $search;
-    public $newProduct, $name, $description, $image, $price, $quantity;
+    public $newProduct, $name, $description, $image, $price, $quantity, $category_id;
 
     protected $queryString = [
         'search' => ['except' => ''],
@@ -33,8 +34,9 @@ class ManageProducts extends Component
             'newProduct.description' => 'required|string|min:1',
             'newProduct.price' => 'required|numeric|min:0',
             'newProduct.quantity' => 'required|numeric|min:1',
-            'newProduct.product_category_id' => 'required|integer|min:1|exists:product_categories, id',
+            'newProduct.category_id' => 'required|integer|min:1|exists:product_categories, id',
         ];
+
         // check if image is an instance of UploadedFile
         if ($this->image instanceof \Illuminate\Http\UploadedFile) {
     
@@ -54,7 +56,9 @@ class ManageProducts extends Component
         })
         // ->orderByPrice('PriceLowToHigh')
             ->paginate(2);
-        return view('livewire.manage-products', compact('products'));
+
+        $categories = Productcategory::all();
+        return view('livewire.manage-products', compact(['products', 'categories']));
     }
 
     public function confirmProductDeletion($id)
@@ -71,17 +75,15 @@ class ManageProducts extends Component
 
     }
 
+    public function confirmProductEdit()
+    {
+        
+    }
+
     public function confirmProductAdd()
     {
         $this->reset(['newProduct']);
         $this->reset(['image']);
-        $this->confirmingProductAdd = true;
-    }
-
-    public function confirmProductEdit(Product $newProduct)
-    {
-        $this->newProduct = $newProduct;
-        $this->image = $newProduct->image;
         $this->confirmingProductAdd = true;
     }
 

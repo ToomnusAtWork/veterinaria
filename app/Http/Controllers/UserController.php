@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Enums\UserRolesEnum;
 use App\Models\Appointment;
+use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\VerifyAdmin;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Exception;
@@ -12,6 +14,15 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
+
+    /**
+     * For authentication and admin verification.
+     */
+    public function __construct()
+    {
+        $this->middleware([Authenticate::class, verifyAdmin::class]);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -29,14 +40,6 @@ class UserController extends Controller
             ->paginate(10);
 
         return view('dashboard.manage-users.index', compact('users'), ['search' => $search]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        return view('dashboard.manage-users.create-user');
     }
 
     /**
