@@ -1,5 +1,5 @@
 <nav class="flex h-28 lg:ml-[260px] mb-5 lg:h-[96px]" id="navbarTop" navbar-scroll="true">
-    <div class="sm:flex items-stretch justify-between grow lg:mb-0 mb-5 py-5 px-10">
+    <div class="flex items-stretch justify-between grow lg:mb-0 mb-5 py-5 px-10">
         <x-headsection.page-links>
             {{ $slot }}
         </x-headsection.page-links>

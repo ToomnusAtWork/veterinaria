@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\products;
+namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -33,5 +33,31 @@ class ProductsController extends Controller
             'products' => $products,
             'filter' => $filter,
         ]);
+    }
+
+    public function show(Product $product)
+    {
+        // $product = Product::findOrFail($product);
+        return view('product.show', compact('product'))->with('title', $product);
+    }
+
+    public function create()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function edit()
+    {
+
+    }
+
+    public function delete()
+    {
+
     }
 }

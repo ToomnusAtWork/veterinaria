@@ -21,7 +21,8 @@ class ManageProducts extends Component
     public $confirmingProductEdit = false;
 
     public $search;
-    public $newProduct, $name, $description, $image, $price, $quantity, $category_id;
+    public $newProduct, $name, $description, $image, $price, $quantity, $product_category_id;
+    public $perPage = 10; 
 
     protected $queryString = [
         'search' => ['except' => ''],
@@ -34,7 +35,7 @@ class ManageProducts extends Component
             'newProduct.description' => 'required|string|min:1',
             'newProduct.price' => 'required|numeric|min:0',
             'newProduct.quantity' => 'required|numeric|min:1',
-            'newProduct.category_id' => 'required|integer|min:1|exists:product_categories, id',
+            'newProduct.product_category_id' => 'required|integer',
         ];
 
         // check if image is an instance of UploadedFile
@@ -47,6 +48,11 @@ class ManageProducts extends Component
         return $rules;
     }
 
+    public function updatingPerPage()
+    {
+        $this->resetPage();
+    }
+
     public function render()
     {
         $products = Product::when($this->search, function ($query){
@@ -55,9 +61,9 @@ class ManageProducts extends Component
                 ->orwhere('price', 'like', '%'.$this->search.'%');
         })
         // ->orderByPrice('PriceLowToHigh')
-            ->paginate(2);
+            ->paginate($this->perPage);
 
-        $categories = Productcategory::all();
+        $categories = ProductCategory::all();
         return view('livewire.manage-products', compact(['products', 'categories']));
     }
 
@@ -75,9 +81,11 @@ class ManageProducts extends Component
 
     }
 
-    public function confirmProductEdit()
+    public function confirmProductEdit(Product $newProduct)
     {
-        
+        $this->newProduct = $newProduct;
+        $this->image = $newProduct->image;
+        $this->confirmingProductAdd = true;
     }
 
     public function confirmProductAdd()
@@ -105,13 +113,12 @@ class ManageProducts extends Component
                 $originalImage = str_replace('storage', 'public', $originalImage);
                 Storage::delete($originalImage);
 
-                $this->image = $this->image->store('product-images', 'public');
+                $filepath = $this->image->store('images', 'public');
             }
 
             // save new product
-            $this->newProduct['image'] = $this->image;
+            $this->newProduct['image'] = $filepath;
             $this->newProduct->save();
-
             
         } else {
             $product = Product::create($this->newProduct);

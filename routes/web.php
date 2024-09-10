@@ -19,21 +19,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/test', [App\Http\Controllers\AdminDashboardHome::class, 'index'])->name('test');
 
-Route::get('/localization/{locale}', LocalizationController::class)->name('localization');
+Route::get('localization/{locale}', LocalizationController::class)->name('localization');
 
+// Specifiy middleware language.
 Route::middleware(Localization::class)->group(function () {
 
+    // Homepage 
     Route::get('/', [App\Http\Controllers\HomePageController::class, 'index'])->name('home');
     Route::get('services', [App\Http\Controllers\services\ServicesController::class, 'index'])->name('services');
     Route::get('services/{slug}', [App\Http\Controllers\DisplayService::class, 'show'])->name('services.show');
-    Route::get('products', [App\Http\Controllers\products\ProductsController::class, 'index'])->name('products');
-    Route::get('product/{name}', [App\Http\Controllers\products\ProductsController::class, 'show'])->name('view-product');
+    // Route::get('products', [App\Http\Controllers\Products\ProductsController::class, 'index'])->name('products');
+    // Route::get('product/{name}', [App\Http\Controllers\Products\ProductsController::class, 'show'])->name('view-product');
     Route::get('deals', [App\Http\Controllers\DisplayDeal::class, 'index'])->name('deals');
     Route::get('shelter', [App\Http\Controllers\ShelterController::class, 'index'])->name('shelter');
 
+    // middleware for Product
+    Route::prefix('product')->group(function () {
+        Route::get('/', [App\Http\Controllers\Products\ProductsController::class, 'index'])->name('product');
+        Route::get('{product}', [App\Http\Controllers\Products\ProductsController::class, 'show'])->name('product.show');
+        Route::get('create-product', [App\Http\Controllers\Products\ProductsController::class, 'create'])->name('product.create');
+        Route::post('create-product', [App\Http\Controllers\Products\ProductsController::class, 'store'])->name('product.store');
+        Route::get('edit', [App\Http\Controllers\Products\ProductsController::class, 'edit'])->name('product.edit');
+        
+    });
 
+    // Route::redirect('/dashboard', '/user');
+    // middelware for Service
+
+    // middleware for Appointment
+
+    // 
+ 
     // Users needs to be logged in for these routes
     // add admin route specificly
     Route::middleware([
@@ -90,12 +107,10 @@ Route::middleware(Localization::class)->group(function () {
                     Route::get('products', function () {
                         return view('dashboard.manage-products.index');
                     })->name('manageproducts');
+
+
                     
                 } );
-
-
-
-                // analytics route group
 
 
             });

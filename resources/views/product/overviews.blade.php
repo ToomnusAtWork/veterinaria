@@ -1,5 +1,6 @@
 @extends('layouts.app', ['title' => 'Product'])
 @section('content')
+
     <!-- Products banner section -->
     <div class="bg-[url('/public/images/company/banner2.png')] w-full bg-cover bg-no-repeat min-h-screen">
         <div class="flex">
@@ -246,7 +247,7 @@
                             <div class="relative -mb-6 w-full overflow-x-auto pb-6">
                                 <ul role="list"
                                     class="mx-4 flex flex-col flex-wrap content-center md:inline-grid gap-x-8 gap-y-8 sm:mx-6 lg:mx-0 lg:grid-cols-3 md:grid-cols-2 lg:gap-x-8 lg:space-x-0">
-                                    @foreach ($products as $product)
+                                    @forelse ($products as $product)
                                         <li class="inline-flex w-64 flex-col text-center lg:w-auto">
                                             <div class="max-w-md w-full bg-gray-900 shadow-xl rounded-xl p-6">
                                                 <div class="flex flex-col ">
@@ -263,22 +264,22 @@
                                                                             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                                                     </svg></button>
                                                             </div>
-                                                            <img src="{{ asset('images/products/' . $product->image . '.jpeg') }}"
+                                                            <img src="{{ asset('storage/' . $product->image) }}"
                                                                 alt="product pic"
-                                                                class=" w-full   object-fill  rounded-2xl">
+                                                                class="w-full object-fill rounded-2xl">
                                                         </div>
                                                         <div class="flex-auto justify-evenly">
                                                             <div class="flex flex-wrap">
                                                                 <div
                                                                     class="flex items-center w-full justify-between min-w-0 ">
                                                                     <a
-                                                                        href="{{ route('view-product', [$product->name]) }}">
+                                                                        href="{{ route('product.show', $product) }}">
                                                                         <h2
                                                                             class="text-lg font-semibold cursor-pointer text-gray-200 hover:text-purple-500">
                                                                             {{ $product->name }}</h2>
-                                                                        {{-- <div class="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
-                                                        INSTOCK
-                                                    </div> --}}
+                                                                            <div class="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
+                                                                                INSTOCK
+                                                                            </div>
                                                                     </a>
                                                                 </div>
                                                                 <div class="text-md text-white font-thin mt-1 truncate">
@@ -304,13 +305,13 @@
                                                                 </div>
                                                             </div>
                                                             <div class="flex space-x-2 text-sm font-medium justify-start">
-                                                                <a href="{{ route('view-product', [$product->name]) }}">
+                                                                {{-- <a href="{{ route('view-product', [$product->name]) }}">
                                                                     <button
                                                                         class="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
                                                                         <span>Add Cart</span>
                                                                     </button>
-                                                                </a>
-                                                                <a href="{{ route('view-product', [$product->name]) }}">
+                                                                </a> --}}
+                                                                {{-- <a href="{{ route('view-product', [$product->name]) }}">
                                                                     <button
                                                                         class="transition ease-in duration-300 bg-gray-700 hover:bg-gray-800 border hover:border-gray-500 border-gray-700 hover:text-white  hover:shadow-lg text-gray-400 rounded-full w-9 h-9 text-center p-2">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -324,7 +325,7 @@
                                                                                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                                         </svg>
                                                                     </button>
-                                                                </a>
+                                                                </a> --}}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -577,8 +578,10 @@
                                             </div>
                                         </div>
                                     </li>
-    --}}
-                                    @endforeach
+    --}}                            
+                                    @empty
+                                        <p>There're no current product availble yet.</p>
+                                    @endforelse
                                 </ul>
                                 {{-- @if ($service->is_hidden == false)
                             <x-service-card :service="$service"/>
@@ -586,6 +589,8 @@
 
 
                             </div>
+                            {{ $products->links() }}
+
                         </div>
 
 

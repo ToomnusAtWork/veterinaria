@@ -240,7 +240,7 @@
                 {{ __('Services') }}
             </x-responsive-nav-link>
 
-            <x-responsive-nav-link href="{{ route('products') }}" :active="request()->routeIs('products')">
+            <x-responsive-nav-link href="{{ route('product') }}" :active="request()->routeIs('products')">
                 {{ __('Products') }}
             </x-responsive-nav-link>
 

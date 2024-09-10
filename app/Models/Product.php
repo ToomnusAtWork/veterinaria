@@ -19,14 +19,19 @@ class Product extends Model
         'product_category_id'
     ];
 
-    public function title(): string
+    public function getRouteKeyName()
     {
-        return $this->title;
+        return 'name';
     }
 
-    public function productcategory()
+    public function body(): string
     {
-        return $this->belongsTo(ProductCategory::class);
+        return $this->name;
+    }
+
+    public function productcategory(): BelongsTo
+    {
+        return $this->belongsTo(ProductCategory::class, 'foreign_key');
     }   
 
     public function scopeAlphabetical(Builder $query): Builder

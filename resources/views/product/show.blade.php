@@ -1,17 +1,18 @@
-<x-app-layout>
+@extends('layouts.app')
+@section('content')
     <section class="py-10 lg:py-24 relative ">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                 <div
                     class="pro-detail w-full flex flex-col justify-center order-last lg:order-none max-lg:max-w-[608px] max-lg:mx-auto">
                     <p class="font-medium text-lg text-indigo-600 mb-4">Home &nbsp; / &nbsp; Product Info &nbsp; / &nbsp;
-                        {{ $ProductQuery->name }}</p>
-                    <h2 class="mb-2 font-manrope font-bold text-3xl leading-10 text-gray-900">{{ $ProductQuery->name }}
+                        {{ $product->name }}</p>
+                    <h2 class="mb-2 font-manrope font-bold text-3xl leading-10 text-gray-900">{{ $product->name }}
                     </h2>
                     <div class="flex flex-col sm:flex-row sm:items-center mb-6">
                         <h6
                             class="font-manrope font-semibold text-2xl leading-9 text-gray-900 pr-5 sm:border-r border-gray-200 mr-5">
-                            {{ $ProductQuery->price }} ฿
+                            {{ $product->price }} ฿
                         </h6>
                         <div class="flex items-center gap-2">
                             <div class="flex items-center gap-1">
@@ -87,10 +88,10 @@
 
                     </div>
                     <p class="text-gray-500 text-base font-normal mb-4 ">
-                        {{ $ProductQuery->description }}
+                        {{ $product->description }}
                     </p>
                     <p class="font-medium text-lg leading-8 text-gray-900  mb-4">
-                        Quantity: <span class="font-thin"> {{ $ProductQuery->quantity }} </span>
+                        Quantity: <span class="font-thin"> {{ $product->quantity }} </span>
                     </p>
                     <div class="block w-full">
 
@@ -179,8 +180,8 @@
                         class="swiper product-prev mb-6">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide rounded-2xl border-2 object-center object-cover">
-                                <img src="{{ asset('images/products/' . $ProductQuery->image . '.jpeg') }}"
-                                    alt="Yellow Travel Bag image" class="mx-auto rounded-xl">
+                                <img src="{{ asset('storage/' . $product->image) }}"
+                                    alt="{{ $product->name }}" class="mx-auto rounded-xl">
                             </div>
                         </div>
 
@@ -193,4 +194,4 @@
         </div>
     </section>
 
-</x-app-layout>
+@endsection
