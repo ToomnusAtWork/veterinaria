@@ -20,10 +20,10 @@
 
                     <!-- Search Box -->
                     <div class="box w-full md:max-w-sm mb-4">
-                        <h6 class="font-medium text-base leading-7 text-black">Search Products</h6>
+                        <h6 class="font-medium text-base leading-7 text-black">Find your product</h6>
                         <input type="search" id="default-search" name="search"
                             class="w-full h-11 mt-4 mb-4 flex items-center justify-center rounded-full text-sm text-gray-900 border-gray-300  bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-                            placeholder="Find a product">
+                            placeholder="Enter your keyword here...">
                         <button
                             class="w-full py-2.5 flex items-center justify-center gap-2 rounded-full bg-indigo-600 text-white font-semibold text-xs shadow-sm shadow-transparent transition-all duration-500 hover:bg-indigo-700 hover:shadow-indigo-200  ">
                             <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
@@ -66,7 +66,7 @@
                     <!-- Category Box -->
                     <div class="mt-6 box rounded-xl border border-gray-100 bg-white p-6 w-full md:max-w-sm">
                         <div class="flex items-center justify-between w-full pb-3 border-b border-gray-200 mb-6">
-                            <p class="font-medium text-base leading-7 text-black ">Category</p>
+                            <p class="font-medium text-base leading-7 text-black ">Category (หมวดหมู่สินค้า)</p>
                             <p
                                 class="font-medium text-xs text-indigo-600 hover:text-gray-500 cursor-pointer transition-all duration-500 ">
                                 RESET
@@ -244,13 +244,13 @@
                         </div>
 
                         <div class="relative mt-8">
-                            <div class="relative -mb-6 w-full overflow-x-auto pb-6">
+                            <div class="relative mb-4  w-full overflow-x-auto pb-6">
                                 <ul role="list"
                                     class="mx-4 flex flex-col flex-wrap content-center md:inline-grid gap-x-8 gap-y-8 sm:mx-6 lg:mx-0 lg:grid-cols-3 md:grid-cols-2 lg:gap-x-8 lg:space-x-0">
                                     @forelse ($products as $product)
                                         <li class="inline-flex w-64 flex-col text-center lg:w-auto">
                                             <div class="max-w-md w-full bg-gray-900 shadow-xl rounded-xl p-6">
-                                                <div class="flex flex-col ">
+                                                <div class="flex flex-col">
                                                     <div class="">
                                                         <div class="relative h-62 w-full mb-3">
                                                             <div class="absolute flex flex-col top-0 right-0 p-3">
@@ -266,10 +266,11 @@
                                                             </div>
                                                             <img src="{{ asset('storage/' . $product->image) }}"
                                                                 alt="product pic"
+                                                                onerror="this.src='/images/alert/error.svg';"
                                                                 class="w-full object-fill rounded-2xl">
                                                         </div>
                                                         <div class="flex-auto justify-evenly">
-                                                            <div class="flex flex-wrap">
+                                                            <div class="block">
                                                                 <div
                                                                     class="flex items-center w-full justify-between min-w-0 ">
                                                                     <a
@@ -277,14 +278,14 @@
                                                                         <h2
                                                                             class="text-lg font-semibold cursor-pointer text-gray-200 hover:text-purple-500">
                                                                             {{ $product->name }}</h2>
-                                                                            <div class="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
+                                                                            {{-- <div class="flex items-center bg-green-400 text-white text-xs px-2 py-1 ml-3 rounded-lg">
                                                                                 INSTOCK
-                                                                            </div>
+                                                                            </div> --}}
                                                                     </a>
                                                                 </div>
-                                                                <div class="text-md text-white font-thin mt-1 truncate">
+                                                                <div class="flex text-md text-white font-thin mt-1 truncate">
                                                                     {{ $product->description }} </div>
-                                                                <div class="text-lg text-white mt-1">Price:
+                                                                <div class="flex text-lg text-white mt-1">Price:
                                                                     {{ $product->price }} ฿</div>
                                                             </div>
 
@@ -305,13 +306,13 @@
                                                                 </div>
                                                             </div>
                                                             <div class="flex space-x-2 text-sm font-medium justify-start">
-                                                                {{-- <a href="{{ route('view-product', [$product->name]) }}">
+                                                                <a href="{{ route('product.show', [$product->name]) }}">
                                                                     <button
                                                                         class="transition ease-in duration-300 inline-flex items-center text-sm font-medium mb-2 md:mb-0 bg-purple-500 px-5 py-2 hover:shadow-lg tracking-wider text-white rounded-full hover:bg-purple-600 ">
                                                                         <span>Add Cart</span>
                                                                     </button>
-                                                                </a> --}}
-                                                                {{-- <a href="{{ route('view-product', [$product->name]) }}">
+                                                                </a>
+                                                                <a href="{{ route('product.show', [$product->name]) }}">
                                                                     <button
                                                                         class="transition ease-in duration-300 bg-gray-700 hover:bg-gray-800 border hover:border-gray-500 border-gray-700 hover:text-white  hover:shadow-lg text-gray-400 rounded-full w-9 h-9 text-center p-2">
                                                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -325,7 +326,7 @@
                                                                                 d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                                                         </svg>
                                                                     </button>
-                                                                </a> --}}
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>

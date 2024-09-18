@@ -181,7 +181,9 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide rounded-2xl border-2 object-center object-cover">
                                 <img src="{{ asset('storage/' . $product->image) }}"
-                                    alt="{{ $product->name }}" class="mx-auto rounded-xl">
+                                    alt="{{ $product->name }}"
+                                    onerror="this.src='/images/alert/error.svg';"
+                                    class="mx-auto rounded-xl">
                             </div>
                         </div>
 

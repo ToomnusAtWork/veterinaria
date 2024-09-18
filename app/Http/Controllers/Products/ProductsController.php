@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Middleware\VerifyAdmin;
 use App\Traits\UsesFilters;
 use App\Models\Product;
 use App\Models\ProductCategory;
@@ -15,7 +15,11 @@ class ProductsController extends Controller
 
     public function __construct()
     {
-        $this->middleware([Authenticate::class, EnsureEmailIsVerified::class], ['except' => ['index', 'show']]);
+        $this->middleware([
+            'auth:sanctum',
+            config('jetstream.auth_session'),
+            'verified',
+            VerifyAdmin::class], ['except' => ['index', 'show']]);
     }
 
     public function index()

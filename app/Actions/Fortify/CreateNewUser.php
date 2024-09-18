@@ -29,11 +29,7 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
         
-        // if ($input['role_id'] == 2) {
-        //     $role_id = UserRolesEnum::Employee;
-        // } else {
-            $role_id = UserRolesEnum::Customer;
-        // }
+        $role_id = UserRolesEnum::Customer;
  
         return User::create([
             'name' => $input['firstname'].' '.$input['lastname'],

@@ -58,9 +58,9 @@
 
                  <!-- Auth Navigation Links -->
                  @auth
-                 <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                 {{-- <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                      {{ __('Dashboard') }}
-                 </x-nav-link>
+                 </x-nav-link> --}}
                  @else
                  <x-dropdown align="right" width="30">
                     <x-slot name="trigger">
@@ -248,14 +248,14 @@
 
             @auth
             @if($userRole == 'Admin')
-            <x-responsive-nav-link href="{{ route('manageusers') }}" :active="request()->routeIs('manageusers')">
+            {{-- <x-responsive-nav-link href="{{ route('manageusers') }}" :active="request()->routeIs('manageusers')">
                 {{ __('Manage Users') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
             @endif
 
-            <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+            {{-- <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            </x-responsive-nav-link> --}}
 
             @else
             <x-responsive-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">

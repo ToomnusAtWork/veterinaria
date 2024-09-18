@@ -53,8 +53,6 @@ class UserController extends Controller
             return redirect()->route('dashboard')->with('error', 'You are not authorized to perform this action.');
         }
 
-
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|min:1|max:255',
             'email' => 'required|email|unique:users',

@@ -18,6 +18,18 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    const ADMIN = 1;
+
+    const PROPERTYOWNER = 2;
+
+    const DOCTOR = 3;
+
+    const NURSE = 4;
+
+    const EMPLOYEE = 5;
+
+    const CUSTOMER = 6;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -63,6 +75,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+     public function name(): string
+    {
+        return $this->name;
+    }
+
     public function role() 
     {
         return $this->belongsTo(Role::class);
@@ -75,7 +92,34 @@ class User extends Authenticatable
 
     public function isAdmin(): bool
     {
-        $this->role_id() == self::Admin;
+        return $this->role()->where('name', 'Admin')->exists();
     }
+
+    public function isVeterinarian(): bool
+    {
+        return $this->role()->where('name', 'Doctor')->exists();
+    }
+
+    public function isVetNurse(): bool
+    {
+        return $this->role()->where('name', 'Nurse')->exists();
+    }
+
+    public function isEmployee(): bool
+    {
+        return $this->role()->where('name', 'Employee')->exists();
+    }
+
+    public function isManager(): bool
+    {
+        return $this->role_id() === self::PROPERTYOWNER;
+    }
+
+    public function isCustomer(): bool
+    {
+        return $this->role_id() === self::CUSTOMER;
+    }
+
+
 }
 
