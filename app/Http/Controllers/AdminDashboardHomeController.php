@@ -81,7 +81,6 @@ class AdminDashboardHomeController extends Controller
             'tommorowsAppointments' => $tommorowsAppointments,
             'bookingRevenueThisMonth' => $bookingRevenueThisMonth,
 
-//            'bookingRevenueLastMonth' => $bookingRevenueLastMonth,
             'percentageRevenueChangeLastMonth' => $percentageRevenueChangeLastMonth,
 
             'todaysSchedule' => $todaysSchedule,

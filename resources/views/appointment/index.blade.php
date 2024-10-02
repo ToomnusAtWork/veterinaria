@@ -3,7 +3,7 @@
     <div class="bg-gray-100 py-8" x-data="{ showCheckoutConfirmation: false }">
         <div class="container  mx-auto px-4 md:w-11/12">
             <h1 class="text-2xl font-semibold mb-4">Appointment</h1>
-            @if(session('unavailable_time_slots'))
+            {{-- @if(session('unavailable_time_slots')) --}}
 
                 <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                     <strong class="font-bold">Oops!</strong>
@@ -11,12 +11,12 @@
                     <ul class="mt-2 list-disc list-inside text-sm text-red-600">
 
 
-                        @foreach(session('unavailable_time_slots') as $unavailable_time_slot)
+                        {{-- @foreach(session('unavailable_time_slots') as $unavailable_time_slot)
                             <li>{{ $unavailable_time_slot['date'] }}: {{ date('g:i a', strtotime($unavailable_time_slot['start_time'])) }} - {{ date('g:i a', strtotime($unavailable_time_slot['end_time'])) }}</li>
-                        @endforeach
+                        @endforeach --}}
                     </ul>
                 </div>
-            @endif
+            {{-- @endif --}}
             <div class="flex flex-col md:flex-row gap-4">
                 <div class="md:w-3/4">
                     <div class="bg-white rounded-lg shadow-md p-6 mb-4">
@@ -34,7 +34,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @if(isset($cart->services))
+                            {{-- @if(isset($cart->services))
                             @foreach($cart->services as $service)
                                 <tr>
                                     <td class="py-4">
@@ -69,11 +69,11 @@
 
                                 </tr>
                             @endforeach
-                            @else
+                            @else --}}
                                 <tr>
                                     <td colspan="5" class="text-center pt-8">No items in cart</td>
                                 </tr>
-                            @endif
+                            {{-- @endif --}}
                             </tbody>
                         </table>
                     </div>
@@ -83,13 +83,13 @@
                         <h2 class="text-lg font-semibold mb-4">Summary</h2>
                         <div class="flex justify-between mb-2">
                             <span>Subtotal</span>
-                            <span>THB {{ number_format($cart?->total, 2, '.', ',') }}</span>
+                            {{-- <span>THB {{ number_format($cart?->total, 2, '.', ',') }}</span> --}}
 
                         </div>
                         <hr class="my-2">
                         <div class="flex justify-between mb-2">
                             <span class="font-semibold">Total</span>
-                            <span class="font-semibold">THB {{ number_format($cart?->total, 2, '.', ',') }}</span>
+                            {{-- <span class="font-semibold">THB {{ number_format($cart?->total, 2, '.', ',') }}</span> --}}
                         </div>
                         <button @click="showCheckoutConfirmation = true" class="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 w-full">Checkout</button>
                     </div>

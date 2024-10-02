@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
-use App\Http\Middleware\VerifyAdmin;
 use App\Traits\UsesFilters;
 use App\Models\Product;
 use App\Models\ProductCategory;
@@ -12,15 +11,6 @@ use App\Models\ProductCategory;
 class ProductsController extends Controller
 {
     use UsesFilters;
-
-    public function __construct()
-    {
-        $this->middleware([
-            'auth:sanctum',
-            config('jetstream.auth_session'),
-            'verified',
-            VerifyAdmin::class], ['except' => ['index', 'show']]);
-    }
 
     public function index()
     {
@@ -42,12 +32,12 @@ class ProductsController extends Controller
     public function show(Product $product)
     {
         // $product = Product::findOrFail($product);
-        return view('product.show', compact('product'))->with('title', $product);
+        return view('product.show', compact('product'))->with('title', $product->name);
     }
 
     public function create()
     {
-
+        
     }
 
     public function update()
@@ -57,7 +47,7 @@ class ProductsController extends Controller
 
     public function edit()
     {
-
+      
     }
 
     public function delete()

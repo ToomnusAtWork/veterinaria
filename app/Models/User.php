@@ -112,12 +112,12 @@ class User extends Authenticatable
 
     public function isManager(): bool
     {
-        return $this->role_id() === self::PROPERTYOWNER;
+        return $this->role() === self::PROPERTYOWNER;
     }
 
     public function isCustomer(): bool
     {
-        return $this->role_id() === self::CUSTOMER;
+        return $this->role() === self::CUSTOMER;
     }
 
 

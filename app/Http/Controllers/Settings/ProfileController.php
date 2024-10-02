@@ -15,10 +15,10 @@ use App\Models\User;
 class ProfileController extends Controller
 {
 
-    // public function index()
-    // {
-    //     return view('users.profile');
-    // }
+    public function index()
+    {
+        return view('profile.show');
+    }
 
     public function show(Request $request, ?User $user = null)
     {
@@ -33,17 +33,9 @@ class ProfileController extends Controller
         abort(404);
     }
 
-    public function edit(): View
+    public function edit(User $user): View
     {
         return view('users.profile');
     }
 
-    public function update(UpdateProfileRequest $request): RedirectResponse
-    {
-        $this->dispatchSync(UpdateProfile::fromRequest($request->user(), $request));
-
-        $this->success('HELLO');
-
-        return redirect()->route('settings.profile');
-    }
 }

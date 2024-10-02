@@ -9,6 +9,7 @@ use Ramsey\Collection\Collection;
 
 class CartController extends Controller
 {
+
     public function index()
     {
         // get the cart of the user that is not paid

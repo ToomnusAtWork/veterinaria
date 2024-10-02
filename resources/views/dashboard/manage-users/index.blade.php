@@ -6,9 +6,9 @@
     </x-headsection._topnav>
     
     <div x-data="{ showModal: false }">
-        <div class="ml-[300px] overflow-auto rounded-lg border border-gray-200 shadow-md m-5">
+        <div class="md:ml-[300px] overflow-auto rounded-lg border border-gray-200 shadow-md m-5">
 
-            <form class="w-1/3 float-right m-4" action="{{ route('manageusers') }}">
+            <form class="w-1/3 float-right m-4" >
                 <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
                 <div class="relative">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -35,7 +35,6 @@
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Status</th>
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Role</th>
                         <th scope="col" class="px-6 py-4 font-medium text-gray-900">Actions</th>
-                        {{--                    <th scope="col" class="px-6 py-4 font-medium text-gray-900"></th> --}}
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -82,25 +81,25 @@
 
                                     @if ($user->role()->first()->name != 'Admin')
                                         @if ($user->status == true)
-                                            <form action="{{ route('manageusers.suspend', $user->id) }}" method="POST">
+                                            {{-- <form action="{{ route('manageusers.suspend', $user->id) }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <button type="submit"
                                                     class="bg-red-50 p-1 px-2 rounded-md text-red-600 hover:text-red-900">Suspend</button>
-                                            </form>
+                                            </form> --}}
                                         @else
-                                            <form action="{{ route('manageusers.activate', $user->id) }}" method="POST">
+                                            {{-- <form action="{{ route('manageusers.activate', $user->id) }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <button type="submit"
                                                     class="bg-green-50 p-1 px-2 rounded-md text-green-600 hover:text-green-900">Activate</button>
-                                            </form>
+                                            </form> --}}
                                         @endif
                                     @endif
-
+manage
                                     @if ($user->role()->first()->name == 'Customer')
-                                        <a href="{{ route('users.show', $user->id) }}"
-                                            class="bg-blue-50 p-1 px-2 rounded-md text-blue-600 hover:text-blue-900">View</a>
+                                        {{-- <a href="{{ route('users.show', $user->id) }}"
+                                            class="bg-blue-50 p-1 px-2 rounded-md text-blue-600 hover:text-blue-900">View</a> --}}
                                     @endif
 
                                 </div>

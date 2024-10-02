@@ -1,4 +1,4 @@
-@extends('layouts.privileged', ['title' => 'Manage Product'])
+@extends('layouts.privileged', ['title' => 'Manage Appointment'])
 
 @section('content')
     <x-headsection._topnav>
@@ -8,9 +8,9 @@
     <div class="lg:ml-[280px]">
         <div class="flex justify-between mx-7">
             <h2 class="text-2xl font-bold">Product</h2>
-            <a href="{{ route('manage-product.create') }}" class="px-5 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">
+            {{-- <x-button wire:click="confirmProductAdd" class="px-5 py-2 text-white bg-blue-500 rounded-md hover:bg--600">
                 Create
-            </a>
+            </x-button> --}}
         </div>
     
         <div class="overflow-auto rounded-lg border border-gray-200 shadow-md m-5">
@@ -99,13 +99,8 @@
                             </td>
                         </tr>
                     @endforeach
-    
                 </tbody>
             </table>
-    
         </div>
-    
     </div>
-    
-
 @endsection

@@ -29,7 +29,7 @@
                 </td>
                 <td class="max-w-xs font-medium text-gray-700 border p-2">
                     @if ($appointment)
-                        <a href="{{ route('manageappointments')}}?search={{ $appointment->appointment_code }}">{{ $appointment->service->name }}</a>
+                        {{-- <a href="{{ route('manageappointments')}}?search={{ $appointment->appointment_code }}">{{ $appointment->service->name }}</a> --}}
                     @endif
                 </td>
                 <td class="border p-2">

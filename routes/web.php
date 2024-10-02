@@ -6,6 +6,8 @@ use App\Http\Controllers\LocalizationController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UsersController as AdminUsersController;
+use App\Http\Controllers\Moderator\ProductController as ManageProductController;
 
 
 /*
@@ -19,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+require_once __DIR__ ."/fortify.php";
 
 Route::get('localization/{locale}', LocalizationController::class)->name('localization');
 
@@ -27,35 +30,88 @@ Route::middleware(Localization::class)->group(function () {
 
     // Homepage 
     Route::get('/', [App\Http\Controllers\HomePageController::class, 'index'])->name('home');
-    Route::get('services', [App\Http\Controllers\services\ServicesController::class, 'index'])->name('services');
-    Route::get('services/{slug}', [App\Http\Controllers\DisplayService::class, 'show'])->name('services.show');
-    // Route::get('products', [App\Http\Controllers\Products\ProductsController::class, 'index'])->name('products');
-    // Route::get('product/{name}', [App\Http\Controllers\Products\ProductsController::class, 'show'])->name('view-product');
     Route::get('deals', [App\Http\Controllers\DisplayDeal::class, 'index'])->name('deals');
     Route::get('shelter', [App\Http\Controllers\ShelterController::class, 'index'])->name('shelter');
     
     // Route::get('profile', [App\Http\Controllers\Settings\ProfileController::class, 'index'])->name('profile');
     // Route::redirect('/dashboard', '/profile');
     // Route::get('profile/{name?}', [App\Http\Controllers\Settings\ProfileController::class, 'show'])->name('profile');
-    Route::get('settings', [App\Http\Controllers\Settings\ProfileController::class, 'edit'])->name('settings.profile');
+    // Route::prefix('settings')->group(function () {
+    //     Route::get('user/{name}', [App\Http\Controllers\Settings\ProfileController::class, 'edit'])->name('profile.edit');
+    // });
 
 
     // Product
     Route::prefix('product')->group(function () {
         Route::get('/', [App\Http\Controllers\Products\ProductsController::class, 'index'])->name('product');
         Route::get('{product}', [App\Http\Controllers\Products\ProductsController::class, 'show'])->name('product.show');
-        Route::get('create-product', [App\Http\Controllers\Products\ProductsController::class, 'create'])->name('product.create');
-        Route::post('create-product', [App\Http\Controllers\Products\ProductsController::class, 'store'])->name('product.store');
-        Route::get('edit', [App\Http\Controllers\Products\ProductsController::class, 'edit'])->name('product.edit');
+    });
+
+    // Service
+    Route::prefix('service')->group(function () {
+        Route::get('/', [App\Http\Controllers\Services\ServicesController::class, 'index'])->name('services');
+        Route::get('{slug}', [App\Http\Controllers\DisplayService::class, 'show'])->name('services.show');
+    });
+
+    // Product Cart
+    Route::prefix('cart')->group( function () {
+        Route::get('/', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
+        Route::post('/', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
+        Route::delete('/item/{cart_service_id}', [App\Http\Controllers\CartController::class, 'removeItem'])->name('cart.remove-item');
+        Route::delete('/{id}', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.destroy');
+        Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');
+    });
+
+    // Route::get('manage', [App\Http\Controllers\Products\ProductsController::class,'moderator'])->name('manage.product');
+    // Route::get('manage/create-product', [App\Http\Controllers\Products\ProductsController::class, 'create'])->name('product.create');
+    // Route::get('edit', [App\Http\Controllers\Products\ProductsController::class, 'edit'])->name('product.edit');
+    // Route::post('create-product', [App\Http\Controllers\Products\ProductsController::class, 'store'])->name('product.store');
+
+    Route::get('dashboard', [App\Http\Controllers\DashboardHomeController::class, 'index'])->name('dashboard');
+
+    // Staff Role
+    Route::prefix('staff')->group(function () {
+
+        // Manage Product
+        Route::prefix('manage-product')->group(function () {
+            Route::get('/', [ManageProductController::class, 'index'])->name('manage-product');
+            Route::get('create', [ManageProductController::class, 'create'])->name('manage-product.create');
+            Route::post('create',[ManageProductController::class, 'store'])->name('manage-product.store');
+            // Route::resource('edit', ManageProductController::class)->name('edit', 'product.edit');
+            // Route::get('{product}', ManageProductController::class)->name('manage-product.show');
+        });
+
+        // Manage Service
+        // Route::prefix('manage-service')->group(function () {
+
+        // });
+
+        // // Manage Shelter
+        // Route::prefix('manage-service')->group(function () {
+
+        // });
+    
+    });
+    
+    
+    
+
+    // Appointment
+    Route::prefix('appointment')->group(function () {
+        Route::get('/', [App\Http\Controllers\Appointment\AppointmentController::class, 'index'])->name('appointments');
+        // Route::get('appointments/{appointment_code}', [App\Http\Controllers\AppointmentController::class, 'show'])->name('appointments.show');
+    });
+
+    Route::prefix('admin')->name('admin')->group(function () {
+        // Route::get('/', []);
+        Route::resource('manage-users', AdminUsersController::class)->name('index', 'manageuser');
+
     });
 
 
     // Route::redirect('/dashboard', '/user');
     // middelware for Service
 
-    // middleware for Appointment
-
-    // 
  
     // Users needs to be logged in for these routes
     // add admin route specificly
@@ -72,7 +128,7 @@ Route::middleware(Localization::class)->group(function () {
     //         Route::get('')->name('');
     //     });
 
-    //     // middlleware to give access only for admin and employee
+    //     // middleware to give access only for admin and employee
     //     Route::middleware([
     //         'validateRole:Admin,Employee'
     //     ])->group(function () {
@@ -108,7 +164,6 @@ Route::middleware(Localization::class)->group(function () {
     //         'validateRole:Admin'
     //     ])->group(function () {
     //         Route::prefix('admin')->group(function () {
-    //             Route::get('dashboard', [App\Http\Controllers\DashboardHomeController::class, 'index'])->name('dashboard');
     //         });
     //     });
        
@@ -176,23 +231,10 @@ Route::middleware(Localization::class)->group(function () {
 //         'validateRole:Customer'
 //     ])->group(function () {
 
-//         Route::prefix('cart')->group( function () {
-//             Route::get('/', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
-//             Route::post('/', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
-//             Route::delete('/item/{cart_service_id}', [App\Http\Controllers\CartController::class, 'removeItem'])->name('cart.remove-item');
-//             Route::delete('/{id}', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.destroy');
-//             Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');
-//         });
 
 
-//         // Get the appointments of the user
-// //            Route::get('appointments', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointments');
-// //
-// //            // View an appointment
-// //            Route::get('appointments/{appointment_code}', [App\Http\Controllers\AppointmentController::class, 'show'])->name('appointments.show');
-// //
-// //            // Cancel an appointment
-// //            Route::delete('appointments/{appointment_code}', [App\Http\Controllers\AppointmentController::class, 'destroy'])->name('appointments.destroy');
+
+
 
 //     });
 // });

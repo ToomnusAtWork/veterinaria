@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\services;
+namespace App\Http\Controllers\Services;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,7 +14,11 @@ class ServicesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware([Authenticate::class, EnsureEmailIsVerified::class], ['except' => ['index', 'show']]);
+        $this->middleware([
+            'auth:sanctum',
+            config('jetstream.auth_session'),
+            'verified',
+            'staff'], ['except' => ['index', 'show']]);
     }
 
     public function index()

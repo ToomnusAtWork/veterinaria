@@ -48,8 +48,7 @@
             </div>
 
             <div class="hidden sm:flex space-x-5 sm:items-center sm:ml-6">
-                <x-shopping-cart>    
-                </x-shopping-cart>
+                <livewire:shopping-cart/>
 
                  <!-- Navigation Links form pages-->
                  @if (isset( $navlinks))
@@ -168,17 +167,14 @@
 
                         <x-slot name="content">
                             @if($userRole == 'Customer')
-                            <div class="block px-4 py-2 text-xs text-gray-400">
+                            {{-- <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Shop') }}
-                            </div>
+                            </div> --}}
                             <x-dropdown-link href="{{ route('cart') }}">
+                                {{ __('Appointments') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="{{ route('appointments')}}">
                                 {{ __('Cart') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link href="">
-                                {{ __('Booking') }}
-                            </x-dropdown-link>
-                            <x-dropdown-link href="">
-                                {{ __('My Appointments') }}
                             </x-dropdown-link>
 
                             <div class="border-t border-gray-200"></div>

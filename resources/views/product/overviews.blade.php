@@ -327,6 +327,9 @@
                                                                         </svg>
                                                                     </button>
                                                                 </a>
+                                                                <div class="">
+                                                                    <a href="{{ route('product.edit') }}" class="block w-3 h-3 bg-blue-600 rounded-full">test</a>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -600,11 +603,6 @@
                 <!-- End of main product display -->
             </div>
         </div>
-
-
-
-
-
-
     </div>
+
 @endsection
