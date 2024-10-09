@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\UserRolesEnum;
+use App\Http\Livewire\ManageAppointments;
 use App\Http\Middleware\Localization;
 use App\Http\Controllers\LocalizationController;
 use App\Models\Role;
@@ -8,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UsersController as AdminUsersController;
 use App\Http\Controllers\Moderator\ProductController as ManageProductController;
+use App\Http\Controllers\Moderator\ServiceController as ManageServiceController;
 
 
 /*
@@ -21,7 +23,7 @@ use App\Http\Controllers\Moderator\ProductController as ManageProductController;
 |
 */
 
-require_once __DIR__ ."/fortify.php";
+// require_once __DIR__ ."/fortify.php";
 
 Route::get('localization/{locale}', LocalizationController::class)->name('localization');
 
@@ -33,7 +35,7 @@ Route::middleware(Localization::class)->group(function () {
     Route::get('deals', [App\Http\Controllers\DisplayDeal::class, 'index'])->name('deals');
     Route::get('shelter', [App\Http\Controllers\ShelterController::class, 'index'])->name('shelter');
     
-    // Route::get('profile', [App\Http\Controllers\Settings\ProfileController::class, 'index'])->name('profile');
+    Route::get('profile', [App\Http\Controllers\Settings\ProfileController::class, 'index'])->name('profile');
     // Route::redirect('/dashboard', '/profile');
     // Route::get('profile/{name?}', [App\Http\Controllers\Settings\ProfileController::class, 'show'])->name('profile');
     // Route::prefix('settings')->group(function () {
@@ -62,36 +64,47 @@ Route::middleware(Localization::class)->group(function () {
         Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');
     });
 
-    // Route::get('manage', [App\Http\Controllers\Products\ProductsController::class,'moderator'])->name('manage.product');
-    // Route::get('manage/create-product', [App\Http\Controllers\Products\ProductsController::class, 'create'])->name('product.create');
-    // Route::get('edit', [App\Http\Controllers\Products\ProductsController::class, 'edit'])->name('product.edit');
-    // Route::post('create-product', [App\Http\Controllers\Products\ProductsController::class, 'store'])->name('product.store');
-
     Route::get('dashboard', [App\Http\Controllers\DashboardHomeController::class, 'index'])->name('dashboard');
 
-    // Staff Role
-    Route::prefix('staff')->group(function () {
-
+    // Staff 
+    Route::group(['prefix' => 'staff', 'middleware' => 'staff'], function () {
+        
         // Manage Product
         Route::prefix('manage-product')->group(function () {
             Route::get('/', [ManageProductController::class, 'index'])->name('manage-product');
             Route::get('create', [ManageProductController::class, 'create'])->name('manage-product.create');
             Route::post('create',[ManageProductController::class, 'store'])->name('manage-product.store');
-            // Route::resource('edit', ManageProductController::class)->name('edit', 'product.edit');
-            // Route::get('{product}', ManageProductController::class)->name('manage-product.show');
+            Route::get('{product}', [ManageProductController::class, 'show'])->name('manage-product.show');
+            Route::get('{product}/edit', [ManageProductController::class, 'edit'])->name( 'manage-product.edit');
+            Route::put('{product}', [ManageProductController::class, 'update'])->name('manage-product.update');
+            Route::delete('{product}', [ManageProductController::class, 'delete'])->name('manage-product.delete'); 
         });
 
         // Manage Service
-        // Route::prefix('manage-service')->group(function () {
+        Route::prefix('manage-service')->group(function () {
+            Route::get('/', [ManageServiceController::class, 'index'])->name('manage-service');
+            Route::get('create', [ManageServiceController::class,'create'])->name('manage-service.create');
+            Route::post('create', [ManageServiceController::class, 'store'])->name('manage-service.store');
+            Route::get('{service}', [ManageServiceController::class, 'show'])->name('manage-service.show');
+            Route::get('{service}/edit', [ManageServiceController::class, 'edit'])->name('manage-service.edit');
+            Route::put('{service}/edit', [ManageServiceController::class, 'update'])->name('manage-service.update');
+            Route::delete('{service}', [ManageServiceController::class, 'delete'])->name('manage-service.delete');
+        });
 
+        // Manage Appointment
+        // Route::prefix('manage-appointment')->group(function () {
+        //     Route::get('/', [ManageAppointmentsController::class,'index'])->name('manage-appointment');
+            
         // });
-
-        // // Manage Shelter
-        // Route::prefix('manage-service')->group(function () {
-
-        // });
-    
+        
     });
+
+    //     // // Manage Shelter
+    //     // Route::prefix('manage-service')->group(function () {
+
+    //     // });
+    
+    // });
     
     
     

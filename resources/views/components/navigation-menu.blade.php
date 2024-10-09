@@ -92,7 +92,7 @@
                 
                  @endif
 
-                 @auth
+            @auth
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ml-3 relative">
@@ -145,6 +145,7 @@
                     </div>
                 @endif
 
+                    
                 <!-- Settings Dropdown -->
                 <div class="ml-3 relative">
                     <x-dropdown align="right" width="48">
@@ -208,9 +209,9 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
-                @endif
-            </div>
-
+                {{-- @endif --}}
+                </div>
+            @endauth
             <!-- Hamburger -->
             <div class="-mr-2 flex items-center sm:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">

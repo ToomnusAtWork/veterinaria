@@ -51,7 +51,7 @@
                         </a> --}}
                     </li>
                     <li>
-                        {{-- <a href="{{ route('manageappointments') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
+                        {{-- <a href="{{ route('manage-appointments') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
                     {{ request()->is('dashboard/manage/appointments') ? 'bg-gray-700 border-violet-600 text-white font-semibold' : '' }}
                     ">
                       <span class="inline-flex justify-center items-center ml-4">
@@ -62,8 +62,8 @@
                         </a> --}}
                     </li>
                       <li>
-                        {{-- <a href="{{route('manageservices')}}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
-                        {{ request()->is('dashboard/manage/services') ? 'bg-gray-700 border-violet-600 text-white font-semibold' : '' }}
+                        <a href="{{route('manage-service')}}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
+                        {{ request()->is('staff/manage-service') ? 'bg-gray-700 border-violet-600 text-white font-semibold' : '' }}
                         ">
                           <span class="inline-flex justify-center items-center ml-4">
                             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@
                             </svg>
                           </span>
                           <span class="invisible md:visible ml-2 text-sm tracking-wide truncate">Manage Services</span>
-                        </a> --}}
+                        </a>
                       </li>
 
                         <li>
@@ -85,8 +85,8 @@
                                 </a> --}}
                         </li>
                         <li>
-                          {{-- <a href="{{ route('manageproducts') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
-                          {{ request()->is('dashboard/manage/products') ? 'bg-gray-700 border-violet-600 text-white font-semibold' : '' }}">
+                          <a href="{{ route('manage-product') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
+                          {{ request()->is('staff/manage-product') ? 'bg-gray-700 border-violet-600 text-white font-semibold' : '' }}">
                               <span class="inline-flex justify-center items-center ml-4">
                                 <svg class="flex-shrink-0 w-5 h-5 group-hover:text-gray-900 dark:group-hover:text-white"
                                       fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -96,7 +96,7 @@
                                 </svg>
                               </span>
                               <span class="invisible md:visible ml-2 text-sm tracking-wide truncate">Manage Products</span>
-                          </a> --}}
+                          </a>
                         </li>
                 </ul>
             </div>

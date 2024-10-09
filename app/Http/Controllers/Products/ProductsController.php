@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Traits\UsesFilters;
 use App\Models\Product;
 use App\Models\ProductCategory;
-
 
 class ProductsController extends Controller
 {
@@ -37,7 +37,7 @@ class ProductsController extends Controller
 
     public function create()
     {
-        
+          
     }
 
     public function update()

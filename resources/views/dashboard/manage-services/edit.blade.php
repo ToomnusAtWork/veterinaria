@@ -1,16 +1,16 @@
-@extends('layouts.privileged', ['title' => 'Create Service'])
+@extends('layouts.privileged', ['title' => 'Edit Service'])
 
 @section('content')
     <x-headsection._topnav>
-        {{ __('Manage Service / Create') }}
+        {{ __('Manage Service / Edit') }}
     </x-headsection._topnav>
 
     <div class="lg:ml-[300px]">
         <div class="flex justify-between mx-7">
-            <h2 class="text-2xl font-bold">Create Service</h2>
+            <h2 class="text-2xl font-bold">Edit Service</h2>
         </div>
 
-        <form action="{{ route('manage-service.store', $service) }}" method="POST">
+        <form action="{{ route('manage-service.update', $service) }}" method="PUT">
             @csrf
             <div class="bg-white m-5 border border-gray-200  rounded-xl shadow-lg p-4 px-4 md:p-8 mb-6">
                 <div class="grid gap-6 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
@@ -18,19 +18,18 @@
                         <div class="gap-6 mt-4">
                             <div class="">
                                 <label for="image" class="ml-4 block text-sm font-medium text-gray-700">Image</label>
-                                <input type="file" id="service_image" name="service_image" onchange="loadFile(event)" class="ml-4 p-1 w-2/3 text-slate-500 text-sm rounded-full leading-6 file:bg-violet-200 file:text-violet-700 file:font-semibold file:border-none file:px-4 file:py-1 file:mr-6 file:rounded-full hover:file:bg-violet-100 border border-gray-300">
+                                <input type="file" class="ml-4 p-1 w-2/3 text-slate-500 text-sm rounded-full leading-6 file:bg-violet-200 file:text-violet-700 file:font-semibold file:border-none file:px-4 file:py-1 file:mr-6 file:rounded-full hover:file:bg-violet-100 border border-gray-300">
                                 @error('image')
                                     <span class="text-red-500">{{ $message }}</span>
                                 @enderror        
                             </div>
                             <div class="border-2 h-60 my-4 rounded-xl items-center justify-center">
-                                <img src="#" id="category-img-tag" width="500px">
                                 {{-- If the image is already saved is system show img --}}
                                @if (isset($image) && is_string($image))
-                                   <img alt="image" src="{{ '/storage/' . $image }}"  class="mt-4" width="200" >
+                                   <img alt="image" src="{{ '/storage/' . $image }}"  class="mt-4" width="200">
                                    {{-- When the image is uploaded show img --}}
                                @elseif (isset($image) && is_object($image))
-                                   <img alt="image" src="{{ $image->temporaryUrl() }}" class="mt-4" width="200" >
+                                   <img alt="image" src="{{ $image->temporaryUrl() }}" class="mt-4" width="200">
                                @else
                                @endif
                            </div>
@@ -40,7 +39,7 @@
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                             <input type="text" wire:model="newService.name" id="name"
-                                class="block w-full mt-2 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             @error('newService.name')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
@@ -156,36 +155,5 @@
         </form>
     </div>
 
-    <script>
-        var loadFile = function(event) {
-        var reader = new FileReader();
-        reader.onload = function(){
-            var output = document.getElementById('category-img-tag');
-            output.src = reader.result;
-            };
-        reader.readAsDataURL(event.target.files[0]);
-        };
-
-    </script>
-
 
 @endsection
-
-
-
-
-
-{{-- @extends('layouts.privileged', ['title' => 'Manage Service'])
-@section('content')
-
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Create Services') }}
-        </h2>
-    </x-slot>
-
-
-
-    <livewire:create-service />
-    
-@endsection --}}

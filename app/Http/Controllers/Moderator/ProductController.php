@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\Moderator;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Resources\ProductsResource;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Http\Requests\ProductRequest;
+use App\Jobs\CreateProduct;
+use App\Jobs\UpdateProduct;
+use App\Jobs\DeleteProduct;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends Controller
 {
@@ -27,35 +32,59 @@ class ProductController extends Controller
         ]);
     }
 
-    public function show(Product $product)
+    public function show(Request $request, Product $product)
     {
+        $product = $request->product;
         // $product = Product::findOrFail($product);
-        return view('dashboard.manage-products.show', compact('product'))->with('title', $product->name);
+        return view('dashboard.manage-products.show', compact('product'))
+            ->with('title', $product->name);
     }
 
-    public function create(Request $request)
+    public function create()
     {
-        return view('dashboard.manage-products.create');
+        $productCategories = ProductCategory::all();
+        return view('dashboard.manage-products.create', [
+            'productCategories' => $productCategories,
+        ]);
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
+        $this->dispatchSync(CreateProduct::fromRequest($request));
 
-        return redirect()->route('dashboard.manage-products.index');
+        // $this->success('Product added');
+        return redirect()->route('manage-product')->with('success','Product Created');
     }
 
-    public function update()
+    public function edit(Request $request, Product $product)
     {
-
+        $product = $request->product;
+        return view('dashboard.manage-products.edit', [
+            'product' => $product,
+        ]);
     }
 
-    public function edit()
+    public function update(ProductRequest $request, Product $product)
     {
-      
+        $this->dispatchSync(UpdateProduct::fromRequest($product, $request));
+
+        $this->success('Thread successfully updated!');
+
+        return  $request->wantsJson() 
+            ? ProductsResource::make($product)
+            : redirect()->route('manage-product')->with('success','Product Created');
     }
 
-    public function delete()
-    {
 
+
+    public function delete(Request $request, Product $product)
+    {
+        $this->dispatchSync(job: new DeleteProduct($product));
+        
+        $this->success('HELLOWORLD');
+
+        return $request->wantsJson()
+            ? response()->json([], Response::HTTP_NO_CONTENT)
+            : redirect()->route('manage-product');
     }
 }

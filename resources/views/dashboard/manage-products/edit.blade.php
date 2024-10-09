@@ -1,16 +1,16 @@
-@extends('layouts.privileged', ['title' => 'Create Product'])
+@extends('layouts.privileged', ['title' => 'Edit Product'])
 
 @section('content')
     <x-headsection._topnav>
-        {{ __('Manage Product / Create') }}
+        {{ __('Manage Product / Edit') }}
     </x-headsection._topnav>
 
     <div class="lg:ml-[280px]">
         <div class="flex justify-between mx-7">
-            <h2 class="text-2xl font-bold">Create Product</h2>
+            <h2 class="text-2xl font-bold">Edit Product</h2>
         </div>
 
-        <form action="{{ route('manage-product.store') }}" method="POST">
+        <form action="{{ route('manage-product.update', $product) }}" method="PUT">
             @csrf
             <div class="bg-white m-5 border border-gray-200  rounded-xl shadow-lg p-4 px-4 md:p-8 mb-6">
                 <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
@@ -41,23 +41,24 @@
                             <div class="md:col-span-5">
                                 <label for="product_name">Product Name</label>
                                 <input type="text" name="name" id="name"
-                                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" required />
+                                    class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="{{ $product->name() }}" required />
                             </div>
     
                             <div class="md:col-span-5">
                                 <label for="description">Description</label>
-                                <textarea type="text" name="description" id="description"
-                                    class="border mt-1 rounded px-4 w-full bg-gray-50" value=""
-                                    placeholder="description" required></textarea>
+                                <textarea name="description" id="description"
+                                    class="border mt-1 rounded px-4 w-full bg-gray-50"
+                                    placeholder="description"
+                                    >{{ $product->description() }}</textarea>
                             </div>
     
                             <div class="md:col-span-1">
                                 <label for="category">Category</label>
                                 <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                                     <select name="category" class="bg-gray-50 border border-gray-200 cursor-pointer text-gray-700 transition-all text-sm rounded-lg hover:text-blue-600 focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        @foreach ( $productCategories as $category)
+                                        {{-- @foreach ( $products-> as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endforeach
+                                        @endforeach --}}
                                     </select>
                                 </div>
                             </div>
@@ -93,7 +94,7 @@
                                 <div class="h-10 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                                     <input name="price" id="price" placeholder="0"
                                     class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
-                                    value="0" />
+                                    value="{{ $product->price() }}" />
                                 </div>
                             </div>
     
@@ -111,7 +112,7 @@
                                     </button>
                                     <input name="quantity" id="quantity" placeholder="0"
                                         class="px-2 text-center appearance-none outline-none text-gray-800 w-full bg-transparent"
-                                        value="0" />
+                                        value="{{ $product->quantity() }}" />
                                     <button tabindex="-1" for="show_more"
                                         class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-500 hover:text-blue-600">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 fill-current"

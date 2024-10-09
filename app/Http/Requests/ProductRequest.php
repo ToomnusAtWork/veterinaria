@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use App\Models\User;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProductRequest extends FormRequest
@@ -11,7 +13,7 @@ class ProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,13 +24,50 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'max:100'],
-            'description' => ['required'],
-            'category' => 'array|nullable',
-            'status' => 'exists:tags,id',
-            'quantity' => 'url|nullable',
-            // 'submitted' => ['required', 'boolean'],
+            'name' => ['required', 'string', 'min:1', 'max:255'],
+            'description' => ['required','string', 'min:1'],
+            'category' => ['required', Rule::exists('product_categories', 'id')],
+            'quantity' => ['required', 'numeric', 'min:1'],
+            'price' => ['required', 'numeric', 'min:0'],
+            // 'status' => 'integer',
         ];
     }
+
+    public function author(): User
+    {
+        return $this->user();
+    }
+
+    public function name(): string
+    {
+        return $this->get('name');
+    }
+
+    public function description(): string
+    {
+        return $this->get('description');
+    }
+
+    public function category()
+    {
+        return $this->get('category');
+    }
+
+    public function quantity(): int
+    {
+        return $this->get('quantity');
+    }
+
+    public function price(): int
+    {
+        return $this->get('price');
+    }
+
+    // public function status(): int
+    // {
+    //     return $this->get('status');
+    // }
+
+
 
 }

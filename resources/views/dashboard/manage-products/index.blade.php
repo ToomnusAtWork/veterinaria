@@ -81,20 +81,21 @@
                             </td>
                             <td>
                                 <div class="align-middle">
-                                    {{-- <a href="{{ route('view-product', ['slug' => $product->slug ])  }}">
-                                    <x-button>
-                                        {{ __('View') }}
-                                    </x-button>
-                                </a> --}}
-    
-                                    <x-warning-button wire:click="confirmProductEdit({{ $product->id }})"
-                                        wire:loading.attr="disabled">
-                                        {{ __('Edit') }}
-                                    </x-warning-button>
-                                    <x-danger-button wire:click="confirmProductDeletion({{ $product->id }})"
-                                        wire:loading.attr="disabled">
-                                        {{ __('Delete') }}
-                                    </x-danger-button>
+                                    <a href="{{ route('manage-product.show', ['product' => $product]) }}">
+                                        <x-button>
+                                            {{ __('View') }}
+                                        </x-button>
+                                    </a>
+                                    <a href="{{ route('manage-product.edit', ['product' => $product]) }}">
+                                        <x-warning-button >
+                                            {{ __('Edit') }}
+                                        </x-warning-button>
+                                    </a>
+                                    <a href="{{ route('manage-product.delete', ['product' => $product])  }}">
+                                        <x-danger-button>
+                                            {{ __('Delete') }}
+                                        </x-danger-button>
+                                    </a>
                                 </div>
                             </td>
                         </tr>

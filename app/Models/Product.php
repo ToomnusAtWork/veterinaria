@@ -24,9 +24,24 @@ class Product extends Model
         return 'name';
     }
 
-    public function body(): string
+    public function name(): string
     {
         return $this->name;
+    }
+
+    public function description()
+    {
+        return $this->description;
+    }
+
+    public function quantity(): int
+    {
+        return $this->quantity;
+    }
+
+    public function price(): int
+    {
+        return $this->price;
     }
 
     public function productcategory(): BelongsTo
