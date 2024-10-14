@@ -10,8 +10,10 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Contracts\LogoutResponse;
+use Laravel\Fortify\Contracts\PasswordUpdateResponse;
 use Laravel\Fortify\Fortify;
-use Laravel\Fortify\Contracts\{LoginResponse, RegisterResponse};
+use Laravel\Fortify\Contracts\{LoginResponse, RegisterResponse, ProfileInformationUpdatedResponse};
 use App\Models\User;
 
 class FortifyServiceProvider extends ServiceProvider
@@ -46,6 +48,33 @@ class FortifyServiceProvider extends ServiceProvider
                         "token" => $user->createToken($request->email)->plainTextToken,
                         ], 200)
                     : redirect()->intended(Fortify::redirects('register'));
+            }
+        });
+
+        $this->app->instance(ProfileInformationUpdatedResponse::class, new class implements ProfileInformationUpdatedResponse {
+            public function toResponse($request)
+            {
+                return $request->wantsJson()
+                    ? response()->json(["message" => "Profile information has been updated successfully"], 200)
+                    : back()->with('status', Fortify::PROFILE_INFORMATION_UPDATED);
+            }
+        });
+
+        $this->app->instance(PasswordUpdateResponse::class, new class implements PasswordUpdateResponse {
+            public function toResponse($request)
+            {
+                return $request->wantsJson()
+                    ? response()->json(["message" => "Password has been updated successfully"], 200)
+                    : back()->with('status', Fortify::PASSWORD_UPDATED);
+            }
+        });
+
+        $this->app->instance(LogoutResponse::class, new class implements LogoutResponse{
+            public function toResponse($request)
+            {
+                return $request->wantsJson()
+                    ? response()->json(["message"=> "Successfully Logged Out"], 200)
+                    : back()->with("status", Fortify::redirects('logout', '/'));
             }
         });
 

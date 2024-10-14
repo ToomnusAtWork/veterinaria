@@ -3,8 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Http\Controllers\{AuthenticatedSessionController, 
-RegisteredUserController, PasswordResetLinkController};
-// use App\Http\Controllers\EmailVerificationNotificationController;
+RegisteredUserController, PasswordResetLinkController, ProfileInformationController, PasswordController};
+use App\Http\Controllers\ProfilePhotoController;
+use App\Http\Controllers\EmailVerificationNotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,9 @@ RegisteredUserController, PasswordResetLinkController};
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 
 // Route::post('/tokens/create', function (Request $request) {
@@ -39,6 +40,24 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
             Route::post('/forgot', [PasswordResetLinkController::class, 'store'])->middleware('guest:'. config('fortify.guard'))
                 ->name('password.email');
+
+            // Route::post('/logout', [LogoutController::class, 'destroy']);
+        });
+
+        Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])->middleware('auth:sanctum');
+
+        Route::prefix('user')->group(function () {
+            Route::get('/', function (Request $request) {
+                return $request->user();
+            });
+
+            Route::put('/profile-information', [ProfileInformationController::class, 'update']);
+
+            Route::post('/profile-photo',  [ProfilePhotoController::class, 'update']);
+
+            Route::post('/remove-photo', [ProfilePhotoController::class, 'delete']);
+
+            Route::put('/update-password', [PasswordController::class, 'update']);
 
         });
     });
