@@ -2,10 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Http\Controllers\{AuthenticatedSessionController, 
+use Laravel\Fortify\Http\Controllers\{AuthenticatedSessionController,
 RegisteredUserController, PasswordResetLinkController, ProfileInformationController, PasswordController};
 use App\Http\Controllers\ProfilePhotoController;
 use App\Http\Controllers\EmailVerificationNotificationController;
+use App\Http\Controllers\Moderator\ProductController;
+use App\Http\Controllers\LogoutController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -40,12 +43,12 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
             Route::post('/forgot', [PasswordResetLinkController::class, 'store'])->middleware('guest:'. config('fortify.guard'))
                 ->name('password.email');
-
-            // Route::post('/logout', [LogoutController::class, 'destroy']);
         });
 
         Route::post('/email/verification-notification', [EmailVerificationNotificationController::class, 'store'])->middleware('auth:sanctum');
 
+        Route::post('/logout', [LogoutController::class, 'destroy']);
+        
         Route::prefix('user')->group(function () {
             Route::get('/', function (Request $request) {
                 return $request->user();
@@ -60,6 +63,14 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
             Route::put('/update-password', [PasswordController::class, 'update']);
 
         });
+
+        Route::prefix('manage-product')->group(function () {
+            Route::post('create', [ProductController::class, 'store'])->name('api.products.store');
+            Route::put('{product}', [ProductController::class, 'update'])->name('api.products.update');
+            Route::delete('{product}', [ProductController::class, 'delete'])->name('api.products.delete');
+        });
+
+        // Route::prefix('')
     });
 });
 
@@ -91,11 +102,6 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 //             Route::delete('/{id}', [\App\Http\Controllers\CustomerAPI::class, 'destroy'])->name('api-customers.destroy');
 
 //         });
-
-
-
-
-
 
 
 //     }

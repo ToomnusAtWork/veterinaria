@@ -42,6 +42,9 @@ Route::middleware(Localization::class)->group(function () {
     //     Route::get('user/{name}', [App\Http\Controllers\Settings\ProfileController::class, 'edit'])->name('profile.edit');
     // });
 
+    Route::get('dashboard', [App\Http\Controllers\DashboardHomeController::class, 'index'])->name('dashboard');
+
+    Route::view('/pet-form', 'pets.create');
 
     // Product
     Route::prefix('product')->group(function () {
@@ -64,11 +67,10 @@ Route::middleware(Localization::class)->group(function () {
         Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');
     });
 
-    Route::get('dashboard', [App\Http\Controllers\DashboardHomeController::class, 'index'])->name('dashboard');
-
+    
     // Staff 
     Route::group(['prefix' => 'staff', 'middleware' => 'staff'], function () {
-        
+
         // Manage Product
         Route::prefix('manage-product')->group(function () {
             Route::get('/', [ManageProductController::class, 'index'])->name('manage-product');
@@ -91,12 +93,19 @@ Route::middleware(Localization::class)->group(function () {
             Route::delete('{service}', [ManageServiceController::class, 'delete'])->name('manage-service.delete');
         });
 
+    });
+    
+    Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
+        Route::resource('manage-users', AdminUsersController::class)->name('index', 'manageusers');
+        Route::resource('manage-users/user', AdminUsersController::class)->name('show', 'manageusers.show');
+        Route::put('users/{id}/suspend', [App\Http\Controllers\UserSuspensionController::class, 'suspend'])->name('manageusers.suspend');
+        Route::put('users/{id}/activate', [App\Http\Controllers\UserSuspensionController::class, 'activate'])->name('manageusers.activate');
+
+
         // Manage Appointment
         // Route::prefix('manage-appointment')->group(function () {
         //     Route::get('/', [ManageAppointmentsController::class,'index'])->name('manage-appointment');
-            
         // });
-        
     });
 
     //     // // Manage Shelter
@@ -115,11 +124,14 @@ Route::middleware(Localization::class)->group(function () {
         // Route::get('appointments/{appointment_code}', [App\Http\Controllers\AppointmentController::class, 'show'])->name('appointments.show');
     });
 
-    Route::prefix('admin')->name('admin')->group(function () {
+    // Route::prefix('admin')->name('admin')->group(function () {
         // Route::get('/', []);
-        Route::resource('manage-users', AdminUsersController::class)->name('index', 'manageuser');
+        // Route::resource('manage-users', AdminUsersController::class)->name('index', 'manageuser');
+        //         Route::prefix('manage')->group( function () {
+//             Route::resource('users', App\Http\Controllers\UserController::class)->name('index', 'manageusers');
 
-    });
+
+    // });
 
 
     // Route::redirect('/dashboard', '/user');
@@ -243,10 +255,6 @@ Route::middleware(Localization::class)->group(function () {
 //     Route::middleware([
 //         'validateRole:Customer'
 //     ])->group(function () {
-
-
-
-
 
 
 //     });

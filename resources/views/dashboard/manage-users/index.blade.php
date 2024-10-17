@@ -81,25 +81,24 @@
 
                                     @if ($user->role()->first()->name != 'Admin')
                                         @if ($user->status == true)
-                                            {{-- <form action="{{ route('manageusers.suspend', $user->id) }}" method="POST">
+                                            <form action="{{ route('manageusers.suspend', $user->id) }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <button type="submit"
                                                     class="bg-red-50 p-1 px-2 rounded-md text-red-600 hover:text-red-900">Suspend</button>
-                                            </form> --}}
+                                            </form>
                                         @else
-                                            {{-- <form action="{{ route('manageusers.activate', $user->id) }}" method="POST">
+                                            <form action="{{ route('manageusers.activate', $user->id) }}" method="POST">
                                                 @csrf
                                                 @method('PUT')
                                                 <button type="submit"
                                                     class="bg-green-50 p-1 px-2 rounded-md text-green-600 hover:text-green-900">Activate</button>
-                                            </form> --}}
+                                            </form>
                                         @endif
                                     @endif
-manage
                                     @if ($user->role()->first()->name == 'Customer')
-                                        {{-- <a href="{{ route('users.show', $user->id) }}"
-                                            class="bg-blue-50 p-1 px-2 rounded-md text-blue-600 hover:text-blue-900">View</a> --}}
+                                        <a href="{{ route('manageusers.show', $user->id) }}"
+                                            class="bg-blue-50 p-1 px-2 rounded-md text-blue-600 hover:text-blue-900">View</a>
                                     @endif
 
                                 </div>

@@ -52,8 +52,12 @@ class ProductController extends Controller
     {
         $this->dispatchSync(CreateProduct::fromRequest($request));
 
+        $product = Product::where('name', $request->name())->first();
         // $this->success('Product added');
-        return redirect()->route('manage-product')->with('success','Product Created');
+
+        return $request->wantsJson()
+            ? ProductsResource::make($product)
+            : redirect()->route('manage-product')->with('success','Product Created');
     }
 
     public function edit(Request $request, Product $product)

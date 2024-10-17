@@ -327,9 +327,9 @@
                                                                         </svg>
                                                                     </button>
                                                                 </a>
-                                                                <div class="">
+                                                                {{-- <div class="">
                                                                     <a href="{{ route('product.edit') }}" class="block w-3 h-3 bg-blue-600 rounded-full">test</a>
-                                                                </div>
+                                                                </div> --}}
                                                             </div>
                                                         </div>
                                                     </div>

@@ -28,7 +28,7 @@
                     </div>
                     </li>
                     <li>
-                    {{-- <a href="{{ route('manageusers') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
+                    <a href="{{ route('manageusers') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
                     {{ request()->is('dashboard/manage/users') ? 'bg-gray-700 border-violet-600 text-white font-semibold' : '' }}
                     ">
                         <span class="inline-flex justify-center items-center ml-4">
@@ -36,7 +36,7 @@
                         </span>
                         <span class="invisible md:visible ml-2 text-sm tracking-wide truncate">Manage Users</span>
 
-                    </a> --}}
+                    </a>
                     </li>
                     <li>
                         {{-- <a href="{{ route('managelocations') }}" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-700 text-gray-600 hover:text-white border-l-4 border-transparent pr-6
