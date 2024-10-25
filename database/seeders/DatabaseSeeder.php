@@ -132,6 +132,7 @@ class DatabaseSeeder extends Seeder
             ServicesSeeder::class,
             TimeSlotSeeder::class,
             ProductSeeder::class,
+            PetSeeder::class,
         ]);
 
 

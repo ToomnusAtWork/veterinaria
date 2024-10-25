@@ -70,7 +70,9 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
             Route::delete('{product}', [ProductController::class, 'delete'])->name('api.products.delete');
         });
 
-        // Route::prefix('')
+        // Route::prefix('manage-service')->group(function () {
+        //     Route::post('create', [ServicesController::class, 'store']);
+        // })
     });
 });
 

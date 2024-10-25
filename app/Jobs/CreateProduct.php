@@ -42,9 +42,6 @@ class CreateProduct implements ShouldQueue
             $request->quantity(),
             $request->price(),
             $request->category(),
-            // [
-            //     'category' => 
-            // ],
         );
     }
 

@@ -247,6 +247,7 @@
                             <div class="relative mb-4  w-full overflow-x-auto pb-6">
                                 <ul role="list"
                                     class="mx-4 flex flex-col flex-wrap content-center md:inline-grid gap-x-8 gap-y-8 sm:mx-6 lg:mx-0 lg:grid-cols-3 md:grid-cols-2 lg:gap-x-8 lg:space-x-0">
+
                                     @forelse ($products as $product)
                                         <li class="inline-flex w-64 flex-col text-center lg:w-auto">
                                             <div class="max-w-md w-full bg-gray-900 shadow-xl rounded-xl p-6">
@@ -584,12 +585,12 @@
                                     </li>
     --}}                            
                                     @empty
-                                        <p>There're no current product availble yet.</p>
+                                    <div class="">
+                                        <p>There's currently no product availble yet.</p>
+                                    </div>
+                                        
                                     @endforelse
                                 </ul>
-                                {{-- @if ($service->is_hidden == false)
-                            <x-service-card :service="$service"/>
-                        @endif --}}
 
 
                             </div>

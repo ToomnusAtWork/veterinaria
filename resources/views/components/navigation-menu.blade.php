@@ -171,11 +171,14 @@
                             {{-- <div class="block px-4 py-2 text-xs text-gray-400">
                                 {{ __('Shop') }}
                             </div> --}}
-                            <x-dropdown-link href="{{ route('cart') }}">
-                                {{ __('Appointments') }}
-                            </x-dropdown-link>
                             <x-dropdown-link href="{{ route('appointments')}}">
                                 {{ __('Cart') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="{{ route('customer-pet') }}">
+                                {{ __('Pet') }}
+                            </x-dropdown-link>
+                            <x-dropdown-link href="{{ route('cart') }}">
+                                {{ __('Appointments') }}
                             </x-dropdown-link>
 
                             <div class="border-t border-gray-200"></div>

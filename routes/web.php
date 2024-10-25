@@ -39,12 +39,20 @@ Route::middleware(Localization::class)->group(function () {
     // Route::redirect('/dashboard', '/profile');
     // Route::get('profile/{name?}', [App\Http\Controllers\Settings\ProfileController::class, 'show'])->name('profile');
     // Route::prefix('settings')->group(function () {
-    //     Route::get('user/{name}', [App\Http\Controllers\Settings\ProfileController::class, 'edit'])->name('profile.edit');
+    //     Route::get('user/{name}', [App\Http\Controllers\Settings\ProfileController::class, 'edipht'])->name('profile.edit');
     // });
 
     Route::get('dashboard', [App\Http\Controllers\DashboardHomeController::class, 'index'])->name('dashboard');
 
-    Route::view('/pet-form', 'pets.create');
+    // Pets
+    Route::prefix('my-pet')->group(function() {
+        Route::get('/',  [App\Http\Controllers\PetsController::class, 'index'])->name('customer-pet');
+        Route::get('create',  [App\Http\Controllers\PetsController::class, 'create'])->name('customer.create');
+        Route::post('create',  [App\Http\Controllers\PetsController::class, 'store'])->name('customer-pet.store');
+        Route::get('{pets}/edit',  [App\Http\Controllers\PetsController::class, 'edit'])->name('customer.edit');
+        Route::put('{pets}',  [App\Http\Controllers\PetsController::class, 'update'])->name('customer-pet.update');
+        Route::delete('/',  [App\Http\Controllers\PetsController::class, 'delete'])->name('customer-pet.delete');
+    });
 
     // Product
     Route::prefix('product')->group(function () {
@@ -66,9 +74,8 @@ Route::middleware(Localization::class)->group(function () {
         Route::delete('/{id}', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.destroy');
         Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');
     });
-
     
-    // Staff 
+    // Staff Grouping
     Route::group(['prefix' => 'staff', 'middleware' => 'staff'], function () {
 
         // Manage Product
@@ -95,6 +102,7 @@ Route::middleware(Localization::class)->group(function () {
 
     });
     
+    // Admin Grouping
     Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         Route::resource('manage-users', AdminUsersController::class)->name('index', 'manageusers');
         Route::resource('manage-users/user', AdminUsersController::class)->name('show', 'manageusers.show');
