@@ -10,7 +10,8 @@ return new class extends Migration {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->unique();
-            $table->foreignId('user_id')->constrained();
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('is_paid')->default(false);
             $table->boolean('is_cancelled')->default(false);            // is abandoned
             $table->boolean('is_abandoned')->default(false);

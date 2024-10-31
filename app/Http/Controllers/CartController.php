@@ -5,20 +5,32 @@ namespace App\Http\Controllers;
 use App\Jobs\SendAppointmentConfirmationMailJob;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Ramsey\Collection\Collection;
 
 class CartController extends Controller
 {
 
+
     public function index()
     {
         // get the cart of the user that is not paid
+        // $cart = auth()->user()->cart()
+        //     ->where('is_paid', false)
+
+        //     ->first();
+        // return view('web.cart', compact('cart'));
+        return view('cart.checkout');
+
+    }
+
+    public function show()
+    {
         $cart = auth()->user()->cart()
-            ->where('is_paid', false)
+        ->where('is_paid', false)
+        ->first();
 
-            ->first();
-        return view('web.cart', compact('cart'));
-
+        return view('cart.index', compact('cart'));
     }
 
     public function removeItem($cart_service_id) {

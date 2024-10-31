@@ -63,7 +63,7 @@ class PetSeeder extends Seeder
             'weight' => 20,
             'allergen' => '-',
             'note' => 'He is a good boy and want to be love',
-            'user_id' => 2,
+            'owner_id' => 2,
         ]);
 
     }

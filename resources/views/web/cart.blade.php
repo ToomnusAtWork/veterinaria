@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.app', ['title' => 'Checkout'])
+
 @section('content')
     <div class="bg-gray-100 py-8" x-data="{ showCheckoutConfirmation: false }">
         <div class="container  mx-auto px-4 md:w-11/12">

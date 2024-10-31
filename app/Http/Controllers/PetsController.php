@@ -23,7 +23,7 @@ class PetsController extends Controller
 
     public function index()
     {
-        $pets = Pet::where('user_id', Auth::user()->id)->get();
+        $pets = Pet::where('owner_id', Auth::user()->id)->get();
     
         return view('pets.index', [
             'pets' => $pets ]);
@@ -36,8 +36,9 @@ class PetsController extends Controller
 
     public function store(PetRequest $request)
     {
-        $this->dispatchSync(CreatePet::fromRequest($request));
 
+        $this->dispatchSync(CreatePet::fromRequest($request));
+        
         $pet = Pet::where('name', $request->name())->first();
 
         return redirect()->route('customer-pet')->with('success','Pet Created');
@@ -45,6 +46,14 @@ class PetsController extends Controller
         // return $request->wantsJson()
         //     ? PetsResource::make($pet)
         //     : redirect()->route('customer-pet')->with('success','Pet Created');
+    }
+
+    public function edit(Request $request, Pet $pet)
+    {
+        $pet = $request->pet;
+        return view('pets.edit', [
+            'pet' => $pet,
+        ]);
     }
 
     public function update()

@@ -21,6 +21,7 @@ class CreatePet implements ShouldQueue
      */
     public function __construct(
         private string $name,
+        private $petImage,
         private $breed,
         private $petType,
         private string $DOB,
@@ -37,6 +38,7 @@ class CreatePet implements ShouldQueue
     {
         return new self (
             $request->name(),
+            $request->petImage(),
             $request->pettype(),
             $request->breed(),
             $request->DOB(),
@@ -54,14 +56,17 @@ class CreatePet implements ShouldQueue
     {
         $pet = new Pet([
             'name' => $this->name,
+            'image' => $this->petImage,
             'pet_type_id' => $this->petType,
             'breed_id' => $this->breed,
             'date_of_birth' => $this->DOB,
             'weight' => $this->weight,
             'allergen' => $this->allergen,
             'note' => $this->note,
-            'user_id' => $this->customer,
+            'owner_id' => $this->customer,
         ]);
+
+        // dd($pet);
 
         $pet->save();
     }

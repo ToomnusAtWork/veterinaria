@@ -12,7 +12,8 @@ return new class extends Migration {
             $table->id();
             $table->string('appointment_code')->unique();
             $table->foreignId('cart_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreignId('service_id')->constrained();
             $table->date('date');
             $table->foreignId('time_slot_id')->constrained();

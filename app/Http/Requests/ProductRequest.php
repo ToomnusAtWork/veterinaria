@@ -25,6 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'min:1', 'max:255'],
+            'image' => ['required', 'image', 'mimes:jpg, jpeg, png, svg, gif, webp', 'max:2048'],
             'description' => ['required','string', 'min:1'],
             'category' => ['required', Rule::exists('product_categories', 'id')],
             'quantity' => ['required', 'numeric', 'min:1'],

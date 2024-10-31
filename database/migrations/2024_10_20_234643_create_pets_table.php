@@ -21,8 +21,11 @@ return new class extends Migration
             $table->integer('weight');
             $table->string('allergen');
             $table->string('note');
-            $table->foreignId('user_id')->constrained();
+            $table->unsignedInteger('owner_id');
             $table->timestamps();
+            
+            $table->foreign('owner_id')
+                ->references('id')->on('users');
         });
     }
 

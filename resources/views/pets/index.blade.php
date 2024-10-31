@@ -6,20 +6,21 @@
         <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-6">
             
             @forelse($pets as $pet)
-                {{-- <a href="{{ route('customer-pet.show') }}"> --}}
-                    <div class="relative flex flex-col justify-center overflow-hidden shadow-xl">
+
+                <a href="{{ route('customer-pet.edit', ['pet' => $pet]) }}">
+                    <div class="flex md:h-72 h-64 w-full justify-center overflow-hidden shadow-xl">
                         {{-- <div class="absolute inset-0 bg-center dark:bg-black"></div> --}}
-                        <div class="group relative m-0 flex h-full w-full rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+                        <div class="group shrink-0 relative m-0 flex h-full w-full rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
                             <div
                                 class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
                                 <img src="{{ asset('storage/' . $pet->image) }}"
-                                    class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
+                                    class="animate-fade-in h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110"
                                     alt="{{ $pet->name }}" />
                             </div>
                             <div class="absolute flex flex-col top-0 right-0 p-3 z-20 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:scale-110">
                                 <!-- Delete Pet Button  -->
                                 <form action="{{ route('customer-pet.delete') }}" method="DELETE">
-                                    <button
+                                    <button type="submit"
                                         class="transition ease-in duration-300 bg-gray-800  hover:text-purple-500 shadow hover:shadow-md text-gray-500 rounded-full w-8 h-8 text-center p-1">
                                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
                                     </button>
@@ -31,13 +32,13 @@
                                 <h1 class="font-serif px-2 py-1 text-3xl font-bold text-black">{{ $pet->name }}</h1>
                                 <span class="inline-block px-2 py-1 font-semibold text-teal-900 bg-teal-200 rounded-full">{{ $pet->pet_type_id }}</span>
                                 <span
-                                    class="inline-block px-2 py-1 font-semibold text-indigo-900 bg-indigo-200 rounded-full">UI/UX</span>
+                                    class="inline-block px-2 py-1 font-semibold text-indigo-900 bg-indigo-200 rounded-full">Breed</span>
                                 <span
                                     class="inline-block px-2 py-1 font-semibold text-purple-900 bg-purple-200 rounded-full">Design</span>
                             </div>
                         </div>
                     </div>
-                {{-- </a>      --}}
+                </a>     
 
             @empty
                 <div class="box-border h-72 border-1 border-black p-2 rounded-xl bg-gray-50 shadow-xl">

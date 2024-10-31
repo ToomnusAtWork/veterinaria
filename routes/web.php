@@ -49,8 +49,8 @@ Route::middleware(Localization::class)->group(function () {
         Route::get('/',  [App\Http\Controllers\PetsController::class, 'index'])->name('customer-pet');
         Route::get('create',  [App\Http\Controllers\PetsController::class, 'create'])->name('customer.create');
         Route::post('create',  [App\Http\Controllers\PetsController::class, 'store'])->name('customer-pet.store');
-        Route::get('{pets}/edit',  [App\Http\Controllers\PetsController::class, 'edit'])->name('customer.edit');
-        Route::put('{pets}',  [App\Http\Controllers\PetsController::class, 'update'])->name('customer-pet.update');
+        Route::get('{pet}/edit',  [App\Http\Controllers\PetsController::class, 'edit'])->name('customer-pet.edit');
+        Route::put('{pet}',  [App\Http\Controllers\PetsController::class, 'update'])->name('customer-pet.update');
         Route::delete('/',  [App\Http\Controllers\PetsController::class, 'delete'])->name('customer-pet.delete');
     });
 
@@ -67,9 +67,10 @@ Route::middleware(Localization::class)->group(function () {
     });
 
     // Product Cart
-    Route::prefix('cart')->group( function () {
+    Route::prefix('checkout')->group( function () {
         Route::get('/', [App\Http\Controllers\CartController::class, 'index'])->name('cart');
         Route::post('/', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
+        Route::get('/cart', [App\Http\Controllers\CartController::class, 'show'])->name('cart.show');
         Route::delete('/item/{cart_service_id}', [App\Http\Controllers\CartController::class, 'removeItem'])->name('cart.remove-item');
         Route::delete('/{id}', [App\Http\Controllers\CartController::class, 'destroy'])->name('cart.destroy');
         Route::post('/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cart.checkout');

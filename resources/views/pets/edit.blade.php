@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Create New Pet Information'])
+@extends('layouts.app', ['title' => 'Edit Pet Information'])
 
 @section('content')
 <div class="w-full max-w-7xl mx-auto p-8">
@@ -35,13 +35,13 @@
 
             <div>
                 <label class="text-black dark:text-gray-200" for="name">Pet name</label>
-                <input id="name" type="text" name="name"
+                <input id="name" type="text" name="name" value="{{ $pet->name }}"
                     class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
             </div>
 
             <div>
                 <label class="text-black dark:text-gray-200" for="date_of_birth">Date Of Birth</label>
-                <input id="date_of_birth" type="date" name="date_of_birth"
+                <input id="date_of_birth" type="date" name="date_of_birth" value="{{ $pet->date_of_birth }}"
                     class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
             </div>
 
@@ -55,8 +55,8 @@
             </div> --}}
 
             <div>
-                <label class="text-black dark:text-gray-200" for="passwordConfirmation">Approximate Weight (Kg.)</label>
-                <input id="weight" name="weight"
+                <label class="text-black dark:text-gray-200" for="weight">Approximate Weight (Kg.)</label>
+                <input id="weight" name="weight" value="{{ $pet->weight }}"
                     class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
             </div>
 
@@ -80,14 +80,15 @@
 
             <div class="col-span-2">
                 <label class="text-black dark:text-gray-200" for="allergen">Allergen</label>
-                <input name="allergen" type="text"
+                <input name="allergen" type="text" value="{{ $pet->allergen }}"
                     class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
             </div>
 
             <div class="col-span-2">
                 <label class="text-black dark:text-gray-200" for="note">Note</label>
-                <textarea name="note" type="textarea"
-                    class="block w-full px-4 h-36 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"></textarea>
+                <textarea name="note" type="textarea" 
+                    class="block w-full px-4 h-36 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">{{ $pet->note }}
+                </textarea>
             </div>
         </div>
 

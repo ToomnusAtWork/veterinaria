@@ -22,6 +22,7 @@ class CreateProduct implements ShouldQueue
      */
     public function __construct(
         private string $name,
+        private string $petImage,
         private string $description,
         private User $author,
         private int $quantity,
@@ -37,6 +38,7 @@ class CreateProduct implements ShouldQueue
     {
         return new self (
             $request->name(),
+            $request->petImage(),
             $request->description(),
             $request->author(),
             $request->quantity(),
@@ -52,6 +54,7 @@ class CreateProduct implements ShouldQueue
     {
         $product = new Product([
             'name' => $this->name,
+            'image' => $this->petImage,
             'description'=> $this->description,
             'quantity' => $this->quantity,
             'price'=> $this->price,

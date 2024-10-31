@@ -5,12 +5,14 @@ namespace App\Http\Requests;
 use App\Models\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class PetRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
+
     public function authorize(): bool
     {
         return true;
@@ -25,19 +27,33 @@ class PetRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'min:1', 'max:255'],
+            'image' => ['required', 'mimes:jpeg,bmp,png', 'max:20000'],
             'pet_type_id' => ['required', Rule::exists('pet_types', 'id')],
             'breed_id' => ['required', Rule::exists('breeds', 'id')],
             'date_of_birth' => ['required', 'date'],
             'weight' => ['required', 'numeric', 'min:0'],
             'allergen' => ['nullable','string', 'min:1'],
             'note' => ['nullable','string', 'min:1'],
-            'user_id' => ['nullable'],
+            'owner_id' => ['nullable'],
         ];
     }
 
     public function customer()
     {
         return $this->user()->id;
+    }
+
+    public function petImage()
+    {
+        $defaultError = "public/images/default-error.svg";
+
+        if($this->hasFile('image'))
+        {
+            $image = $this->file('image')->store('customer/pets');
+            return $image;
+        }
+
+        return $defaultError;
     }
 
     public function name(): string
